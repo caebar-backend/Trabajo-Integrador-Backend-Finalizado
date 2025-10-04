@@ -7,6 +7,7 @@
 
 
 const raizRoutes = require('./routes/raiz')
+const usuariosRoutes = require('./routes/usuarios')
 
 const sequelize = require("./config/database")
 const express = require("express")
@@ -71,6 +72,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 app.use('/', raizRoutes)
+app.use('/api/v1', usuariosRoutes)
 
 app.use((req, res) => {
   console.log(chalk.yellowBright(`Ruta no encontrada: ${req.originalUrl}`))

@@ -29,7 +29,10 @@ Content-Type: {{json}}
   "fecha_nac": "1995-05-20"
 }
 
-### Listar usuarios
+### Listar todos los usuarios
+GET {{baseUrl}}/usuarios
+
+### Listar usuarios con limite de resultados
 GET {{baseUrl}}/usuarios?page=1&limit=20
 
 ### Obtener usuario por ID
