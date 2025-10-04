@@ -7,25 +7,24 @@ const { Sequelize } = require('sequelize')
 
 process.loadEnvFile()
 
-const dbHost = process.env.DB_HOST
-const dbUser = process.env.DB_USER
-const dbPassword = process.env.DB_PASSWORD
-const dataBase = process.env.DB_NAME
-const dbPort = process.env.DB_PORT
+const DBNAME = process.env.DB_NAME
+const DBUSER = process.env.DB_USER
+const DBPASSWORD = process.env.DB_PASSWORD
+const DBHOST = process.env.DB_HOST
 
-const sequelizeConfig = new Sequelize(
-    dataBase,
-    dbUser,
-    dbPassword,
-    {
-        host: dbHost,
-        port: dbPort,
+
+const sequelize = new Sequelize(DBNAME,
+    DBUSER,
+    DBPASSWORD,{
+        host: DBHOST,
         dialect: 'mysql',
-    })
+        logging: false
+    }
+)
 
- module.exports = sequelizeConfig
+ module.exports = sequelize
 
- 
+
 
 
 

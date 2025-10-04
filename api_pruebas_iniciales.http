@@ -1,0 +1,10 @@
+
+### PRUEBA Primaria para comprobar conexión y funcionamiento de archivos varios
+@base= http://localhost:3000/
+@rz=raiz
+
+### GET /raiz/ (mensaje de bienvenida)
+GET {{base}}{{rz}}/
+
+### GET /raiz/rutainexistente (mensaje de error)
+GET {{base}}{{rz}}/rutainexistente
