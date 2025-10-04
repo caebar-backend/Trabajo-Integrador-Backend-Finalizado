@@ -1,0 +1,4036 @@
+{
+  "artista": [
+    {
+      "artista": "Pink Floyd",
+      "imagen": "Pink Floyd.jpg"
+    },
+    {
+      "artista": "AC/DC",
+      "imagen": ""
+    },
+    {
+      "artista": "The Rolling Stones",
+      "imagen": "The Rolling Stones.jpg"
+    },
+    {
+      "artista": "The Beatles",
+      "imagen": ""
+    },
+    {
+      "artista": "Guns\\'n Roses','Guns\\'n Roses.jpg",
+      "imagen": ""
+    },
+    {
+      "artista": "Linkin Park",
+      "imagen": ""
+    },
+    {
+      "artista": "Madonna",
+      "imagen": "Madonna.jpg"
+    },
+    {
+      "artista": "Fito Paez",
+      "imagen": ""
+    },
+    {
+      "artista": "Diego Torres",
+      "imagen": "Diego Torres.jpg"
+    },
+    {
+      "artista": "Shakira",
+      "imagen": ""
+    },
+    {
+      "artista": "Maluma",
+      "imagen": "Maluma.jpg"
+    },
+    {
+      "artista": "Carlos Vives",
+      "imagen": ""
+    },
+    {
+      "artista": "Karol G",
+      "imagen": "Karol G.jpg"
+    },
+    {
+      "artista": "Yo-Yo Ma",
+      "imagen": ""
+    },
+    {
+      "artista": "Michael Finnissy",
+      "imagen": "Michael Finnissy.jpg"
+    },
+    {
+      "artista": "John Adams",
+      "imagen": ""
+    },
+    {
+      "artista": "John Corigliano",
+      "imagen": "John Corigliano.jpg"
+    },
+    {
+      "artista": "Terry Riley",
+      "imagen": ""
+    },
+    {
+      "artista": "Brian John Peter Ferneyhough",
+      "imagen": "Brian John Peter Ferneyhough.jpg"
+    },
+    {
+      "artista": "Charlie Parker",
+      "imagen": ""
+    },
+    {
+      "artista": "MIles Davis",
+      "imagen": "MIles Davis.jpg"
+    },
+    {
+      "artista": "Dizzy Gillespie",
+      "imagen": ""
+    },
+    {
+      "artista": "Coleman Hawkins",
+      "imagen": "Coleman Hawkins.jpg"
+    },
+    {
+      "artista": "Billie Holiday",
+      "imagen": ""
+    },
+    {
+      "artista": "Ray Charles",
+      "imagen": "Ray Charles.jpg"
+    },
+    {
+      "artista": "Chet Baker",
+      "imagen": ""
+    },
+    {
+      "artista": "Celia Cruz",
+      "imagen": "Celia Cruz.jpg"
+    },
+    {
+      "artista": "Ruben Blades",
+      "imagen": ""
+    },
+    {
+      "artista": "Willie Colon",
+      "imagen": "Willie Colon.jpg"
+    },
+    {
+      "artista": "Hector Lavoe",
+      "imagen": ""
+    },
+    {
+      "artista": "Tito Rodriguez",
+      "imagen": "Tito Rodriguez.jpg"
+    },
+    {
+      "artista": "Luis Enrique",
+      "imagen": ""
+    },
+    {
+      "artista": "Astor Piazzolla",
+      "imagen": "Astor Piazzolla.jpg"
+    },
+    {
+      "artista": "Carlos Gardel",
+      "imagen": ""
+    },
+    {
+      "artista": "Adriana Varela",
+      "imagen": "Adriana Varela.jpg"
+    },
+    {
+      "artista": "Alberto Podestá",
+      "imagen": ""
+    },
+    {
+      "artista": "Bajofondo Tango Club",
+      "imagen": "Bajofondo Tango Club.jpg"
+    },
+    {
+      "artista": "Susana Rinaldi",
+      "imagen": ""
+    },
+    {
+      "artista": "Dr. Dre",
+      "imagen": "Dr. Dre.jpg"
+    },
+    {
+      "artista": "Eminem",
+      "imagen": ""
+    },
+    {
+      "artista": "Snoop Dogg",
+      "imagen": "Snoop Dogg.jpg"
+    },
+    {
+      "artista": "Jay-Z",
+      "imagen": ""
+    },
+    {
+      "artista": "Beastie Boys",
+      "imagen": "Beastie Boys.jpg"
+    },
+    {
+      "artista": "Kanye West",
+      "imagen": ""
+    },
+    {
+      "artista": "Carl Cox",
+      "imagen": "Carl Cox.jpg"
+    },
+    {
+      "artista": "Marco Carola",
+      "imagen": ""
+    },
+    {
+      "artista": "Oscar Mulero",
+      "imagen": "Oscar Mulero.jpg"
+    },
+    {
+      "artista": "Nina Kraviz",
+      "imagen": ""
+    },
+    {
+      "artista": "Adam Beyer",
+      "imagen": "Adam Beyer.jpg"
+    },
+    {
+      "artista": "Solomun",
+      "imagen": ""
+    }
+  ],
+  "discografica": [
+    {
+      "discografica": "Sony Music Entertainment",
+      "pais": "Estados Unidos"
+    },
+    {
+      "discografica": "Universal Music Group",
+      "pais": "Estados Unidos"
+    },
+    {
+      "discografica": "Warner Music Group",
+      "pais": "Estados Unidos"
+    },
+    {
+      "discografica": "EMI",
+      "pais": "Inglaterra"
+    },
+    {
+      "discografica": "Apple Records",
+      "pais": "Inglaterra"
+    },
+    {
+      "discografica": "Geffen Records",
+      "pais": "Estados Unidos"
+    },
+    {
+      "discografica": "Sire Warner Bros",
+      "pais": "Estados Unidos"
+    },
+    {
+      "discografica": "UMG Recordings",
+      "pais": "España"
+    },
+    {
+      "discografica": "Elektra Records LLC",
+      "pais": "Inglaterra"
+    },
+    {
+      "discografica": "Atlantic Recording Corporation",
+      "pais": "Chile"
+    },
+    {
+      "discografica": "Geffen Records",
+      "pais": "Estados Unidos"
+    },
+    {
+      "discografica": "Atlantic Recording Corporation",
+      "pais": "Estados Unidos"
+    },
+    {
+      "discografica": "Rimas Entertainment LLC",
+      "pais": "Brasil"
+    },
+    {
+      "discografica": "RCA Records",
+      "pais": "España"
+    },
+    {
+      "discografica": "Universal International Music BV",
+      "pais": "Inglaterra"
+    },
+    {
+      "discografica": "Columbia Records",
+      "pais": "Brasil"
+    },
+    {
+      "discografica": "BigHit Entertainment",
+      "pais": "Canadá"
+    },
+    {
+      "discografica": "Interscope Records",
+      "pais": "España"
+    },
+    {
+      "discografica": "Ministry of Sound Recordings Limited",
+      "pais": "Brasil"
+    },
+    {
+      "discografica": "WK Records",
+      "pais": "Estados Unidos"
+    },
+    {
+      "discografica": "White World Music",
+      "pais": "España"
+    },
+    {
+      "discografica": "Epic Records.",
+      "pais": "Chile"
+    },
+    {
+      "discografica": "Internet Money Records",
+      "pais": "Brasil"
+    },
+    {
+      "discografica": "Aftermath Entertainment",
+      "pais": "Estados Unidos"
+    },
+    {
+      "discografica": "Atlantic",
+      "pais": "Estados Unidos"
+    },
+    {
+      "discografica": "Capitol Records",
+      "pais": "Canadá"
+    },
+    {
+      "discografica": "CBS",
+      "pais": "España"
+    },
+    {
+      "discografica": "CBS Masterworks",
+      "pais": "Alemania"
+    },
+    {
+      "discografica": "Commodore",
+      "pais": "Estados Unidos"
+    },
+    {
+      "discografica": "Death Row Records",
+      "pais": "Brasil"
+    },
+    {
+      "discografica": "Decca",
+      "pais": "Estados Unidos"
+    },
+    {
+      "discografica": "Detroit Underground",
+      "pais": "Estados Unidos"
+    },
+    {
+      "discografica": "Dial Records",
+      "pais": "Estados Unidos"
+    },
+    {
+      "discografica": "Diynamic Music",
+      "pais": "Alemania"
+    },
+    {
+      "discografica": "Etcetera Records B.V.",
+      "pais": "Holanda"
+    },
+    {
+      "discografica": "Fania Records",
+      "pais": "Estados Unidos"
+    },
+    {
+      "discografica": "Fania Records",
+      "pais": "Estados Unidos"
+    },
+    {
+      "discografica": "Inca Records",
+      "pais": "Colombia"
+    },
+    {
+      "discografica": "M nus",
+      "pais": "Canadá"
+    },
+    {
+      "discografica": "Music Hall",
+      "pais": "Argentina"
+    },
+    {
+      "discografica": "Musicraft",
+      "pais": "Estados Unidos"
+    },
+    {
+      "discografica": "Naxos Records",
+      "pais": "Estados Unidos"
+    },
+    {
+      "discografica": "ND Nueva Direccion En La Cultura",
+      "pais": "Argentina"
+    },
+    {
+      "discografica": "NMC",
+      "pais": "Inglaterra"
+    },
+    {
+      "discografica": "Octave",
+      "pais": "Inglaterra"
+    },
+    {
+      "discografica": "Odeon",
+      "pais": "Argentina"
+    },
+    {
+      "discografica": "Prestige",
+      "pais": "Estados Unidos"
+    },
+    {
+      "discografica": "RCA Victor Red Seal",
+      "pais": "Alemania"
+    },
+    {
+      "discografica": "REKIDS",
+      "pais": "Alemania"
+    },
+    {
+      "discografica": "Riverside Records",
+      "pais": "Estados Unidos"
+    },
+    {
+      "discografica": "Roc-A-Fella Records",
+      "pais": "Canadá"
+    },
+    {
+      "discografica": "Roc-A-Fella Records, Universal Music",
+      "pais": "Brasil"
+    },
+    {
+      "discografica": "Sony Music",
+      "pais": "Mexico"
+    },
+    {
+      "discografica": "Stip Record",
+      "pais": "Francia"
+    },
+    {
+      "discografica": "Tico Records",
+      "pais": "Estados Unidos"
+    },
+    {
+      "discografica": "Trova",
+      "pais": "Uruguay"
+    },
+    {
+      "discografica": "Truesoul",
+      "pais": "Suecia"
+    },
+    {
+      "discografica": "UA Latino",
+      "pais": "España"
+    }
+  ],
+  "album": [
+    {
+      "album": "Is There Anybody Out There",
+      "artista": "Pink Floyd",
+      "discografica": "EMI",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "Radio Sampler ‎2xCD",
+      "artista": "Pink Floyd",
+      "discografica": "EMI",
+      "imagenportada": ""
+    },
+    {
+      "album": "Delicate Sound Of Thunder",
+      "artista": "Pink Floyd",
+      "discografica": "EMI",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "Abbey Road",
+      "artista": "The Beatles",
+      "discografica": "Apple Records",
+      "imagenportada": ""
+    },
+    {
+      "album": "Use Your Illusion II",
+      "artista": "Guns\\'n Roses','Guns\\'n Roses.jpg",
+      "discografica": "Geffen Records",
+      "imagenportada": ""
+    },
+    {
+      "album": "Appetite for Destruction",
+      "artista": "Guns\\'n Roses','Guns\\'n Roses.jpg",
+      "discografica": "Geffen Records",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "True Blue",
+      "artista": "Madonna",
+      "discografica": "Sire Warner Bros",
+      "imagenportada": ""
+    },
+    {
+      "album": "Like A Virgin ",
+      "artista": "Madonna",
+      "discografica": "Sire Warner Bros",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "Fito Paez",
+      "artista": "Fito Paez",
+      "discografica": "EMI",
+      "imagenportada": ""
+    },
+    {
+      "album": "Antología",
+      "artista": "Fito Paez",
+      "discografica": "Warner Music Group",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "Diego Torres",
+      "artista": "Diego Torres",
+      "discografica": "EMI",
+      "imagenportada": ""
+    },
+    {
+      "album": "Loba",
+      "artista": "Shakira",
+      "discografica": "Sony Music Entertainment",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "Pies Descalzos",
+      "artista": "Shakira",
+      "discografica": "Warner Music Group",
+      "imagenportada": ""
+    },
+    {
+      "album": "Papi Juancho",
+      "artista": "Maluma",
+      "discografica": "Sony Music Entertainment",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "Vives",
+      "artista": "Carlos Vives",
+      "discografica": "Sony Music Entertainment",
+      "imagenportada": ""
+    },
+    {
+      "album": "OCEAN",
+      "artista": "Karol G",
+      "discografica": "Warner Music Group",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "Cello Concertos",
+      "artista": "Yo-Yo Ma",
+      "discografica": "CBS Masterworks",
+      "imagenportada": ""
+    },
+    {
+      "album": "\\\"Plays Weir, Finnissy, Newman And Skempton\\\"",
+      "artista": "Michael Finnissy",
+      "discografica": "NMC",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "My father Knew Charles Ives and Harmonielehre",
+      "artista": "John Adams",
+      "discografica": "Naxos Records",
+      "imagenportada": ""
+    },
+    {
+      "album": "Pied Piper Fantasy",
+      "artista": "John Corigliano",
+      "discografica": "RCA Victor Red Seal",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "Le Secret De La Vie",
+      "artista": "Terry Riley",
+      "discografica": "Stip Record",
+      "imagenportada": ""
+    },
+    {
+      "album": "Solo Works",
+      "artista": "Brian John Peter Ferneyhough",
+      "discografica": "Etcetera Records B.V.",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "Charlie Parker Sextet",
+      "artista": "Charlie Parker",
+      "discografica": "Dial Records",
+      "imagenportada": ""
+    },
+    {
+      "album": "Relaxin With The Miles Davis Quintet",
+      "artista": "MIles Davis",
+      "discografica": "Prestige",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "Dizzy Gillespie And His All-Stars",
+      "artista": "Dizzy Gillespie",
+      "discografica": "Musicraft",
+      "imagenportada": ""
+    },
+    {
+      "album": "King Of The Tenor Sax",
+      "artista": "Coleman Hawkins",
+      "discografica": "Commodore",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "Distinctive Song Styling",
+      "artista": "Billie Holiday",
+      "discografica": "Decca",
+      "imagenportada": ""
+    },
+    {
+      "album": "Yes Indeed!",
+      "artista": "Ray Charles",
+      "discografica": "Atlantic",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "Chet Baker In New York",
+      "artista": "Chet Baker",
+      "discografica": "Riverside Records",
+      "imagenportada": ""
+    },
+    {
+      "album": "Son Con Guaguancó",
+      "artista": "Celia Cruz",
+      "discografica": "Tico Records",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "Maestra Vida",
+      "artista": "Ruben Blades",
+      "discografica": "Fania Records",
+      "imagenportada": ""
+    },
+    {
+      "album": "El Malo",
+      "artista": "Willie Colon",
+      "discografica": "Fania Records",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "La Voz",
+      "artista": "Hector Lavoe",
+      "discografica": "Inca Records",
+      "imagenportada": ""
+    },
+    {
+      "album": "Tito Rodriguez At The Palladium",
+      "artista": "Tito Rodriguez",
+      "discografica": "UA Latino",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "Amor Y Alegria",
+      "artista": "Luis Enrique",
+      "discografica": "CBS",
+      "imagenportada": ""
+    },
+    {
+      "album": "Adios Nonino",
+      "artista": "Astor Piazzolla",
+      "discografica": "Trova",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "Así Cantaba Carlitos",
+      "artista": "Carlos Gardel",
+      "discografica": "Odeon",
+      "imagenportada": ""
+    },
+    {
+      "album": "Cuando El Río Suena",
+      "artista": "Adriana Varela",
+      "discografica": "ND Nueva Direccion En La Cultura",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "Alma De Bohemio",
+      "artista": "Alberto Podestá",
+      "discografica": "Music Hall",
+      "imagenportada": ""
+    },
+    {
+      "album": "Aura",
+      "artista": "Bajofondo Tango Club",
+      "discografica": "Sony Music",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "Monton De Vida",
+      "artista": "Susana Rinaldi",
+      "discografica": "Diynamic Music",
+      "imagenportada": ""
+    },
+    {
+      "album": "Let Me Ride",
+      "artista": "Dr. Dre",
+      "discografica": "Inca Records",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "Kamikaze",
+      "artista": "Eminem",
+      "discografica": "Aftermath Entertainment",
+      "imagenportada": ""
+    },
+    {
+      "album": "Doggystyle",
+      "artista": "Snoop Dogg",
+      "discografica": "Death Row Records",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "The Black Album",
+      "artista": "Jay-Z",
+      "discografica": "Roc-A-Fella Records",
+      "imagenportada": ""
+    },
+    {
+      "album": "Check Your Head",
+      "artista": "Beastie Boys",
+      "discografica": "Capitol Records",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "Late Registration",
+      "artista": "Kanye West",
+      "discografica": "Roc-A-Fella Records, Universal Music",
+      "imagenportada": ""
+    },
+    {
+      "album": "Back To Mine",
+      "artista": "Carl Cox",
+      "discografica": "Octave",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "Play It Loud!",
+      "artista": "Marco Carola",
+      "discografica": "M nus",
+      "imagenportada": ""
+    },
+    {
+      "album": "Biosfera",
+      "artista": "Oscar Mulero",
+      "discografica": "Detroit Underground",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "The Remixes",
+      "artista": "Nina Kraviz",
+      "discografica": "REKIDS",
+      "imagenportada": ""
+    },
+    {
+      "album": "Ignition Key",
+      "artista": "Adam Beyer",
+      "discografica": "Truesoul",
+      "imagenportada": "imagenalbum.jpg"
+    },
+    {
+      "album": "Dance Baby",
+      "artista": "Solomun",
+      "discografica": "Diynamic Music",
+      "imagenportada": ""
+    }
+  ],
+  "cancion": [
+    {
+      "cancion": "In The Flesh",
+      "duracion_min": 3.25,
+      "reproducciones": 1000050.0,
+      "likes": 7500.0,
+      "album": "Is There Anybody Out There",
+      "artista": "Pink Floyd",
+      "discografica": "EMI",
+      "generos": "Rock"
+    },
+    {
+      "cancion": "The Thin Ice",
+      "duracion_min": 2.49,
+      "reproducciones": 850050.0,
+      "likes": 7600.0,
+      "album": "Is There Anybody Out There",
+      "artista": "Pink Floyd",
+      "discografica": "EMI",
+      "generos": "Rock"
+    },
+    {
+      "cancion": "Gone For Bad",
+      "duracion_min": 3.58,
+      "reproducciones": 1200400.0,
+      "likes": 6500.0,
+      "album": "Radio Sampler ‎2xCD",
+      "artista": "Pink Floyd",
+      "discografica": "EMI",
+      "generos": "Rock; Soul"
+    },
+    {
+      "cancion": "Fink Is The King",
+      "duracion_min": 3.15,
+      "reproducciones": 218500.0,
+      "likes": 8600.0,
+      "album": "Radio Sampler ‎2xCD",
+      "artista": "Pink Floyd",
+      "discografica": "EMI",
+      "generos": "Rock"
+    },
+    {
+      "cancion": "Shine On You Crazy Diamond",
+      "duracion_min": 11.53,
+      "reproducciones": 210000.0,
+      "likes": 4500.0,
+      "album": "Delicate Sound Of Thunder",
+      "artista": "Pink Floyd",
+      "discografica": "EMI",
+      "generos": "Rock"
+    },
+    {
+      "cancion": "Yet Another Movie",
+      "duracion_min": 4.1,
+      "reproducciones": 4500668.0,
+      "likes": 1500.0,
+      "album": "Delicate Sound Of Thunder",
+      "artista": "Pink Floyd",
+      "discografica": "EMI",
+      "generos": "Pop; Rock"
+    },
+    {
+      "cancion": "Oh! Darling",
+      "duracion_min": 3.26,
+      "reproducciones": 1598634.0,
+      "likes": 256986.0,
+      "album": "Abbey Road",
+      "artista": "The Beatles",
+      "discografica": "Apple Records",
+      "generos": "Pop; Rock"
+    },
+    {
+      "cancion": "Come Together",
+      "duracion_min": 4.2,
+      "reproducciones": 3568946.0,
+      "likes": 103569.0,
+      "album": "Abbey Road",
+      "artista": "The Beatles",
+      "discografica": "Apple Records",
+      "generos": "Pop; Rock"
+    },
+    {
+      "cancion": "Something",
+      "duracion_min": 3.03,
+      "reproducciones": 628634.0,
+      "likes": 5698.0,
+      "album": "Abbey Road",
+      "artista": "The Beatles",
+      "discografica": "Apple Records",
+      "generos": "Pop; Rock"
+    },
+    {
+      "cancion": "The End",
+      "duracion_min": 2.05,
+      "reproducciones": 68946.0,
+      "likes": 3569.0,
+      "album": "Abbey Road",
+      "artista": "The Beatles",
+      "discografica": "Apple Records",
+      "generos": "Rock"
+    },
+    {
+      "cancion": "4.29",
+      "duracion_min": "",
+      "reproducciones": "",
+      "likes": 8.0,
+      "album": "",
+      "artista": "",
+      "discografica": "",
+      "generos": ""
+    },
+    {
+      "cancion": "Open Your Heart",
+      "duracion_min": 4.13,
+      "reproducciones": 2500245.0,
+      "likes": 1785444.0,
+      "album": "True Blue",
+      "artista": "Madonna",
+      "discografica": "Sire Warner Bros",
+      "generos": "Pop"
+    },
+    {
+      "cancion": "Material Girl",
+      "duracion_min": 4.04,
+      "reproducciones": 457788.0,
+      "likes": 68555.0,
+      "album": "True Blue",
+      "artista": "Madonna",
+      "discografica": "Sire Warner Bros",
+      "generos": "Pop"
+    },
+    {
+      "cancion": "Open Your Heart",
+      "duracion_min": 3.57,
+      "reproducciones": 7500277.0,
+      "likes": 985444.0,
+      "album": "True Blue",
+      "artista": "Madonna",
+      "discografica": "Sire Warner Bros",
+      "generos": "Pop"
+    },
+    {
+      "cancion": "Cancion Sobre Cancion",
+      "duracion_min": 3.49,
+      "reproducciones": 988100.0,
+      "likes": 578101.0,
+      "album": "Fito Paez",
+      "artista": "Fito Paez",
+      "discografica": "EMI",
+      "generos": "Pop"
+    },
+    {
+      "cancion": "11 Y 6",
+      "duracion_min": 2.55,
+      "reproducciones": 1122554.0,
+      "likes": 245778.0,
+      "album": "Fito Paez",
+      "artista": "Fito Paez",
+      "discografica": "EMI",
+      "generos": "Rock"
+    },
+    {
+      "cancion": "Y Dale Alegría A Mi Corazón",
+      "duracion_min": 5.15,
+      "reproducciones": 1985663.0,
+      "likes": 658874.0,
+      "album": "Antología",
+      "artista": "Fito Paez",
+      "discografica": "Warner Music Group",
+      "generos": "Rock"
+    },
+    {
+      "cancion": "El Amor Después Del Amor",
+      "duracion_min": 5.1,
+      "reproducciones": 2100358.0,
+      "likes": 35456.0,
+      "album": "Antología",
+      "artista": "Fito Paez",
+      "discografica": "Warner Music Group",
+      "generos": "Pop"
+    },
+    {
+      "cancion": "Estamos Juntos",
+      "duracion_min": 4.39,
+      "reproducciones": 389555.0,
+      "likes": 12488.0,
+      "album": "Diego Torres",
+      "artista": "Diego Torres",
+      "discografica": "EMI",
+      "generos": "Pop"
+    },
+    {
+      "cancion": "No Tengas Miedo",
+      "duracion_min": 4.25,
+      "reproducciones": 258456.0,
+      "likes": 5247.0,
+      "album": "Diego Torres",
+      "artista": "Diego Torres",
+      "discografica": "EMI",
+      "generos": "Pop"
+    },
+    {
+      "cancion": "Lo Hecho Esta Hecho",
+      "duracion_min": 3.13,
+      "reproducciones": 986444.0,
+      "likes": 657112.0,
+      "album": "Loba",
+      "artista": "Shakira",
+      "discografica": "Sony Music Entertainment",
+      "generos": "Pop"
+    },
+    {
+      "cancion": "Loba",
+      "duracion_min": 3.09,
+      "reproducciones": 3150441.0,
+      "likes": 1244523.0,
+      "album": "Loba",
+      "artista": "Shakira",
+      "discografica": "Sony Music Entertainment",
+      "generos": "Pop"
+    },
+    {
+      "cancion": "Años Luz",
+      "duracion_min": 3.41,
+      "reproducciones": 1335054.0,
+      "likes": 485777.0,
+      "album": "Loba",
+      "artista": "Shakira",
+      "discografica": "Sony Music Entertainment",
+      "generos": "Pop"
+    },
+    {
+      "cancion": "Estoy Aqui",
+      "duracion_min": 3.52,
+      "reproducciones": 845300.0,
+      "likes": 247712.0,
+      "album": "Pies Descalzos",
+      "artista": "Shakira",
+      "discografica": "Warner Music Group",
+      "generos": "Pop"
+    },
+    {
+      "cancion": "Hawai",
+      "duracion_min": 3.19,
+      "reproducciones": 1325450.0,
+      "likes": 857400.0,
+      "album": "Papi Juancho",
+      "artista": "Maluma",
+      "discografica": "Sony Music Entertainment",
+      "generos": "Pop"
+    },
+    {
+      "cancion": "La Cura",
+      "duracion_min": 2.56,
+      "reproducciones": 750425.0,
+      "likes": 74856.0,
+      "album": "Papi Juancho",
+      "artista": "Maluma",
+      "discografica": "Sony Music Entertainment",
+      "generos": ""
+    },
+    {
+      "cancion": "Salida de escape",
+      "duracion_min": 3.04,
+      "reproducciones": 166582.0,
+      "likes": 37142.0,
+      "album": "Papi Juancho",
+      "artista": "Maluma",
+      "discografica": "Sony Music Entertainment",
+      "generos": ""
+    },
+    {
+      "cancion": "Ansiedad",
+      "duracion_min": 3.4,
+      "reproducciones": 500266.0,
+      "likes": 25004.0,
+      "album": "Papi Juancho",
+      "artista": "Maluma",
+      "discografica": "Sony Music Entertainment",
+      "generos": ""
+    },
+    {
+      "cancion": "Baby",
+      "duracion_min": 4.01,
+      "reproducciones": 70052.0,
+      "likes": 12488.0,
+      "album": "OCEAN",
+      "artista": "Karol G",
+      "discografica": "Warner Music Group",
+      "generos": ""
+    },
+    {
+      "cancion": "Dices que te vas",
+      "duracion_min": 3.11,
+      "reproducciones": 1122554.0,
+      "likes": 35456.0,
+      "album": "OCEAN",
+      "artista": "Karol G",
+      "discografica": "Warner Music Group",
+      "generos": ""
+    },
+    {
+      "cancion": "Hoy tengo tiempo",
+      "duracion_min": 3.12,
+      "reproducciones": 10458.0,
+      "likes": 24115.0,
+      "album": "Vives",
+      "artista": "Carlos Vives",
+      "discografica": "Sony Music Entertainment",
+      "generos": ""
+    },
+    {
+      "cancion": "La tierra prometida",
+      "duracion_min": 3.17,
+      "reproducciones": 10047.0,
+      "likes": 3578.0,
+      "album": "Vives",
+      "artista": "Carlos Vives",
+      "discografica": "Sony Music Entertainment",
+      "generos": ""
+    },
+    {
+      "cancion": "Mañana",
+      "duracion_min": 2.49,
+      "reproducciones": 8507.0,
+      "likes": 1574.0,
+      "album": "Vives",
+      "artista": "Carlos Vives",
+      "discografica": "Sony Music Entertainment",
+      "generos": ""
+    },
+    {
+      "cancion": "In A Minor For Cello And Orchestra, Op",
+      "duracion_min": 18.53,
+      "reproducciones": 15934.0,
+      "likes": 0.0,
+      "album": "Cello Concertos",
+      "artista": "Yo-Yo Ma",
+      "discografica": "CBS Masterworks",
+      "generos": "Música Clasica"
+    },
+    {
+      "cancion": "Prelude: Lento Allegro Maestoso",
+      "duracion_min": 12.38,
+      "reproducciones": 96306.0,
+      "likes": 4157.0,
+      "album": "Cello Concertos",
+      "artista": "Yo-Yo Ma",
+      "discografica": "CBS Masterworks",
+      "generos": "Música Clasica"
+    },
+    {
+      "cancion": "Intermezzo",
+      "duracion_min": 6.14,
+      "reproducciones": 95338.0,
+      "likes": 41.0,
+      "album": "Cello Concertos",
+      "artista": "Yo-Yo Ma",
+      "discografica": "CBS Masterworks",
+      "generos": "Música Clasica"
+    },
+    {
+      "cancion": "Reels",
+      "duracion_min": 7.58,
+      "reproducciones": 53402.0,
+      "likes": 340.0,
+      "album": "\\\"Plays Weir, Finnissy, Newman And Skempton\\\"",
+      "artista": "Michael Finnissy",
+      "discografica": "NMC",
+      "generos": "Música Clasica"
+    },
+    {
+      "cancion": "An Mein Klavier",
+      "duracion_min": 8.1,
+      "reproducciones": 523452.0,
+      "likes": 984.0,
+      "album": "\\\"Plays Weir, Finnissy, Newman And Skempton\\\"",
+      "artista": "Michael Finnissy",
+      "discografica": "NMC",
+      "generos": "Música Clasica"
+    },
+    {
+      "cancion": "Le Repos Sur Le Lit",
+      "duracion_min": 7.03,
+      "reproducciones": 589744.0,
+      "likes": 891.0,
+      "album": "\\\"Plays Weir, Finnissy, Newman And Skempton\\\"",
+      "artista": "Michael Finnissy",
+      "discografica": "NMC",
+      "generos": "Música Clasica"
+    },
+    {
+      "cancion": "My father Knew Charles Ives and Harmonielehre",
+      "duracion_min": 9.41,
+      "reproducciones": 292364.0,
+      "likes": 9236.0,
+      "album": "My father Knew Charles Ives and Harmonielehre",
+      "artista": "John Adams",
+      "discografica": "Naxos Records",
+      "generos": "Música Clasica"
+    },
+    {
+      "cancion": "Harmonielehre I",
+      "duracion_min": 17.26,
+      "reproducciones": 0.0,
+      "likes": 0.0,
+      "album": "My father Knew Charles Ives and Harmonielehre",
+      "artista": "John Adams",
+      "discografica": "Naxos Records",
+      "generos": "Música Clasica"
+    },
+    {
+      "cancion": "Harmonielehre II .The Anfortas Wound",
+      "duracion_min": 12.46,
+      "reproducciones": 2585604.0,
+      "likes": 984.0,
+      "album": "My father Knew Charles Ives and Harmonielehre",
+      "artista": "John Adams",
+      "discografica": "Naxos Records",
+      "generos": "Música Clasica"
+    },
+    {
+      "cancion": "Sunrise And The Piper s Song",
+      "duracion_min": 9.36,
+      "reproducciones": 666667.0,
+      "likes": 6.0,
+      "album": "Pied Piper Fantasy",
+      "artista": "John Corigliano",
+      "discografica": "RCA Victor Red Seal",
+      "generos": "Música Clasica"
+    },
+    {
+      "cancion": "The Rats",
+      "duracion_min": 1.38,
+      "reproducciones": 5510.0,
+      "likes": 54.0,
+      "album": "Pied Piper Fantasy",
+      "artista": "John Corigliano",
+      "discografica": "RCA Victor Red Seal",
+      "generos": "Música Clasica"
+    },
+    {
+      "cancion": "The Children is March",
+      "duracion_min": 9.29,
+      "reproducciones": 4295153.0,
+      "likes": 157.0,
+      "album": "Pied Piper Fantasy",
+      "artista": "John Corigliano",
+      "discografica": "RCA Victor Red Seal",
+      "generos": "Música Clasica"
+    },
+    {
+      "cancion": "G. Song",
+      "duracion_min": 3.04,
+      "reproducciones": 535211.0,
+      "likes": 5352.0,
+      "album": "Le Secret De La Vie",
+      "artista": "Terry Riley",
+      "discografica": "Stip Record",
+      "generos": "Música Clasica"
+    },
+    {
+      "cancion": "MIce",
+      "duracion_min": 2.11,
+      "reproducciones": 564916.0,
+      "likes": 9.0,
+      "album": "Le Secret De La Vie",
+      "artista": "Terry Riley",
+      "discografica": "Stip Record",
+      "generos": "Música Clasica"
+    },
+    {
+      "cancion": "In The Summer",
+      "duracion_min": 6.34,
+      "reproducciones": 4701.0,
+      "likes": 984.0,
+      "album": "Le Secret De La Vie",
+      "artista": "Terry Riley",
+      "discografica": "Stip Record",
+      "generos": "Música Clasica"
+    },
+    {
+      "cancion": "Time And Motion Study I",
+      "duracion_min": 8.42,
+      "reproducciones": 673426.0,
+      "likes": 642.0,
+      "album": "Solo Works",
+      "artista": "Brian John Peter Ferneyhough",
+      "discografica": "Etcetera Records B.V.",
+      "generos": "Música Clasica"
+    },
+    {
+      "cancion": "Bone Alphabet",
+      "duracion_min": 2.56,
+      "reproducciones": 578738.0,
+      "likes": 54.0,
+      "album": "Solo Works",
+      "artista": "Brian John Peter Ferneyhough",
+      "discografica": "Etcetera Records B.V.",
+      "generos": "Música Clasica"
+    },
+    {
+      "cancion": "Time And Motion Study II",
+      "duracion_min": 22.32,
+      "reproducciones": 714249.0,
+      "likes": 98.0,
+      "album": "Solo Works",
+      "artista": "Brian John Peter Ferneyhough",
+      "discografica": "Etcetera Records B.V.",
+      "generos": "Música Clasica"
+    },
+    {
+      "cancion": "My Old Flame",
+      "duracion_min": 3.18,
+      "reproducciones": 811641.0,
+      "likes": 1164.0,
+      "album": "Charlie Parker Sextet",
+      "artista": "Charlie Parker",
+      "discografica": "Dial Records",
+      "generos": "Jazz"
+    },
+    {
+      "cancion": "Air Conditioning",
+      "duracion_min": 3.06,
+      "reproducciones": 592559.0,
+      "likes": 5.0,
+      "album": "Charlie Parker Sextet",
+      "artista": "Charlie Parker",
+      "discografica": "Dial Records",
+      "generos": "Jazz"
+    },
+    {
+      "cancion": "Crazeology",
+      "duracion_min": 3.01,
+      "reproducciones": 89423798.0,
+      "likes": 158.0,
+      "album": "Charlie Parker Sextet",
+      "artista": "Charlie Parker",
+      "discografica": "Dial Records",
+      "generos": "Jazz"
+    },
+    {
+      "cancion": "If I Were A Bell",
+      "duracion_min": 8.17,
+      "reproducciones": 949856.0,
+      "likes": 4985.0,
+      "album": "Relaxin With The Miles Davis Quintet",
+      "artista": "MIles Davis",
+      "discografica": "Prestige",
+      "generos": "Jazz"
+    },
+    {
+      "cancion": "You are My Everything",
+      "duracion_min": 5.2,
+      "reproducciones": 606381.0,
+      "likes": 54.0,
+      "album": "Relaxin With The Miles Davis Quintet",
+      "artista": "MIles Davis",
+      "discografica": "Prestige",
+      "generos": "Jazz"
+    },
+    {
+      "cancion": "It Could Happen To You",
+      "duracion_min": 6.31,
+      "reproducciones": 133346.0,
+      "likes": 0.0,
+      "album": "Relaxin With The Miles Davis Quintet",
+      "artista": "MIles Davis",
+      "discografica": "Prestige",
+      "generos": "Jazz"
+    },
+    {
+      "cancion": "A Hand Fulla Gimme",
+      "duracion_min": 3.02,
+      "reproducciones": 108807.0,
+      "likes": 880.0,
+      "album": "Dizzy Gillespie And His All-Stars",
+      "artista": "Dizzy Gillespie",
+      "discografica": "Musicraft",
+      "generos": "Jazz"
+    },
+    {
+      "cancion": "Groovin High",
+      "duracion_min": 2.41,
+      "reproducciones": 161.0,
+      "likes": 95.0,
+      "album": "Dizzy Gillespie And His All-Stars",
+      "artista": "Dizzy Gillespie",
+      "discografica": "Musicraft",
+      "generos": "Jazz"
+    },
+    {
+      "cancion": "Blue N Boogie",
+      "duracion_min": 2.58,
+      "reproducciones": 842894.0,
+      "likes": 39.0,
+      "album": "Dizzy Gillespie And His All-Stars",
+      "artista": "Dizzy Gillespie",
+      "discografica": "Musicraft",
+      "generos": "Jazz"
+    },
+    {
+      "cancion": "I Surrender Dear",
+      "duracion_min": 4.41,
+      "reproducciones": 122628.0,
+      "likes": 4157.0,
+      "album": "King Of The Tenor Sax",
+      "artista": "Coleman Hawkins",
+      "discografica": "Commodore",
+      "generos": "Jazz"
+    },
+    {
+      "cancion": "Smack",
+      "duracion_min": 2.46,
+      "reproducciones": 123.0,
+      "likes": 41.0,
+      "album": "King Of The Tenor Sax",
+      "artista": "Coleman Hawkins",
+      "discografica": "Commodore",
+      "generos": "Jazz"
+    },
+    {
+      "cancion": "My Ideal",
+      "duracion_min": 3.11,
+      "reproducciones": 4552442.0,
+      "likes": 247.0,
+      "album": "King Of The Tenor Sax",
+      "artista": "Coleman Hawkins",
+      "discografica": "Commodore",
+      "generos": "Jazz"
+    },
+    {
+      "cancion": "Lover Man Oh Where Can You Be?",
+      "duracion_min": 3.21,
+      "reproducciones": 136450.0,
+      "likes": 984.0,
+      "album": "Distinctive Song Styling",
+      "artista": "Billie Holiday",
+      "discografica": "Decca",
+      "generos": "Jazz"
+    },
+    {
+      "cancion": "That Ole Devil Called Love",
+      "duracion_min": 2.51,
+      "reproducciones": 1325.0,
+      "likes": 891.0,
+      "album": "Distinctive Song Styling",
+      "artista": "Billie Holiday",
+      "discografica": "Decca",
+      "generos": "Jazz"
+    },
+    {
+      "cancion": "No More",
+      "duracion_min": 2.44,
+      "reproducciones": 6261991.0,
+      "likes": 593.0,
+      "album": "Distinctive Song Styling",
+      "artista": "Billie Holiday",
+      "discografica": "Decca",
+      "generos": "Jazz"
+    },
+    {
+      "cancion": "What Would I Do Without You",
+      "duracion_min": 2.37,
+      "reproducciones": 150271.0,
+      "likes": 545.0,
+      "album": "Yes Indeed!",
+      "artista": "Ray Charles",
+      "discografica": "Atlantic",
+      "generos": "Jazz"
+    },
+    {
+      "cancion": "It is All Right",
+      "duracion_min": 2.15,
+      "reproducciones": 666667.0,
+      "likes": 984.0,
+      "album": "Yes Indeed!",
+      "artista": "Ray Charles",
+      "discografica": "Atlantic",
+      "generos": "Jazz"
+    },
+    {
+      "cancion": "I Want To Know",
+      "duracion_min": 2.28,
+      "reproducciones": 971539.0,
+      "likes": 340.0,
+      "album": "Yes Indeed!",
+      "artista": "Ray Charles",
+      "discografica": "Atlantic",
+      "generos": "Jazz"
+    },
+    {
+      "cancion": "Fair Weather",
+      "duracion_min": 7.0,
+      "reproducciones": 164093.0,
+      "likes": 54.0,
+      "album": "Chet Baker In New York",
+      "artista": "Chet Baker",
+      "discografica": "Riverside Records",
+      "generos": "Jazz"
+    },
+    {
+      "cancion": "Polka Dots And Moonbeams",
+      "duracion_min": 8.0,
+      "reproducciones": 675467.0,
+      "likes": 157.0,
+      "album": "Chet Baker In New York",
+      "artista": "Chet Baker",
+      "discografica": "Riverside Records",
+      "generos": "Jazz"
+    },
+    {
+      "cancion": "Hotel 49",
+      "duracion_min": 9.54,
+      "reproducciones": 9681087.0,
+      "likes": 9236.0,
+      "album": "Chet Baker In New York",
+      "artista": "Chet Baker",
+      "discografica": "Riverside Records",
+      "generos": "Jazz"
+    },
+    {
+      "cancion": "Bemba Colora",
+      "duracion_min": 8.54,
+      "reproducciones": 177914.0,
+      "likes": 9.0,
+      "album": "Son Con Guaguancó",
+      "artista": "Celia Cruz",
+      "discografica": "Tico Records",
+      "generos": "Salsa"
+    },
+    {
+      "cancion": "Son Con Guaguanco",
+      "duracion_min": 2.51,
+      "reproducciones": 931067.0,
+      "likes": 984.0,
+      "album": "Son Con Guaguancó",
+      "artista": "Celia Cruz",
+      "discografica": "Tico Records",
+      "generos": "Salsa"
+    },
+    {
+      "cancion": "Es La Humanidad",
+      "duracion_min": 2.25,
+      "reproducciones": 7139063.0,
+      "likes": 6.0,
+      "album": "Son Con Guaguancó",
+      "artista": "Celia Cruz",
+      "discografica": "Tico Records",
+      "generos": "Salsa"
+    },
+    {
+      "cancion": "",
+      "duracion_min": "",
+      "reproducciones": "",
+      "likes": "",
+      "album": "",
+      "artista": "",
+      "discografica": "",
+      "generos": ""
+    },
+    {
+      "cancion": "",
+      "duracion_min": "",
+      "reproducciones": "",
+      "likes": "",
+      "album": "",
+      "artista": "",
+      "discografica": "",
+      "generos": ""
+    },
+    {
+      "cancion": "El Velorio",
+      "duracion_min": 5.06,
+      "reproducciones": 100184.0,
+      "likes": 5352.0,
+      "album": "Maestra Vida",
+      "artista": "Ruben Blades",
+      "discografica": "Fania Records",
+      "generos": "Salsa"
+    },
+    {
+      "cancion": "Jazzy",
+      "duracion_min": 4.19,
+      "reproducciones": 205557.0,
+      "likes": 5.0,
+      "album": "El Malo",
+      "artista": "Willie Colon",
+      "discografica": "Fania Records",
+      "generos": "Salsa; Pop"
+    },
+    {
+      "cancion": "Willie Baby",
+      "duracion_min": 2.42,
+      "reproducciones": 7169667.0,
+      "likes": 158.0,
+      "album": "El Malo",
+      "artista": "Willie Colon",
+      "discografica": "Fania Records",
+      "generos": "Salsa"
+    },
+    {
+      "cancion": "Borinquen",
+      "duracion_min": 3.17,
+      "reproducciones": 4809732.0,
+      "likes": 642.0,
+      "album": "El Malo",
+      "artista": "Willie Colon",
+      "discografica": "Fania Records",
+      "generos": "Salsa"
+    },
+    {
+      "cancion": "El Todopoderoso",
+      "duracion_min": 4.21,
+      "reproducciones": 219379.0,
+      "likes": 54.0,
+      "album": "La Voz",
+      "artista": "Hector Lavoe",
+      "discografica": "Inca Records",
+      "generos": "Salsa"
+    },
+    {
+      "cancion": "Emborrachame De Amor",
+      "duracion_min": 3.12,
+      "reproducciones": 730767.0,
+      "likes": 0.0,
+      "album": "La Voz",
+      "artista": "Hector Lavoe",
+      "discografica": "Inca Records",
+      "generos": "Salsa"
+    },
+    {
+      "cancion": "Paraiso De Dulzura",
+      "duracion_min": 4.48,
+      "reproducciones": 266281.0,
+      "likes": 1164.0,
+      "album": "La Voz",
+      "artista": "Hector Lavoe",
+      "discografica": "Inca Records",
+      "generos": "Salsa"
+    },
+    {
+      "cancion": "Satin And Lace",
+      "duracion_min": 4.25,
+      "reproducciones": 233200.0,
+      "likes": 95.0,
+      "album": "Tito Rodriguez At The Palladium",
+      "artista": "Tito Rodriguez",
+      "discografica": "UA Latino",
+      "generos": "Salsa; Pop"
+    },
+    {
+      "cancion": "Mama Guela",
+      "duracion_min": 2.36,
+      "reproducciones": 15518541.0,
+      "likes": 39.0,
+      "album": "Tito Rodriguez At The Palladium",
+      "artista": "Tito Rodriguez",
+      "discografica": "UA Latino",
+      "generos": "Salsa"
+    },
+    {
+      "cancion": "Te Comiste Un Pan",
+      "duracion_min": 2.37,
+      "reproducciones": 210.0,
+      "likes": 4985.0,
+      "album": "Tito Rodriguez At The Palladium",
+      "artista": "Tito Rodriguez",
+      "discografica": "UA Latino",
+      "generos": "Salsa"
+    },
+    {
+      "cancion": "Desesperado",
+      "duracion_min": 3.5,
+      "reproducciones": 247022.0,
+      "likes": 41.0,
+      "album": "Amor Y Alegria",
+      "artista": "Luis Enrique",
+      "discografica": "CBS",
+      "generos": "Salsa"
+    },
+    {
+      "cancion": "Tu No Le Amas Le Temes",
+      "duracion_min": 4.27,
+      "reproducciones": 1582509.0,
+      "likes": 247.0,
+      "album": "Amor Y Alegria",
+      "artista": "Luis Enrique",
+      "discografica": "CBS",
+      "generos": "Salsa"
+    },
+    {
+      "cancion": "Comprendelo",
+      "duracion_min": 5.2,
+      "reproducciones": 145.0,
+      "likes": 880.0,
+      "album": "Amor Y Alegria",
+      "artista": "Luis Enrique",
+      "discografica": "CBS",
+      "generos": "Salsa"
+    },
+    {
+      "cancion": "Adiós Nonino",
+      "duracion_min": 8.06,
+      "reproducciones": 260843.0,
+      "likes": 891.0,
+      "album": "Adios Nonino",
+      "artista": "Astor Piazzolla",
+      "discografica": "Trova",
+      "generos": "Tango"
+    },
+    {
+      "cancion": "Otoño Porteño",
+      "duracion_min": 5.1,
+      "reproducciones": 161387638.0,
+      "likes": 593.0,
+      "album": "Adios Nonino",
+      "artista": "Astor Piazzolla",
+      "discografica": "Trova",
+      "generos": "Tango"
+    },
+    {
+      "cancion": "Michelangelo 70",
+      "duracion_min": 3.2,
+      "reproducciones": 27647926.0,
+      "likes": 4157.0,
+      "album": "Adios Nonino",
+      "artista": "Astor Piazzolla",
+      "discografica": "Trova",
+      "generos": "Tango"
+    },
+    {
+      "cancion": "Chorra",
+      "duracion_min": 2.16,
+      "reproducciones": 274665.0,
+      "likes": 984.0,
+      "album": "Así Cantaba Carlitos",
+      "artista": "Carlos Gardel",
+      "discografica": "Odeon",
+      "generos": "Tango"
+    },
+    {
+      "cancion": "Dicen Que Dicen",
+      "duracion_min": 2.21,
+      "reproducciones": 1644186.0,
+      "likes": 340.0,
+      "album": "Así Cantaba Carlitos",
+      "artista": "Carlos Gardel",
+      "discografica": "Odeon",
+      "generos": "Tango"
+    },
+    {
+      "cancion": "Ebrio",
+      "duracion_min": 2.26,
+      "reproducciones": 54575.0,
+      "likes": 984.0,
+      "album": "Así Cantaba Carlitos",
+      "artista": "Carlos Gardel",
+      "discografica": "Odeon",
+      "generos": "Tango"
+    },
+    {
+      "cancion": "Aquello",
+      "duracion_min": 4.33,
+      "reproducciones": 288486.0,
+      "likes": 157.0,
+      "album": "Cuando El Río Suena",
+      "artista": "Adriana Varela",
+      "discografica": "ND Nueva Direccion En La Cultura",
+      "generos": "Tango"
+    },
+    {
+      "cancion": "Don Carlos",
+      "duracion_min": 3.59,
+      "reproducciones": 167593735.0,
+      "likes": 9236.0,
+      "album": "Cuando El Río Suena",
+      "artista": "Adriana Varela",
+      "discografica": "ND Nueva Direccion En La Cultura",
+      "generos": "Tango"
+    },
+    {
+      "cancion": "Milongón Del Guruyú",
+      "duracion_min": 4.46,
+      "reproducciones": 245.0,
+      "likes": 0.0,
+      "album": "Cuando El Río Suena",
+      "artista": "Adriana Varela",
+      "discografica": "ND Nueva Direccion En La Cultura",
+      "generos": "Tango"
+    },
+    {
+      "cancion": "Alma De Bohemio",
+      "duracion_min": 3.38,
+      "reproducciones": 302308.0,
+      "likes": 984.0,
+      "album": "Alma De Bohemio",
+      "artista": "Alberto Podestá",
+      "discografica": "Music Hall",
+      "generos": "Tango"
+    },
+    {
+      "cancion": "Al Compas Del Corazon",
+      "duracion_min": 2.2,
+      "reproducciones": 3523283.0,
+      "likes": 6.0,
+      "album": "Alma De Bohemio",
+      "artista": "Alberto Podestá",
+      "discografica": "Music Hall",
+      "generos": "Tango"
+    },
+    {
+      "cancion": "Temblando",
+      "duracion_min": 2.36,
+      "reproducciones": 7657.0,
+      "likes": 54.0,
+      "album": "Alma De Bohemio",
+      "artista": "Alberto Podestá",
+      "discografica": "Music Hall",
+      "generos": "Tango"
+    },
+    {
+      "cancion": "solari yacumenza",
+      "duracion_min": 6.5,
+      "reproducciones": 316129.0,
+      "likes": 98.0,
+      "album": "Aura",
+      "artista": "Bajofondo Tango Club",
+      "discografica": "Sony Music",
+      "generos": "Tango"
+    },
+    {
+      "cancion": "flor de piel",
+      "duracion_min": 4.38,
+      "reproducciones": 1738831.0,
+      "likes": 5352.0,
+      "album": "Aura",
+      "artista": "Bajofondo Tango Club",
+      "discografica": "Sony Music",
+      "generos": "Tango"
+    },
+    {
+      "cancion": "Clueca la Cueca",
+      "duracion_min": 6.17,
+      "reproducciones": 1215.0,
+      "likes": 9.0,
+      "album": "Aura",
+      "artista": "Bajofondo Tango Club",
+      "discografica": "Sony Music",
+      "generos": "Tango"
+    },
+    {
+      "cancion": "Soy Un Circo",
+      "duracion_min": 4.52,
+      "reproducciones": 329951.0,
+      "likes": 158.0,
+      "album": "Monton De Vida",
+      "artista": "Susana Rinaldi",
+      "discografica": "Diynamic Music",
+      "generos": "Tango"
+    },
+    {
+      "cancion": "La Chanson Des Vieux Amants",
+      "duracion_min": 5.15,
+      "reproducciones": 1738.0,
+      "likes": 642.0,
+      "album": "Monton De Vida",
+      "artista": "Susana Rinaldi",
+      "discografica": "Diynamic Music",
+      "generos": "Tango"
+    },
+    {
+      "cancion": "Gabbiani ",
+      "duracion_min": 3.5,
+      "reproducciones": 2315.0,
+      "likes": 54.0,
+      "album": "Monton De Vida",
+      "artista": "Susana Rinaldi",
+      "discografica": "Diynamic Music",
+      "generos": "Tango"
+    },
+    {
+      "cancion": "Let Me Ride",
+      "duracion_min": 11.01,
+      "reproducciones": 343772.0,
+      "likes": 0.0,
+      "album": "Let Me Ride",
+      "artista": "Dr. Dre",
+      "discografica": "Inca Records",
+      "generos": "Hip Hop"
+    },
+    {
+      "cancion": "One Eight Seven",
+      "duracion_min": 4.18,
+      "reproducciones": 1801928.0,
+      "likes": 1164.0,
+      "album": "Let Me Ride",
+      "artista": "Dr. Dre",
+      "discografica": "Inca Records",
+      "generos": "Hip Hop"
+    },
+    {
+      "cancion": "",
+      "duracion_min": "",
+      "reproducciones": "",
+      "likes": "",
+      "album": "",
+      "artista": "",
+      "discografica": "",
+      "generos": ""
+    },
+    {
+      "cancion": "The Ringer",
+      "duracion_min": 5.37,
+      "reproducciones": 357594.0,
+      "likes": 39.0,
+      "album": "Kamikaze",
+      "artista": "Eminem",
+      "discografica": "Aftermath Entertainment",
+      "generos": "Hip Hop"
+    },
+    {
+      "cancion": "Greatest",
+      "duracion_min": 3.46,
+      "reproducciones": 11261476.0,
+      "likes": 4985.0,
+      "album": "Kamikaze",
+      "artista": "Eminem",
+      "discografica": "Aftermath Entertainment",
+      "generos": "Hip Hop"
+    },
+    {
+      "cancion": "Lucky You",
+      "duracion_min": 4.04,
+      "reproducciones": 297944.0,
+      "likes": 54.0,
+      "album": "Kamikaze",
+      "artista": "Eminem",
+      "discografica": "Aftermath Entertainment",
+      "generos": "Hip Hop"
+    },
+    {
+      "cancion": "E Side",
+      "duracion_min": 5.35,
+      "reproducciones": 714156.0,
+      "likes": 247.0,
+      "album": "Doggystyle",
+      "artista": "Snoop Dogg",
+      "discografica": "Death Row Records",
+      "generos": "Hip Hop"
+    },
+    {
+      "cancion": "Bathtub",
+      "duracion_min": 4.15,
+      "reproducciones": 216025.0,
+      "likes": 880.0,
+      "album": "Doggystyle",
+      "artista": "Snoop Dogg",
+      "discografica": "Death Row Records",
+      "generos": "Hip Hop"
+    },
+    {
+      "cancion": "G Funk Intro",
+      "duracion_min": 2.25,
+      "reproducciones": 30112.0,
+      "likes": 95.0,
+      "album": "Doggystyle",
+      "artista": "Snoop Dogg",
+      "discografica": "Death Row Records",
+      "generos": "Hip Hop"
+    },
+    {
+      "cancion": "Encore",
+      "duracion_min": 4.1,
+      "reproducciones": 385271.0,
+      "likes": 593.0,
+      "album": "The Black Album",
+      "artista": "Jay-Z",
+      "discografica": "Roc-A-Fella Records",
+      "generos": "Hip Hop"
+    },
+    {
+      "cancion": "Change Clothes",
+      "duracion_min": 4.1,
+      "reproducciones": 7557119.0,
+      "likes": 4157.0,
+      "album": "The Black Album",
+      "artista": "Jay-Z",
+      "discografica": "Roc-A-Fella Records",
+      "generos": "Hip Hop"
+    },
+    {
+      "cancion": "Dirt Off Your Shoulder",
+      "duracion_min": 4.18,
+      "reproducciones": 3041.0,
+      "likes": 41.0,
+      "album": "The Black Album",
+      "artista": "Jay-Z",
+      "discografica": "Roc-A-Fella Records",
+      "generos": "Hip Hop"
+    },
+    {
+      "cancion": "Jimmy James",
+      "duracion_min": 3.11,
+      "reproducciones": 990586.0,
+      "likes": 340.0,
+      "album": "Check Your Head",
+      "artista": "Beastie Boys",
+      "discografica": "Capitol Records",
+      "generos": "Hip Hop"
+    },
+    {
+      "cancion": "Funky Boss",
+      "duracion_min": 2.28,
+      "reproducciones": 291527.0,
+      "likes": 984.0,
+      "album": "Check Your Head",
+      "artista": "Beastie Boys",
+      "discografica": "Capitol Records",
+      "generos": "Hip Hop"
+    },
+    {
+      "cancion": "Pass The Mic",
+      "duracion_min": 4.04,
+      "reproducciones": 307209.0,
+      "likes": 891.0,
+      "album": "Check Your Head",
+      "artista": "Beastie Boys",
+      "discografica": "Capitol Records",
+      "generos": "Hip Hop"
+    },
+    {
+      "cancion": "Wake Up Mr. West",
+      "duracion_min": 0.41,
+      "reproducciones": 412880.0,
+      "likes": 9236.0,
+      "album": "Late Registration",
+      "artista": "Kanye West",
+      "discografica": "Roc-A-Fella Records, Universal Music",
+      "generos": "Hip Hop"
+    },
+    {
+      "cancion": "Heard Em Say",
+      "duracion_min": 3.24,
+      "reproducciones": 472110856.0,
+      "likes": 545.0,
+      "album": "Late Registration",
+      "artista": "Kanye West",
+      "discografica": "Roc-A-Fella Records, Universal Music",
+      "generos": "Hip Hop"
+    },
+    {
+      "cancion": "Touch The Sky",
+      "duracion_min": 3.56,
+      "reproducciones": 452957.0,
+      "likes": 984.0,
+      "album": "Late Registration",
+      "artista": "Kanye West",
+      "discografica": "Roc-A-Fella Records, Universal Music",
+      "generos": "Hip Hop"
+    },
+    {
+      "cancion": "Give Me Your Love",
+      "duracion_min": 8.48,
+      "reproducciones": 267016.0,
+      "likes": 6.0,
+      "album": "Back To Mine",
+      "artista": "Carl Cox",
+      "discografica": "Octave",
+      "generos": "Techno"
+    },
+    {
+      "cancion": "Pacific 212",
+      "duracion_min": 3.35,
+      "reproducciones": 30755.0,
+      "likes": 54.0,
+      "album": "Back To Mine",
+      "artista": "Carl Cox",
+      "discografica": "Octave",
+      "generos": "Techno"
+    },
+    {
+      "cancion": "Why Can not We Live Together",
+      "duracion_min": 4.47,
+      "reproducciones": 2162505.0,
+      "likes": 157.0,
+      "album": "Back To Mine",
+      "artista": "Carl Cox",
+      "discografica": "Octave",
+      "generos": "Techno"
+    },
+    {
+      "cancion": "The Jingle",
+      "duracion_min": 4.38,
+      "reproducciones": 440523.0,
+      "likes": 5352.0,
+      "album": "Play It Loud!",
+      "artista": "Marco Carola",
+      "discografica": "M nus",
+      "generos": "Techno; Pop"
+    },
+    {
+      "cancion": "Magic Tribe",
+      "duracion_min": 3.36,
+      "reproducciones": 42540796.0,
+      "likes": 9.0,
+      "album": "Play It Loud!",
+      "artista": "Marco Carola",
+      "discografica": "M nus",
+      "generos": "Techno"
+    },
+    {
+      "cancion": "Kimbo",
+      "duracion_min": 4.54,
+      "reproducciones": 938720.0,
+      "likes": 984.0,
+      "album": "Play It Loud!",
+      "artista": "Marco Carola",
+      "discografica": "M nus",
+      "generos": "Techno"
+    },
+    {
+      "cancion": "Cova Rosa",
+      "duracion_min": 5.31,
+      "reproducciones": 543440.0,
+      "likes": 642.0,
+      "album": "Biosfera",
+      "artista": "Oscar Mulero",
+      "discografica": "Detroit Underground",
+      "generos": "Techno; Pop"
+    },
+    {
+      "cancion": "Oscos",
+      "duracion_min": 5.4,
+      "reproducciones": 310024.0,
+      "likes": 54.0,
+      "album": "Biosfera",
+      "artista": "Oscar Mulero",
+      "discografica": "Detroit Underground",
+      "generos": "Techno"
+    },
+    {
+      "cancion": "Doiras",
+      "duracion_min": 5.22,
+      "reproducciones": 319672.0,
+      "likes": 98.0,
+      "album": "Biosfera",
+      "artista": "Oscar Mulero",
+      "discografica": "Detroit Underground",
+      "generos": "Techno"
+    },
+    {
+      "cancion": "Aus ",
+      "duracion_min": 9.25,
+      "reproducciones": 481667.0,
+      "likes": 1164.0,
+      "album": "The Remixes",
+      "artista": "Nina Kraviz",
+      "discografica": "REKIDS",
+      "generos": "Techno"
+    },
+    {
+      "cancion": "Working",
+      "duracion_min": 7.05,
+      "reproducciones": 65968.0,
+      "likes": 5.0,
+      "album": "The Remixes",
+      "artista": "Nina Kraviz",
+      "discografica": "REKIDS",
+      "generos": "Techno"
+    },
+    {
+      "cancion": "Pain In The Ass",
+      "duracion_min": 9.02,
+      "reproducciones": 3227.0,
+      "likes": 158.0,
+      "album": "The Remixes",
+      "artista": "Nina Kraviz",
+      "discografica": "REKIDS",
+      "generos": "Techno"
+    },
+    {
+      "cancion": "Ignition Key",
+      "duracion_min": 8.05,
+      "reproducciones": 4819876.0,
+      "likes": 4985.0,
+      "album": "Ignition Key",
+      "artista": "Adam Beyer",
+      "discografica": "Truesoul",
+      "generos": "Techno"
+    },
+    {
+      "cancion": "The Convertion",
+      "duracion_min": 2.29,
+      "reproducciones": 1421912.0,
+      "likes": 54.0,
+      "album": "Ignition Key",
+      "artista": "Adam Beyer",
+      "discografica": "Truesoul",
+      "generos": "Techno"
+    },
+    {
+      "cancion": "Triangle",
+      "duracion_min": 6.02,
+      "reproducciones": 3200699.0,
+      "likes": 524545.0,
+      "album": "Ignition Key",
+      "artista": "Adam Beyer",
+      "discografica": "Truesoul",
+      "generos": "Techno"
+    },
+    {
+      "cancion": "Country Song",
+      "duracion_min": 6.43,
+      "reproducciones": 49580.0,
+      "likes": 880.0,
+      "album": "Dance Baby",
+      "artista": "Solomun",
+      "discografica": "Diynamic Music",
+      "generos": "Techno"
+    },
+    {
+      "cancion": "Boys In The Hood",
+      "duracion_min": 5.32,
+      "reproducciones": 477856.0,
+      "likes": 95.0,
+      "album": "Dance Baby",
+      "artista": "Solomun",
+      "discografica": "Diynamic Music",
+      "generos": "Techno"
+    },
+    {
+      "cancion": "Cloud Dancer",
+      "duracion_min": 4.1,
+      "reproducciones": 710247.0,
+      "likes": 39.0,
+      "album": "Dance Baby",
+      "artista": "Solomun",
+      "discografica": "Diynamic Music",
+      "generos": "Techno"
+    }
+  ],
+  "usuario": [
+    {
+      "usuario": "MORTIZ",
+      "nyap": "MARIA ORTIZ",
+      "fecha_nac": "1975-09-27",
+      "sexo": "F",
+      "CP": "1001",
+      "password": "********",
+      "pais": "Argentina",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "usuario": "IBALLESTEROS",
+      "nyap": "ISABEL BALLESTEROS",
+      "fecha_nac": "1987-10-17",
+      "sexo": "F",
+      "CP": "1001",
+      "password": "**************",
+      "pais": "Argentina",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "usuario": "CRAMIREZ",
+      "nyap": "CARMEN RAMIREZ",
+      "fecha_nac": "1994-08-26",
+      "sexo": "F",
+      "CP": "1001",
+      "password": "**********",
+      "pais": "Argentina",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "usuario": "MGONZALEZ",
+      "nyap": "MARIA PAULA GONZALEZ",
+      "fecha_nac": "1981-03-27",
+      "sexo": "F",
+      "CP": "118942",
+      "password": "***********",
+      "pais": "Colombia",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "usuario": "EHERDEZ",
+      "nyap": "EMILY HERDEZ",
+      "fecha_nac": "2001-02-10",
+      "sexo": "F",
+      "CP": "118942",
+      "password": "***********",
+      "pais": "Colombia",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "usuario": "LGOMEZ",
+      "nyap": "LUISA GOMEZ",
+      "fecha_nac": "1971-12-12",
+      "sexo": "F",
+      "CP": "118942",
+      "password": "********",
+      "pais": "Colombia",
+      "tipoUsuario": "standard"
+    },
+    {
+      "usuario": "MSOSA",
+      "nyap": "MARIA CARMEN SOSA",
+      "fecha_nac": "1981-07-16",
+      "sexo": "F",
+      "CP": "3",
+      "password": "*******",
+      "pais": "España",
+      "tipoUsuario": "standard"
+    },
+    {
+      "usuario": "MSMITH",
+      "nyap": "MARY SMITH",
+      "fecha_nac": "2000-05-04",
+      "sexo": "F",
+      "CP": "B24",
+      "password": "********",
+      "pais": "Inglaterra",
+      "tipoUsuario": "standard"
+    },
+    {
+      "usuario": "PSOTO",
+      "nyap": "PATRICIA SOTO",
+      "fecha_nac": "1974-07-12",
+      "sexo": "F",
+      "CP": "832 0000",
+      "password": "*******",
+      "pais": "Chile",
+      "tipoUsuario": "free"
+    },
+    {
+      "usuario": "AGARCIA",
+      "nyap": "ANTONIO GARCIA",
+      "fecha_nac": "1995-08-30",
+      "sexo": "M",
+      "CP": "1001",
+      "password": "*********",
+      "pais": "Argentina",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "usuario": "JMARTINEZ",
+      "nyap": "JOSE MARTINEZ",
+      "fecha_nac": "1987-11-22",
+      "sexo": "M",
+      "CP": "1001",
+      "password": "***********",
+      "pais": "Argentina",
+      "tipoUsuario": "standard"
+    },
+    {
+      "usuario": "FLOPEZ",
+      "nyap": "FRANCISCO LOPEZ",
+      "fecha_nac": "1988-02-16",
+      "sexo": "M",
+      "CP": "1001",
+      "password": "********",
+      "pais": "Argentina",
+      "tipoUsuario": "free"
+    },
+    {
+      "usuario": "JSANCHEZ",
+      "nyap": "JUAN SANCHEZ",
+      "fecha_nac": "2003-03-23",
+      "sexo": "M",
+      "CP": "1001",
+      "password": "**********",
+      "pais": "Argentina",
+      "tipoUsuario": "free"
+    },
+    {
+      "usuario": "MRODRIGUEZ",
+      "nyap": "MIGUEL ANGEL RODRIGUEZ",
+      "fecha_nac": "2003-10-16",
+      "sexo": "M",
+      "CP": "118942",
+      "password": "************",
+      "pais": "Colombia",
+      "tipoUsuario": "standard"
+    },
+    {
+      "usuario": "JDIAZ",
+      "nyap": "JUAN ESTEBAN DIAZ",
+      "fecha_nac": "1973-05-23",
+      "sexo": "M",
+      "CP": "118942",
+      "password": "*******",
+      "pais": "Colombia",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "usuario": "JLOPEZ",
+      "nyap": "JUAN SEBASTIAN LOPEZ",
+      "fecha_nac": "1974-03-15",
+      "sexo": "M",
+      "CP": "118942",
+      "password": "********",
+      "pais": "Colombia",
+      "tipoUsuario": "standard"
+    },
+    {
+      "usuario": "SMARTINEZ",
+      "nyap": "SANTIAGO MARTINEZ",
+      "fecha_nac": "1977-07-18",
+      "sexo": "M",
+      "CP": "118942",
+      "password": "***********",
+      "pais": "Colombia",
+      "tipoUsuario": "standard"
+    },
+    {
+      "usuario": "DRUBIO",
+      "nyap": "DAVID RUBIO",
+      "fecha_nac": "2001-01-17",
+      "sexo": "M",
+      "CP": "60000",
+      "password": "********",
+      "pais": "Uruguay",
+      "tipoUsuario": "standard"
+    },
+    {
+      "usuario": "JWATSON",
+      "nyap": "JHON WATSON",
+      "fecha_nac": "2003-10-22",
+      "sexo": "M",
+      "CP": "10029",
+      "password": "*********",
+      "pais": "Estados Unidos",
+      "tipoUsuario": "free"
+    }
+  ],
+  "playlist": [
+    {
+      "playlist": "Para correr",
+      "cant_canciones": 15,
+      "usuario": "MORTIZ",
+      "estado": "activa",
+      "fecha_creacion": "2020-02-27 00:00:00",
+      "fecha_eliminada": "",
+      "canciones": "In The Flesh – Pink Floyd; Pain In The Ass – Nina Kraviz; Loba – Shakira; Es La Humanidad – Celia Cruz"
+    },
+    {
+      "playlist": "Para Estudiar",
+      "cant_canciones": 10,
+      "usuario": "IBALLESTEROS",
+      "estado": "activa",
+      "fecha_creacion": "2019-05-07 00:00:00",
+      "fecha_eliminada": "",
+      "canciones": "Le Repos Sur Le Lit – Michael Finnissy; Harmonielehre II .The Anfortas Wound – John Adams; Sunrise And The Piper s Song – John Corigliano"
+    },
+    {
+      "playlist": "Para Gym",
+      "cant_canciones": 15,
+      "usuario": "MGONZALEZ",
+      "estado": "eliminada",
+      "fecha_creacion": "2020-03-07 00:00:00",
+      "fecha_eliminada": "2020-04-10 00:00:00",
+      "canciones": "G. Song – Terry Riley; Smack – Coleman Hawkins; Loba – Shakira; Bemba Colora – Celia Cruz; In The Flesh – Pink Floyd"
+    },
+    {
+      "playlist": "Las mejores canciones",
+      "cant_canciones": 10,
+      "usuario": "EHERDEZ",
+      "estado": "activa",
+      "fecha_creacion": "2017-06-06 00:00:00",
+      "fecha_eliminada": "",
+      "canciones": "In The Flesh – Pink Floyd; The Thin Ice – Pink Floyd; Gone For Bad – Pink Floyd; Shine On You Crazy Diamond – Pink Floyd"
+    },
+    {
+      "playlist": "Mis canciones favoritos",
+      "cant_canciones": 10,
+      "usuario": "IBALLESTEROS",
+      "estado": "activa",
+      "fecha_creacion": "2016-09-29 00:00:00",
+      "fecha_eliminada": "",
+      "canciones": "El Amor Después Del Amor – Fito Paez; La Cura – Maluma; Dices que te vas – Karol G"
+    },
+    {
+      "playlist": "Top 20",
+      "cant_canciones": 20,
+      "usuario": "FLOPEZ",
+      "estado": "eliminada",
+      "fecha_creacion": "2016-06-06 00:00:00",
+      "fecha_eliminada": "2016-04-12 00:00:00",
+      "canciones": "Shine On You Crazy Diamond – Pink Floyd; Open Your Heart – Madonna; Gabbiani  – Susana Rinaldi; Crazeology – Charlie Parker; Smack – Coleman Hawkins; Yet Another Movie – Pink Floyd; Come Together – The Beatles; Mañana – Carlos Vives; Harmonielehre I – John Adams; Dices que te vas – Karol G; The Thin Ice – Pink Floyd; Alma De Bohemio – Alberto Podestá; Willie Baby – Willie Colon; 11 Y 6 – Fito Paez; Y Dale Alegría A Mi Corazón – Fito Paez; Tu No Le Amas Le Temes – Luis Enrique; The Rats – John Corigliano; Intermezzo – Yo-Yo Ma; Estamos Juntos – Diego Torres; It Could Happen To You – MIles Davis"
+    },
+    {
+      "playlist": "Mi top 10",
+      "cant_canciones": 10,
+      "usuario": "JMARTINEZ",
+      "estado": "activa",
+      "fecha_creacion": "2017-06-16 00:00:00",
+      "fecha_eliminada": "",
+      "canciones": "If I Were A Bell – MIles Davis; Al Compas Del Corazon – Alberto Podestá; Satin And Lace – Tito Rodriguez; Open Your Heart – Madonna; Reels – Michael Finnissy; Groovin High – Dizzy Gillespie; Time And Motion Study I – Brian John Peter Ferneyhough; La tierra prometida – Carlos Vives; Estamos Juntos – Diego Torres; Time And Motion Study II – Brian John Peter Ferneyhough"
+    },
+    {
+      "playlist": "Lo mejor del Rock",
+      "cant_canciones": 10,
+      "usuario": "SMARTINEZ",
+      "estado": "activa",
+      "fecha_creacion": "2018-07-11 00:00:00",
+      "fecha_eliminada": "",
+      "canciones": "Shine On You Crazy Diamond – Pink Floyd; In The Flesh – Pink Floyd; Fink Is The King – Pink Floyd; The End – The Beatles; 11 Y 6 – Fito Paez; Y Dale Alegría A Mi Corazón – Fito Paez"
+    },
+    {
+      "playlist": "Musica Latina",
+      "cant_canciones": 5,
+      "usuario": "JDIAZ",
+      "estado": "eliminada",
+      "fecha_creacion": "2016-12-11 00:00:00",
+      "fecha_eliminada": "2016-02-19 00:00:00",
+      "canciones": "Estamos Juntos – Diego Torres; Cancion Sobre Cancion – Fito Paez; No Tengas Miedo – Diego Torres; Estoy Aqui – Shakira; Años Luz – Shakira"
+    },
+    {
+      "playlist": "Pop",
+      "cant_canciones": 6,
+      "usuario": "JDIAZ",
+      "estado": "activa",
+      "fecha_creacion": "2016-06-23 00:00:00",
+      "fecha_eliminada": "",
+      "canciones": "Open Your Heart – Madonna; No Tengas Miedo – Diego Torres; Satin And Lace – Tito Rodriguez; Cova Rosa – Oscar Mulero; Lo Hecho Esta Hecho – Shakira"
+    }
+  ],
+  "datos_pago_usuario": [
+    {
+      "usuario": "MORTIZ",
+      "tipo_forma_pago": "Efectivo",
+      "cbu": "",
+      "banco_codigo": 0,
+      "nro_tarjeta": "",
+      "mes_caduca": "",
+      "anio_caduca": "",
+      "cvc": ""
+    },
+    {
+      "usuario": "MORTIZ",
+      "tipo_forma_pago": "Tarjeta de Debito",
+      "cbu": "",
+      "banco_codigo": 1,
+      "nro_tarjeta": "**** **** **** 1881",
+      "mes_caduca": 1.0,
+      "anio_caduca": 21.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "IBALLESTEROS",
+      "tipo_forma_pago": "Tarjeta de credito",
+      "cbu": "",
+      "banco_codigo": 2,
+      "nro_tarjeta": "**** **** **** 8181",
+      "mes_caduca": 10.0,
+      "anio_caduca": 30.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "CRAMIREZ",
+      "tipo_forma_pago": "Tarjeta de credito",
+      "cbu": "",
+      "banco_codigo": 17,
+      "nro_tarjeta": "**** **** **** 0087",
+      "mes_caduca": 10.0,
+      "anio_caduca": 28.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "MGONZALEZ",
+      "tipo_forma_pago": "Efectivo",
+      "cbu": "",
+      "banco_codigo": 0,
+      "nro_tarjeta": "",
+      "mes_caduca": "",
+      "anio_caduca": "",
+      "cvc": ""
+    },
+    {
+      "usuario": "EHERDEZ",
+      "tipo_forma_pago": "Debito Automatico x Banco",
+      "cbu": "******************3748",
+      "banco_codigo": 0,
+      "nro_tarjeta": "",
+      "mes_caduca": "",
+      "anio_caduca": "",
+      "cvc": ""
+    },
+    {
+      "usuario": "LGOMEZ",
+      "tipo_forma_pago": "Debito Automatico x Banco",
+      "cbu": "******************2854",
+      "banco_codigo": 0,
+      "nro_tarjeta": "",
+      "mes_caduca": "",
+      "anio_caduca": "",
+      "cvc": ""
+    },
+    {
+      "usuario": "MSOSA",
+      "tipo_forma_pago": "Efectivo",
+      "cbu": "",
+      "banco_codigo": 0,
+      "nro_tarjeta": "",
+      "mes_caduca": "",
+      "anio_caduca": "",
+      "cvc": ""
+    },
+    {
+      "usuario": "MSMITH",
+      "tipo_forma_pago": "Tarjeta de Debito",
+      "cbu": "",
+      "banco_codigo": 15,
+      "nro_tarjeta": "**** **** **** 8431",
+      "mes_caduca": 8.0,
+      "anio_caduca": 24.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "PSOTO",
+      "tipo_forma_pago": "Efectivo",
+      "cbu": "",
+      "banco_codigo": 0,
+      "nro_tarjeta": "",
+      "mes_caduca": "",
+      "anio_caduca": "",
+      "cvc": ""
+    },
+    {
+      "usuario": "AGARCIA",
+      "tipo_forma_pago": "Debito Automatico x Banco",
+      "cbu": "******************0002",
+      "banco_codigo": 0,
+      "nro_tarjeta": "",
+      "mes_caduca": "",
+      "anio_caduca": "",
+      "cvc": ""
+    },
+    {
+      "usuario": "JMARTINEZ",
+      "tipo_forma_pago": "Efectivo",
+      "cbu": "",
+      "banco_codigo": 0,
+      "nro_tarjeta": "",
+      "mes_caduca": "",
+      "anio_caduca": "",
+      "cvc": ""
+    },
+    {
+      "usuario": "FLOPEZ",
+      "tipo_forma_pago": "Tarjeta de Debito",
+      "cbu": "",
+      "banco_codigo": 12,
+      "nro_tarjeta": "**** **** **** 3237",
+      "mes_caduca": 12.0,
+      "anio_caduca": 21.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "JSANCHEZ",
+      "tipo_forma_pago": "Tarjeta de Debito",
+      "cbu": "",
+      "banco_codigo": 19,
+      "nro_tarjeta": "**** **** **** 5904",
+      "mes_caduca": 11.0,
+      "anio_caduca": 25.0,
+      "cvc": ""
+    },
+    {
+      "usuario": "MRODRIGUEZ",
+      "tipo_forma_pago": "Debito Automatico x Banco",
+      "cbu": "******************2077",
+      "banco_codigo": 0,
+      "nro_tarjeta": "",
+      "mes_caduca": "",
+      "anio_caduca": "",
+      "cvc": ""
+    },
+    {
+      "usuario": "JDIAZ",
+      "tipo_forma_pago": "Tarjeta de credito",
+      "cbu": "",
+      "banco_codigo": 10,
+      "nro_tarjeta": "**** **** **** 8431",
+      "mes_caduca": 5.0,
+      "anio_caduca": 29.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "JLOPEZ",
+      "tipo_forma_pago": "Tarjeta de credito",
+      "cbu": "",
+      "banco_codigo": 7,
+      "nro_tarjeta": "**** **** **** 0005",
+      "mes_caduca": 4.0,
+      "anio_caduca": 20.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "SMARTINEZ",
+      "tipo_forma_pago": "Tarjeta de Debito",
+      "cbu": "",
+      "banco_codigo": 12,
+      "nro_tarjeta": "**** **** **** 0007",
+      "mes_caduca": 2.0,
+      "anio_caduca": 20.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "DRUBIO",
+      "tipo_forma_pago": "Tarjeta de Debito",
+      "cbu": "",
+      "banco_codigo": 15,
+      "nro_tarjeta": "**** **** **** 0009",
+      "mes_caduca": 3.0,
+      "anio_caduca": 30.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "JWATSON",
+      "tipo_forma_pago": "Debito Automatico x Banco",
+      "cbu": "******************4096",
+      "banco_codigo": 0,
+      "nro_tarjeta": "",
+      "mes_caduca": "",
+      "anio_caduca": "",
+      "cvc": ""
+    },
+    {
+      "usuario": "JMARTINEZ",
+      "tipo_forma_pago": "Tarjeta de Debito",
+      "cbu": "",
+      "banco_codigo": 4,
+      "nro_tarjeta": "**** **** **** 6300",
+      "mes_caduca": 1.0,
+      "anio_caduca": 21.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "IBALLESTEROS",
+      "tipo_forma_pago": "Debito Automatico x Banco",
+      "cbu": "",
+      "banco_codigo": 2,
+      "nro_tarjeta": "**** **** **** 1117",
+      "mes_caduca": 10.0,
+      "anio_caduca": 31.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "CRAMIREZ",
+      "tipo_forma_pago": "Tarjeta de Debito",
+      "cbu": "",
+      "banco_codigo": 1,
+      "nro_tarjeta": "**** **** **** 0000",
+      "mes_caduca": 12.0,
+      "anio_caduca": 21.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "EHERDEZ",
+      "tipo_forma_pago": "Tarjeta de Debito",
+      "cbu": "",
+      "banco_codigo": 1,
+      "nro_tarjeta": "**** **** **** 5824",
+      "mes_caduca": 11.0,
+      "anio_caduca": 21.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "EHERDEZ",
+      "tipo_forma_pago": "Tarjeta de credito",
+      "cbu": "",
+      "banco_codigo": 1,
+      "nro_tarjeta": "**** **** **** 4654",
+      "mes_caduca": 11.0,
+      "anio_caduca": 21.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "MSOSA",
+      "tipo_forma_pago": "Debito Automatico x Banco",
+      "cbu": "",
+      "banco_codigo": 5,
+      "nro_tarjeta": "**** **** **** 4454",
+      "mes_caduca": 12.0,
+      "anio_caduca": 21.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "JDIAZ",
+      "tipo_forma_pago": "Tarjeta de Debito",
+      "cbu": "",
+      "banco_codigo": 17,
+      "nro_tarjeta": "**** **** **** 7879",
+      "mes_caduca": 11.0,
+      "anio_caduca": 25.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "JLOPEZ",
+      "tipo_forma_pago": "Efectivo",
+      "cbu": "",
+      "banco_codigo": 0,
+      "nro_tarjeta": "",
+      "mes_caduca": "",
+      "anio_caduca": "",
+      "cvc": ""
+    },
+    {
+      "usuario": "JLOPEZ",
+      "tipo_forma_pago": "Debito Automatico x Banco",
+      "cbu": "******************5478",
+      "banco_codigo": 0,
+      "nro_tarjeta": "",
+      "mes_caduca": "",
+      "anio_caduca": "",
+      "cvc": ""
+    },
+    {
+      "usuario": "SMARTINEZ",
+      "tipo_forma_pago": "Tarjeta de Debito",
+      "cbu": "",
+      "banco_codigo": 17,
+      "nro_tarjeta": "**** **** **** 5645",
+      "mes_caduca": 10.0,
+      "anio_caduca": 24.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "JMARTINEZ",
+      "tipo_forma_pago": "Tarjeta de Debito",
+      "cbu": "",
+      "banco_codigo": 7,
+      "nro_tarjeta": "**** **** **** 4654",
+      "mes_caduca": 10.0,
+      "anio_caduca": 22.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "JMARTINEZ",
+      "tipo_forma_pago": "Tarjeta de credito",
+      "cbu": "",
+      "banco_codigo": 7,
+      "nro_tarjeta": "**** **** **** 6545",
+      "mes_caduca": 10.0,
+      "anio_caduca": 22.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "DRUBIO",
+      "tipo_forma_pago": "Efectivo",
+      "cbu": "",
+      "banco_codigo": 0,
+      "nro_tarjeta": "",
+      "mes_caduca": "",
+      "anio_caduca": "",
+      "cvc": ""
+    },
+    {
+      "usuario": "DRUBIO",
+      "tipo_forma_pago": "Tarjeta de Debito",
+      "cbu": "",
+      "banco_codigo": 7,
+      "nro_tarjeta": "**** **** **** 7987",
+      "mes_caduca": 11.0,
+      "anio_caduca": 25.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "MSOSA",
+      "tipo_forma_pago": "Tarjeta de Debito",
+      "cbu": "",
+      "banco_codigo": 5,
+      "nro_tarjeta": "**** **** **** 5454",
+      "mes_caduca": 10.0,
+      "anio_caduca": 23.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "PSOTO",
+      "tipo_forma_pago": "Tarjeta de credito",
+      "cbu": "",
+      "banco_codigo": 2,
+      "nro_tarjeta": "**** **** **** 8485",
+      "mes_caduca": 5.0,
+      "anio_caduca": 22.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "AGARCIA",
+      "tipo_forma_pago": "Tarjeta de Debito",
+      "cbu": "",
+      "banco_codigo": 17,
+      "nro_tarjeta": "**** **** **** 5645",
+      "mes_caduca": 10.0,
+      "anio_caduca": 24.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "MSMITH",
+      "tipo_forma_pago": "Tarjeta de Debito",
+      "cbu": "",
+      "banco_codigo": 7,
+      "nro_tarjeta": "**** **** **** 4654",
+      "mes_caduca": 10.0,
+      "anio_caduca": 22.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "LGOMEZ",
+      "tipo_forma_pago": "Tarjeta de credito",
+      "cbu": "",
+      "banco_codigo": 7,
+      "nro_tarjeta": "**** **** **** 6545",
+      "mes_caduca": 10.0,
+      "anio_caduca": 22.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "MGONZALEZ",
+      "tipo_forma_pago": "Tarjeta de Debito",
+      "cbu": "",
+      "banco_codigo": 4,
+      "nro_tarjeta": "**** **** **** 6300",
+      "mes_caduca": 1.0,
+      "anio_caduca": 21.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "CRAMIREZ",
+      "tipo_forma_pago": "Tarjeta de credito",
+      "cbu": "",
+      "banco_codigo": 2,
+      "nro_tarjeta": "**** **** **** 1117",
+      "mes_caduca": 10.0,
+      "anio_caduca": 31.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "JWATSON",
+      "tipo_forma_pago": "Tarjeta de credito",
+      "cbu": "",
+      "banco_codigo": 1,
+      "nro_tarjeta": "**** **** **** 0000",
+      "mes_caduca": 12.0,
+      "anio_caduca": 21.0,
+      "cvc": "***"
+    },
+    {
+      "usuario": "JMARTINEZ",
+      "tipo_forma_pago": "Debito Automatico x Banco",
+      "cbu": "******************9485",
+      "banco_codigo": 0,
+      "nro_tarjeta": "",
+      "mes_caduca": "",
+      "anio_caduca": "",
+      "cvc": ""
+    }
+  ],
+  "pagos": [
+    {
+      "fechaPago": "2020-01-01 00:00:00",
+      "importe": 0,
+      "usuario": "MORTIZ",
+      "tipo_forma_pago": "Efectivo"
+    },
+    {
+      "fechaPago": "2020-02-01 00:00:00",
+      "importe": 0,
+      "usuario": "MORTIZ",
+      "tipo_forma_pago": "Efectivo"
+    },
+    {
+      "fechaPago": "2020-02-01 00:00:00",
+      "importe": 100,
+      "usuario": "IBALLESTEROS",
+      "tipo_forma_pago": "Tarjeta de credito"
+    },
+    {
+      "fechaPago": "2020-03-01 00:00:00",
+      "importe": 0,
+      "usuario": "MORTIZ",
+      "tipo_forma_pago": "Efectivo"
+    },
+    {
+      "fechaPago": "2020-03-01 00:00:00",
+      "importe": 100,
+      "usuario": "LGOMEZ",
+      "tipo_forma_pago": "Tarjeta de credito"
+    },
+    {
+      "fechaPago": "2020-03-01 00:00:00",
+      "importe": 0,
+      "usuario": "IBALLESTEROS",
+      "tipo_forma_pago": "Tarjeta de credito"
+    },
+    {
+      "fechaPago": "2020-03-01 00:00:00",
+      "importe": 0,
+      "usuario": "CRAMIREZ",
+      "tipo_forma_pago": "Tarjeta de credito"
+    },
+    {
+      "fechaPago": "2020-03-01 00:00:00",
+      "importe": 0,
+      "usuario": "MGONZALEZ",
+      "tipo_forma_pago": "Efectivo"
+    },
+    {
+      "fechaPago": "2020-03-01 00:00:00",
+      "importe": 100,
+      "usuario": "MSOSA",
+      "tipo_forma_pago": "Efectivo"
+    },
+    {
+      "fechaPago": "2020-03-01 00:00:00",
+      "importe": 100,
+      "usuario": "MSMITH",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-03-01 00:00:00",
+      "importe": 500,
+      "usuario": "PSOTO",
+      "tipo_forma_pago": "Efectivo"
+    },
+    {
+      "fechaPago": "2020-03-01 00:00:00",
+      "importe": 0,
+      "usuario": "AGARCIA",
+      "tipo_forma_pago": "Debito Automatico x Banco"
+    },
+    {
+      "fechaPago": "2020-03-01 00:00:00",
+      "importe": 100,
+      "usuario": "JMARTINEZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-04-01 00:00:00",
+      "importe": 0,
+      "usuario": "MORTIZ",
+      "tipo_forma_pago": "Efectivo"
+    },
+    {
+      "fechaPago": "2020-04-01 00:00:00",
+      "importe": 100,
+      "usuario": "IBALLESTEROS",
+      "tipo_forma_pago": "Debito Automatico x Banco"
+    },
+    {
+      "fechaPago": "2020-04-01 00:00:00",
+      "importe": 100,
+      "usuario": "CRAMIREZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-04-01 00:00:00",
+      "importe": 100,
+      "usuario": "MGONZALEZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-04-01 00:00:00",
+      "importe": 100,
+      "usuario": "EHERDEZ",
+      "tipo_forma_pago": "Debito Automatico x Banco"
+    },
+    {
+      "fechaPago": "2020-04-01 00:00:00",
+      "importe": 500,
+      "usuario": "LGOMEZ",
+      "tipo_forma_pago": "Tarjeta de credito"
+    },
+    {
+      "fechaPago": "2020-04-01 00:00:00",
+      "importe": 500,
+      "usuario": "MSOSA",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-04-01 00:00:00",
+      "importe": 500,
+      "usuario": "MORTIZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-04-01 00:00:00",
+      "importe": 500,
+      "usuario": "PSOTO",
+      "tipo_forma_pago": "Efectivo"
+    },
+    {
+      "fechaPago": "2020-04-01 00:00:00",
+      "importe": 0,
+      "usuario": "AGARCIA",
+      "tipo_forma_pago": "Debito Automatico x Banco"
+    },
+    {
+      "fechaPago": "2020-04-01 00:00:00",
+      "importe": 100,
+      "usuario": "JMARTINEZ",
+      "tipo_forma_pago": "Tarjeta de credito"
+    },
+    {
+      "fechaPago": "2020-05-01 00:00:00",
+      "importe": 0,
+      "usuario": "MORTIZ",
+      "tipo_forma_pago": "Efectivo"
+    },
+    {
+      "fechaPago": "2020-05-01 00:00:00",
+      "importe": 100,
+      "usuario": "IBALLESTEROS",
+      "tipo_forma_pago": "Debito Automatico x Banco"
+    },
+    {
+      "fechaPago": "2020-05-01 00:00:00",
+      "importe": 100,
+      "usuario": "CRAMIREZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-05-01 00:00:00",
+      "importe": 100,
+      "usuario": "MGONZALEZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-05-01 00:00:00",
+      "importe": 100,
+      "usuario": "EHERDEZ",
+      "tipo_forma_pago": "Debito Automatico x Banco"
+    },
+    {
+      "fechaPago": "2020-05-01 00:00:00",
+      "importe": 500,
+      "usuario": "LGOMEZ",
+      "tipo_forma_pago": "Tarjeta de credito"
+    },
+    {
+      "fechaPago": "2020-05-01 00:00:00",
+      "importe": 500,
+      "usuario": "MSOSA",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-05-01 00:00:00",
+      "importe": 500,
+      "usuario": "MORTIZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-05-01 00:00:00",
+      "importe": 500,
+      "usuario": "PSOTO",
+      "tipo_forma_pago": "Efectivo"
+    },
+    {
+      "fechaPago": "2020-05-01 00:00:00",
+      "importe": 0,
+      "usuario": "AGARCIA",
+      "tipo_forma_pago": "Debito Automatico x Banco"
+    },
+    {
+      "fechaPago": "2020-05-01 00:00:00",
+      "importe": 100,
+      "usuario": "JMARTINEZ",
+      "tipo_forma_pago": "Tarjeta de credito"
+    },
+    {
+      "fechaPago": "2020-05-01 00:00:00",
+      "importe": 800,
+      "usuario": "FLOPEZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-05-01 00:00:00",
+      "importe": 800,
+      "usuario": "JSANCHEZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-05-01 00:00:00",
+      "importe": 200,
+      "usuario": "MRODRIGUEZ",
+      "tipo_forma_pago": "Debito Automatico x Banco"
+    },
+    {
+      "fechaPago": "2020-05-01 00:00:00",
+      "importe": 0,
+      "usuario": "JDIAZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-06-01 00:00:00",
+      "importe": 200,
+      "usuario": "JLOPEZ",
+      "tipo_forma_pago": "Debito Automatico x Banco"
+    },
+    {
+      "fechaPago": "2020-06-01 00:00:00",
+      "importe": 200,
+      "usuario": "SMARTINEZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-06-01 00:00:00",
+      "importe": 200,
+      "usuario": "DRUBIO",
+      "tipo_forma_pago": "Efectivo"
+    },
+    {
+      "fechaPago": "2020-07-01 00:00:00",
+      "importe": 500,
+      "usuario": "JWATSON",
+      "tipo_forma_pago": "Tarjeta de credito"
+    },
+    {
+      "fechaPago": "2020-05-01 00:00:00",
+      "importe": 0,
+      "usuario": "MORTIZ",
+      "tipo_forma_pago": "Efectivo"
+    },
+    {
+      "fechaPago": "2020-08-01 00:00:00",
+      "importe": 100,
+      "usuario": "IBALLESTEROS",
+      "tipo_forma_pago": "Debito Automatico x Banco"
+    },
+    {
+      "fechaPago": "2020-08-01 00:00:00",
+      "importe": 100,
+      "usuario": "CRAMIREZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-08-01 00:00:00",
+      "importe": 100,
+      "usuario": "MGONZALEZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-08-01 00:00:00",
+      "importe": 100,
+      "usuario": "EHERDEZ",
+      "tipo_forma_pago": "Debito Automatico x Banco"
+    },
+    {
+      "fechaPago": "2020-08-01 00:00:00",
+      "importe": 500,
+      "usuario": "LGOMEZ",
+      "tipo_forma_pago": "Tarjeta de credito"
+    },
+    {
+      "fechaPago": "2020-08-01 00:00:00",
+      "importe": 500,
+      "usuario": "MSOSA",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-08-01 00:00:00",
+      "importe": 500,
+      "usuario": "MORTIZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-08-01 00:00:00",
+      "importe": 500,
+      "usuario": "PSOTO",
+      "tipo_forma_pago": "Efectivo"
+    },
+    {
+      "fechaPago": "2020-08-01 00:00:00",
+      "importe": 0,
+      "usuario": "AGARCIA",
+      "tipo_forma_pago": "Debito Automatico x Banco"
+    },
+    {
+      "fechaPago": "2020-08-01 00:00:00",
+      "importe": 100,
+      "usuario": "JMARTINEZ",
+      "tipo_forma_pago": "Tarjeta de credito"
+    },
+    {
+      "fechaPago": "2020-08-01 00:00:00",
+      "importe": 800,
+      "usuario": "FLOPEZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-08-01 00:00:00",
+      "importe": 800,
+      "usuario": "JSANCHEZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-09-01 00:00:00",
+      "importe": 200,
+      "usuario": "JLOPEZ",
+      "tipo_forma_pago": "Debito Automatico x Banco"
+    },
+    {
+      "fechaPago": "2020-09-01 00:00:00",
+      "importe": 200,
+      "usuario": "SMARTINEZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-09-01 00:00:00",
+      "importe": 200,
+      "usuario": "DRUBIO",
+      "tipo_forma_pago": "Efectivo"
+    },
+    {
+      "fechaPago": "2020-10-01 00:00:00",
+      "importe": 500,
+      "usuario": "JWATSON",
+      "tipo_forma_pago": "Tarjeta de credito"
+    },
+    {
+      "fechaPago": "2020-10-01 00:00:00",
+      "importe": 0,
+      "usuario": "MORTIZ",
+      "tipo_forma_pago": "Efectivo"
+    },
+    {
+      "fechaPago": "2020-10-01 00:00:00",
+      "importe": 100,
+      "usuario": "IBALLESTEROS",
+      "tipo_forma_pago": "Debito Automatico x Banco"
+    },
+    {
+      "fechaPago": "2020-10-01 00:00:00",
+      "importe": 100,
+      "usuario": "CRAMIREZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-10-01 00:00:00",
+      "importe": 100,
+      "usuario": "MGONZALEZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-10-01 00:00:00",
+      "importe": 100,
+      "usuario": "EHERDEZ",
+      "tipo_forma_pago": "Debito Automatico x Banco"
+    },
+    {
+      "fechaPago": "2020-10-01 00:00:00",
+      "importe": 500,
+      "usuario": "LGOMEZ",
+      "tipo_forma_pago": "Tarjeta de credito"
+    },
+    {
+      "fechaPago": "2020-10-01 00:00:00",
+      "importe": 500,
+      "usuario": "MSOSA",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-10-01 00:00:00",
+      "importe": 500,
+      "usuario": "MORTIZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-10-01 00:00:00",
+      "importe": 500,
+      "usuario": "PSOTO",
+      "tipo_forma_pago": "Efectivo"
+    },
+    {
+      "fechaPago": "2020-10-01 00:00:00",
+      "importe": 0,
+      "usuario": "AGARCIA",
+      "tipo_forma_pago": "Debito Automatico x Banco"
+    },
+    {
+      "fechaPago": "2020-10-01 00:00:00",
+      "importe": 100,
+      "usuario": "JMARTINEZ",
+      "tipo_forma_pago": "Tarjeta de credito"
+    },
+    {
+      "fechaPago": "2020-10-01 00:00:00",
+      "importe": 800,
+      "usuario": "FLOPEZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-10-01 00:00:00",
+      "importe": 800,
+      "usuario": "JSANCHEZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-12-01 00:00:00",
+      "importe": 200,
+      "usuario": "JLOPEZ",
+      "tipo_forma_pago": "Debito Automatico x Banco"
+    },
+    {
+      "fechaPago": "2020-12-01 00:00:00",
+      "importe": 200,
+      "usuario": "SMARTINEZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2020-12-01 00:00:00",
+      "importe": 200,
+      "usuario": "DRUBIO",
+      "tipo_forma_pago": "Efectivo"
+    },
+    {
+      "fechaPago": "2021-01-01 00:00:00",
+      "importe": 500,
+      "usuario": "JWATSON",
+      "tipo_forma_pago": "Tarjeta de credito"
+    },
+    {
+      "fechaPago": "2021-02-01 00:00:00",
+      "importe": 0,
+      "usuario": "MORTIZ",
+      "tipo_forma_pago": "Efectivo"
+    },
+    {
+      "fechaPago": "2021-02-01 00:00:00",
+      "importe": 100,
+      "usuario": "IBALLESTEROS",
+      "tipo_forma_pago": "Debito Automatico x Banco"
+    },
+    {
+      "fechaPago": "2021-02-01 00:00:00",
+      "importe": 100,
+      "usuario": "CRAMIREZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2021-02-01 00:00:00",
+      "importe": 100,
+      "usuario": "MGONZALEZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2021-02-01 00:00:00",
+      "importe": 100,
+      "usuario": "EHERDEZ",
+      "tipo_forma_pago": "Debito Automatico x Banco"
+    },
+    {
+      "fechaPago": "2021-02-01 00:00:00",
+      "importe": 500,
+      "usuario": "LGOMEZ",
+      "tipo_forma_pago": "Tarjeta de credito"
+    },
+    {
+      "fechaPago": "2021-02-01 00:00:00",
+      "importe": 500,
+      "usuario": "MSOSA",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2021-02-01 00:00:00",
+      "importe": 500,
+      "usuario": "MORTIZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2021-02-01 00:00:00",
+      "importe": 500,
+      "usuario": "PSOTO",
+      "tipo_forma_pago": "Efectivo"
+    },
+    {
+      "fechaPago": "2021-02-01 00:00:00",
+      "importe": 0,
+      "usuario": "AGARCIA",
+      "tipo_forma_pago": "Debito Automatico x Banco"
+    },
+    {
+      "fechaPago": "2021-02-01 00:00:00",
+      "importe": 100,
+      "usuario": "JMARTINEZ",
+      "tipo_forma_pago": "Tarjeta de credito"
+    },
+    {
+      "fechaPago": "2021-02-01 00:00:00",
+      "importe": 800,
+      "usuario": "FLOPEZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2021-02-01 00:00:00",
+      "importe": 800,
+      "usuario": "JSANCHEZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2021-03-01 00:00:00",
+      "importe": 200,
+      "usuario": "SMARTINEZ",
+      "tipo_forma_pago": "Tarjeta de Debito"
+    },
+    {
+      "fechaPago": "2021-03-01 00:00:00",
+      "importe": 200,
+      "usuario": "DRUBIO",
+      "tipo_forma_pago": "Efectivo"
+    },
+    {
+      "fechaPago": "2021-03-01 00:00:00",
+      "importe": 500,
+      "usuario": "JWATSON",
+      "tipo_forma_pago": "Tarjeta de credito"
+    }
+  ],
+  "suscripcion": [
+    {
+      "fecha_inicio": "2020-01-01 00:00:00",
+      "fecha_renovacion": "2020-02-01 00:00:00",
+      "usuario": "MORTIZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-02-01 00:00:00",
+      "fecha_renovacion": "2020-03-01 00:00:00",
+      "usuario": "MORTIZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-02-01 00:00:00",
+      "fecha_renovacion": "2020-03-01 00:00:00",
+      "usuario": "LGOMEZ",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-03-01 00:00:00",
+      "fecha_renovacion": "2020-04-01 00:00:00",
+      "usuario": "MORTIZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-03-01 00:00:00",
+      "fecha_renovacion": "2020-04-01 00:00:00",
+      "usuario": "LGOMEZ",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-03-01 00:00:00",
+      "fecha_renovacion": "2020-04-01 00:00:00",
+      "usuario": "IBALLESTEROS",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-03-01 00:00:00",
+      "fecha_renovacion": "2020-04-01 00:00:00",
+      "usuario": "CRAMIREZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-03-01 00:00:00",
+      "fecha_renovacion": "2020-04-01 00:00:00",
+      "usuario": "MGONZALEZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-03-01 00:00:00",
+      "fecha_renovacion": "2020-04-01 00:00:00",
+      "usuario": "MSOSA",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-03-01 00:00:00",
+      "fecha_renovacion": "2020-04-01 00:00:00",
+      "usuario": "MSMITH",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-03-01 00:00:00",
+      "fecha_renovacion": "2020-04-01 00:00:00",
+      "usuario": "PSOTO",
+      "tipoUsuario": "free"
+    },
+    {
+      "fecha_inicio": "2020-03-01 00:00:00",
+      "fecha_renovacion": "2020-04-01 00:00:00",
+      "usuario": "AGARCIA",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-03-01 00:00:00",
+      "fecha_renovacion": "2020-04-01 00:00:00",
+      "usuario": "JMARTINEZ",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-04-01 00:00:00",
+      "fecha_renovacion": "2020-05-01 00:00:00",
+      "usuario": "MORTIZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-04-01 00:00:00",
+      "fecha_renovacion": "2020-05-01 00:00:00",
+      "usuario": "IBALLESTEROS",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-04-01 00:00:00",
+      "fecha_renovacion": "2020-05-01 00:00:00",
+      "usuario": "CRAMIREZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-04-01 00:00:00",
+      "fecha_renovacion": "2020-05-01 00:00:00",
+      "usuario": "MGONZALEZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-04-01 00:00:00",
+      "fecha_renovacion": "2020-05-01 00:00:00",
+      "usuario": "EHERDEZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-04-01 00:00:00",
+      "fecha_renovacion": "2020-05-01 00:00:00",
+      "usuario": "LGOMEZ",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-04-01 00:00:00",
+      "fecha_renovacion": "2020-05-01 00:00:00",
+      "usuario": "MSOSA",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-04-01 00:00:00",
+      "fecha_renovacion": "2020-05-01 00:00:00",
+      "usuario": "MSMITH",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-04-01 00:00:00",
+      "fecha_renovacion": "2020-05-01 00:00:00",
+      "usuario": "PSOTO",
+      "tipoUsuario": "free"
+    },
+    {
+      "fecha_inicio": "2020-04-01 00:00:00",
+      "fecha_renovacion": "2020-05-01 00:00:00",
+      "usuario": "AGARCIA",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-04-01 00:00:00",
+      "fecha_renovacion": "2020-05-01 00:00:00",
+      "usuario": "JMARTINEZ",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-05-01 00:00:00",
+      "fecha_renovacion": "2020-08-01 00:00:00",
+      "usuario": "MORTIZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-05-01 00:00:00",
+      "fecha_renovacion": "2020-08-01 00:00:00",
+      "usuario": "IBALLESTEROS",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-05-01 00:00:00",
+      "fecha_renovacion": "2020-08-01 00:00:00",
+      "usuario": "CRAMIREZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-05-01 00:00:00",
+      "fecha_renovacion": "2020-08-01 00:00:00",
+      "usuario": "MGONZALEZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-05-01 00:00:00",
+      "fecha_renovacion": "2020-08-01 00:00:00",
+      "usuario": "EHERDEZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-05-01 00:00:00",
+      "fecha_renovacion": "2020-08-01 00:00:00",
+      "usuario": "LGOMEZ",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-05-01 00:00:00",
+      "fecha_renovacion": "2020-08-01 00:00:00",
+      "usuario": "MSOSA",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-05-01 00:00:00",
+      "fecha_renovacion": "2020-08-01 00:00:00",
+      "usuario": "MSMITH",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-05-01 00:00:00",
+      "fecha_renovacion": "2020-08-01 00:00:00",
+      "usuario": "PSOTO",
+      "tipoUsuario": "free"
+    },
+    {
+      "fecha_inicio": "2020-05-01 00:00:00",
+      "fecha_renovacion": "2020-08-01 00:00:00",
+      "usuario": "AGARCIA",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-05-01 00:00:00",
+      "fecha_renovacion": "2020-08-01 00:00:00",
+      "usuario": "JMARTINEZ",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-05-01 00:00:00",
+      "fecha_renovacion": "2020-08-01 00:00:00",
+      "usuario": "FLOPEZ",
+      "tipoUsuario": "free"
+    },
+    {
+      "fecha_inicio": "2020-05-01 00:00:00",
+      "fecha_renovacion": "2020-08-01 00:00:00",
+      "usuario": "JSANCHEZ",
+      "tipoUsuario": "free"
+    },
+    {
+      "fecha_inicio": "2020-05-01 00:00:00",
+      "fecha_renovacion": "2020-08-01 00:00:00",
+      "usuario": "MRODRIGUEZ",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-05-01 00:00:00",
+      "fecha_renovacion": "2020-08-01 00:00:00",
+      "usuario": "JDIAZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-06-01 00:00:00",
+      "fecha_renovacion": "2020-09-01 00:00:00",
+      "usuario": "JLOPEZ",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-06-01 00:00:00",
+      "fecha_renovacion": "2020-09-01 00:00:00",
+      "usuario": "SMARTINEZ",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-06-01 00:00:00",
+      "fecha_renovacion": "2020-09-01 00:00:00",
+      "usuario": "DRUBIO",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-07-01 00:00:00",
+      "fecha_renovacion": "2020-10-01 00:00:00",
+      "usuario": "JWATSON",
+      "tipoUsuario": "free"
+    },
+    {
+      "fecha_inicio": "2020-08-01 00:00:00",
+      "fecha_renovacion": "2020-11-01 00:00:00",
+      "usuario": "MORTIZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-08-01 00:00:00",
+      "fecha_renovacion": "2020-11-01 00:00:00",
+      "usuario": "IBALLESTEROS",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-08-01 00:00:00",
+      "fecha_renovacion": "2020-11-01 00:00:00",
+      "usuario": "CRAMIREZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-08-01 00:00:00",
+      "fecha_renovacion": "2020-11-01 00:00:00",
+      "usuario": "MGONZALEZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-08-01 00:00:00",
+      "fecha_renovacion": "2020-11-01 00:00:00",
+      "usuario": "EHERDEZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-08-01 00:00:00",
+      "fecha_renovacion": "2020-11-01 00:00:00",
+      "usuario": "LGOMEZ",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-08-01 00:00:00",
+      "fecha_renovacion": "2020-11-01 00:00:00",
+      "usuario": "MSOSA",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-08-01 00:00:00",
+      "fecha_renovacion": "2020-11-01 00:00:00",
+      "usuario": "MSMITH",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-08-01 00:00:00",
+      "fecha_renovacion": "2020-11-01 00:00:00",
+      "usuario": "PSOTO",
+      "tipoUsuario": "free"
+    },
+    {
+      "fecha_inicio": "2020-08-01 00:00:00",
+      "fecha_renovacion": "2020-11-01 00:00:00",
+      "usuario": "AGARCIA",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-08-01 00:00:00",
+      "fecha_renovacion": "2020-11-01 00:00:00",
+      "usuario": "JMARTINEZ",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-08-01 00:00:00",
+      "fecha_renovacion": "2020-11-01 00:00:00",
+      "usuario": "FLOPEZ",
+      "tipoUsuario": "free"
+    },
+    {
+      "fecha_inicio": "2020-08-01 00:00:00",
+      "fecha_renovacion": "2020-11-01 00:00:00",
+      "usuario": "JSANCHEZ",
+      "tipoUsuario": "free"
+    },
+    {
+      "fecha_inicio": "2020-09-01 00:00:00",
+      "fecha_renovacion": "2020-12-01 00:00:00",
+      "usuario": "JLOPEZ",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-09-01 00:00:00",
+      "fecha_renovacion": "2020-12-01 00:00:00",
+      "usuario": "SMARTINEZ",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-09-01 00:00:00",
+      "fecha_renovacion": "2020-12-01 00:00:00",
+      "usuario": "DRUBIO",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-10-01 00:00:00",
+      "fecha_renovacion": "2021-01-01 00:00:00",
+      "usuario": "JWATSON",
+      "tipoUsuario": "free"
+    },
+    {
+      "fecha_inicio": "2020-11-01 00:00:00",
+      "fecha_renovacion": "2021-02-01 00:00:00",
+      "usuario": "MORTIZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-11-01 00:00:00",
+      "fecha_renovacion": "2021-02-01 00:00:00",
+      "usuario": "IBALLESTEROS",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-11-01 00:00:00",
+      "fecha_renovacion": "2021-02-01 00:00:00",
+      "usuario": "CRAMIREZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-11-01 00:00:00",
+      "fecha_renovacion": "2021-02-01 00:00:00",
+      "usuario": "MGONZALEZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-11-01 00:00:00",
+      "fecha_renovacion": "2021-02-01 00:00:00",
+      "usuario": "EHERDEZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-11-01 00:00:00",
+      "fecha_renovacion": "2021-02-01 00:00:00",
+      "usuario": "LGOMEZ",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-11-01 00:00:00",
+      "fecha_renovacion": "2021-02-01 00:00:00",
+      "usuario": "MSOSA",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-11-01 00:00:00",
+      "fecha_renovacion": "2021-02-01 00:00:00",
+      "usuario": "MSMITH",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-11-01 00:00:00",
+      "fecha_renovacion": "2021-02-01 00:00:00",
+      "usuario": "PSOTO",
+      "tipoUsuario": "free"
+    },
+    {
+      "fecha_inicio": "2020-11-01 00:00:00",
+      "fecha_renovacion": "2021-02-01 00:00:00",
+      "usuario": "AGARCIA",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2020-11-01 00:00:00",
+      "fecha_renovacion": "2021-02-01 00:00:00",
+      "usuario": "JMARTINEZ",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-11-01 00:00:00",
+      "fecha_renovacion": "2021-02-01 00:00:00",
+      "usuario": "FLOPEZ",
+      "tipoUsuario": "free"
+    },
+    {
+      "fecha_inicio": "2020-11-01 00:00:00",
+      "fecha_renovacion": "2021-02-01 00:00:00",
+      "usuario": "JSANCHEZ",
+      "tipoUsuario": "free"
+    },
+    {
+      "fecha_inicio": "2020-12-01 00:00:00",
+      "fecha_renovacion": "2021-03-01 00:00:00",
+      "usuario": "JLOPEZ",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-12-01 00:00:00",
+      "fecha_renovacion": "2021-03-01 00:00:00",
+      "usuario": "SMARTINEZ",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2020-12-01 00:00:00",
+      "fecha_renovacion": "2021-03-01 00:00:00",
+      "usuario": "DRUBIO",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2021-01-01 00:00:00",
+      "fecha_renovacion": "2021-04-01 00:00:00",
+      "usuario": "JWATSON",
+      "tipoUsuario": "free"
+    },
+    {
+      "fecha_inicio": "2021-02-01 00:00:00",
+      "fecha_renovacion": "2021-04-01 00:00:00",
+      "usuario": "MORTIZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2021-02-01 00:00:00",
+      "fecha_renovacion": "2021-04-01 00:00:00",
+      "usuario": "IBALLESTEROS",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2021-02-01 00:00:00",
+      "fecha_renovacion": "2021-04-01 00:00:00",
+      "usuario": "CRAMIREZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2021-02-01 00:00:00",
+      "fecha_renovacion": "2021-04-01 00:00:00",
+      "usuario": "MGONZALEZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2021-02-01 00:00:00",
+      "fecha_renovacion": "2021-04-01 00:00:00",
+      "usuario": "EHERDEZ",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2021-02-01 00:00:00",
+      "fecha_renovacion": "2021-04-01 00:00:00",
+      "usuario": "LGOMEZ",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2021-02-01 00:00:00",
+      "fecha_renovacion": "2021-04-01 00:00:00",
+      "usuario": "MSOSA",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2021-02-01 00:00:00",
+      "fecha_renovacion": "2021-04-01 00:00:00",
+      "usuario": "MSMITH",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2021-02-01 00:00:00",
+      "fecha_renovacion": "2021-04-01 00:00:00",
+      "usuario": "PSOTO",
+      "tipoUsuario": "free"
+    },
+    {
+      "fecha_inicio": "2021-02-01 00:00:00",
+      "fecha_renovacion": "2021-04-01 00:00:00",
+      "usuario": "AGARCIA",
+      "tipoUsuario": "Premium"
+    },
+    {
+      "fecha_inicio": "2021-02-01 00:00:00",
+      "fecha_renovacion": "2021-04-01 00:00:00",
+      "usuario": "JMARTINEZ",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2021-02-01 00:00:00",
+      "fecha_renovacion": "2021-04-01 00:00:00",
+      "usuario": "FLOPEZ",
+      "tipoUsuario": "free"
+    },
+    {
+      "fecha_inicio": "2021-02-01 00:00:00",
+      "fecha_renovacion": "2021-04-01 00:00:00",
+      "usuario": "JSANCHEZ",
+      "tipoUsuario": "free"
+    },
+    {
+      "fecha_inicio": "2021-03-01 00:00:00",
+      "fecha_renovacion": "2021-05-01 00:00:00",
+      "usuario": "JLOPEZ",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2021-03-01 00:00:00",
+      "fecha_renovacion": "2021-05-01 00:00:00",
+      "usuario": "SMARTINEZ",
+      "tipoUsuario": "standard"
+    },
+    {
+      "fecha_inicio": "2021-03-01 00:00:00",
+      "fecha_renovacion": "2021-05-01 00:00:00",
+      "usuario": "DRUBIO",
+      "tipoUsuario": "standard"
+    }
+  ]
+}

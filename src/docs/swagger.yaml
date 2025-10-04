@@ -1,0 +1,494 @@
+openapi: 3.0.3
+info:
+  title: Spotify Backend API
+  description: |
+    API REST para plataforma de streaming musical estilo Spotify.
+    
+    ## Características principales:
+    - Gestión completa de usuarios, artistas, álbumes y canciones
+    - Sistema de playlists con soft-delete
+    - Manejo de suscripciones y pagos
+    - Vistas avanzadas con JOINs complejos
+    - Validaciones exhaustivas y manejo de errores
+    
+    ## Ejercicios adicionales:
+    - **Vistas con JOINs**: Consultas complejas para análisis de datos
+    - **Canciones populares por país**: Análisis de reproducciones por ubicación geográfica
+    - **Ingresos por artista/discográfica**: Análisis financiero detallado
+    
+    ## Autenticación:
+    Algunos endpoints pueden requerir autenticación JWT (implementación opcional).
+    
+  version: 1.0.0
+  contact:
+    name: Proyecto Integrador UNTreF
+    email: estudiante@untref.edu.ar
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: http://localhost:3000/api/v1
+    description: Servidor de desarrollo local
+  - url: https://api.spotify-backend.com/v1
+    description: Servidor de producción (ejemplo)
+
+tags:
+  - name: Usuarios
+    description: Gestión de usuarios y autenticación
+  - name: Artistas
+    description: Gestión de artistas
+  - name: Álbumes
+    description: Gestión de álbumes musicales
+  - name: Canciones
+    description: Gestión de canciones y géneros
+  - name: Géneros
+    description: Gestión de géneros musicales
+  - name: Playlists
+    description: Gestión de playlists de usuarios
+  - name: Suscripciones
+    description: Gestión de suscripciones de usuarios
+  - name: Métodos de Pago
+    description: Gestión de métodos de pago
+  - name: Pagos
+    description: Gestión de pagos y facturación
+  - name: Vistas Avanzadas
+    description: Consultas complejas con JOINs (Ejercicios adicionales)
+
+paths:
+  # ==================== USUARIOS ====================
+  /usuarios:
+    get:
+      tags: [Usuarios]
+      summary: Listar usuarios
+      description: Obtiene una lista paginada de usuarios (sin password_hash)
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+            minimum: 1
+            maximum: 100
+      responses:
+        '200':
+          description: Lista de usuarios obtenida exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  usuarios:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/UsuarioResponse'
+                  pagination:
+                    $ref: '#/components/schemas/Pagination'
+    
+    post:
+      tags: [Usuarios]
+      summary: Crear usuario
+      description: Crea un nuevo usuario con validaciones
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UsuarioCreate'
+      responses:
+        '201':
+          description: Usuario creado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsuarioResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '409':
+          $ref: '#/components/responses/Conflict'
+
+  /usuarios/{id}:
+    get:
+      tags: [Usuarios]
+      summary: Obtener usuario por ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Usuario encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsuarioResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /usuarios/password-vencidas:
+    get:
+      tags: [Usuarios]
+      summary: Usuarios con contraseña vencida
+      description: Lista usuarios con contraseña no actualizada en más de 90 días
+      responses:
+        '200':
+          description: Lista de usuarios con contraseña vencida
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UsuarioResponse'
+
+  # ==================== VISTAS AVANZADAS (EJERCICIOS) ====================
+  /vistas/canciones-populares-por-pais:
+    get:
+      tags: [Vistas Avanzadas]
+      summary: 'EJERCICIO 1: Canciones populares por país'
+      description: |
+        **Ejercicio de JOINs complejos**: Obtiene las canciones más reproducidas 
+        agrupadas por país de origen de los usuarios.
+        
+        **JOINs utilizados**: 
+        cancion → album → artista, playlist_cancion → playlist → usuario → pais
+        
+        **Agregaciones**: SUM(reproducciones), COUNT(playlists)
+      parameters:
+        - name: pais
+          in: query
+          description: Filtrar por país específico
+          schema:
+            type: string
+            example: Argentina
+        - name: limit
+          in: query
+          description: Límite de resultados
+          schema:
+            type: integer
+            default: 50
+            minimum: 1
+        - name: orden
+          in: query
+          description: Campo de ordenamiento
+          schema:
+            type: string
+            enum: [reproducciones, apariciones]
+            default: reproducciones
+      responses:
+        '200':
+          description: Datos de canciones populares por país
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CancionPopularPorPais'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+  /vistas/ingresos-por-artista-discografica:
+    get:
+      tags: [Vistas Avanzadas]
+      summary: 'EJERCICIO 2: Ingresos por artista y discográfica'
+      description: |
+        **Ejercicio de JOINs complejos**: Analiza los ingresos generados por cada 
+        combinación artista-discográfica con estadísticas detalladas.
+        
+        **JOINs utilizados**: 
+        pago → suscripcion → usuario → playlist → playlist_cancion → cancion → album → artista/discografica → pais
+        
+        **Agregaciones**: SUM(ingresos), COUNT(suscripciones), AVG(reproducciones)
+      parameters:
+        - name: pais
+          in: query
+          description: Filtrar por país de la discográfica
+          schema:
+            type: string
+            example: Argentina
+        - name: minimo_ingresos
+          in: query
+          description: Filtrar por monto mínimo de ingresos
+          schema:
+            type: number
+            minimum: 0
+        - name: orden
+          in: query
+          description: Campo de ordenamiento
+          schema:
+            type: string
+            enum: [ingresos, suscripciones, canciones]
+            default: ingresos
+        - name: page
+          in: query
+          schema:
+            type: integer
+            default: 1
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+      responses:
+        '200':
+          description: Datos de ingresos por artista y discográfica
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/IngresoPorArtistaDiscografica'
+                  pagination:
+                    $ref: '#/components/schemas/Pagination'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+components:
+  schemas:
+    # ==================== SCHEMAS BÁSICOS ====================
+    UsuarioCreate:
+      type: object
+      required:
+        - email
+        - password
+        - fecha_nac
+        - sexo
+        - id_pais
+        - tipo_usuario_actual
+      properties:
+        email:
+          type: string
+          format: email
+          example: ana.garcia@example.com
+        password:
+          type: string
+          minLength: 8
+          pattern: '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]'
+          example: Secr3t0!
+          description: Debe contener al menos una mayúscula, minúscula, número y carácter especial
+        fecha_nac:
+          type: string
+          format: date
+          example: '1995-05-20'
+        sexo:
+          type: string
+          enum: [M, F]
+          example: F
+        cp:
+          type: string
+          maxLength: 10
+          example: '4600'
+        id_pais:
+          type: integer
+          example: 1
+        tipo_usuario_actual:
+          type: integer
+          example: 2
+
+    UsuarioResponse:
+      type: object
+      properties:
+        id_usuario:
+          type: integer
+          example: 1
+        email:
+          type: string
+          example: ana.garcia@example.com
+        fecha_nac:
+          type: string
+          format: date
+          example: '1995-05-20'
+        sexo:
+          type: string
+          example: F
+        cp:
+          type: string
+          example: '4600'
+        id_pais:
+          type: integer
+          example: 1
+        tipo_usuario_actual:
+          type: integer
+          example: 2
+        fecha_ult_mod_password:
+          type: string
+          format: date-time
+        activo:
+          type: boolean
+          example: true
+        fecha_creacion:
+          type: string
+          format: date-time
+
+    # ==================== SCHEMAS PARA EJERCICIOS ====================
+    CancionPopularPorPais:
+      type: object
+      description: Resultado del EJERCICIO 1 - Canciones populares por país
+      properties:
+        nombre_cancion:
+          type: string
+          example: Mariposa Tecknicolor
+        nombre_artista:
+          type: string
+          example: Fito Páez
+        nombre_album:
+          type: string
+          example: El Amor Después Del Amor
+        nombre_pais:
+          type: string
+          example: Argentina
+        total_reproducciones:
+          type: integer
+          example: 1500000
+          description: Suma total de reproducciones de la canción
+        apariciones_en_playlists:
+          type: integer
+          example: 245
+          description: Número de playlists activas que contienen esta canción
+
+    IngresoPorArtistaDiscografica:
+      type: object
+      description: Resultado del EJERCICIO 2 - Ingresos por artista y discográfica
+      properties:
+        nombre_artista:
+          type: string
+          example: Fito Páez
+        nombre_discografica:
+          type: string
+          example: Sony Music Argentina
+        nombre_pais_discografica:
+          type: string
+          example: Argentina
+        total_ingresos:
+          type: number
+          format: decimal
+          example: 2547.85
+          description: Suma total de ingresos generados
+        cantidad_suscripciones_activas:
+          type: integer
+          example: 127
+          description: Número de suscripciones activas relacionadas
+        total_canciones:
+          type: integer
+          example: 45
+          description: Total de canciones del artista en la discográfica
+        promedio_reproducciones:
+          type: number
+          format: decimal
+          example: 125000.50
+          description: Promedio de reproducciones por canción
+
+    # ==================== SCHEMAS AUXILIARES ====================
+    Pagination:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        limit:
+          type: integer
+          example: 20
+        total:
+          type: integer
+          example: 150
+        pages:
+          type: integer
+          example: 8
+
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              example: VALIDATION_ERROR
+            message:
+              type: string
+              example: Datos de entrada inválidos
+            details:
+              oneOf:
+                - type: string
+                - type: array
+                  items:
+                    type: string
+              example: El email es obligatorio
+
+  # ==================== RESPUESTAS REUTILIZABLES ====================
+  responses:
+    BadRequest:
+      description: Solicitud inválida
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            error:
+              code: VALIDATION_ERROR
+              message: Datos de entrada inválidos
+              details: ["El email es obligatorio", "La contraseña debe tener al menos 8 caracteres"]
+
+    Conflict:
+      description: Conflicto - Recurso duplicado
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            error:
+              code: DUPLICATE_ENTRY
+              message: El registro ya existe
+              details: El email ya está registrado
+
+    NotFound:
+      description: Recurso no encontrado
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            error:
+              code: NOT_FOUND
+              message: Recurso no encontrado
+              details: El usuario especificado no existe
+
+    InternalServerError:
+      description: Error interno del servidor
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            error:
+              code: INTERNAL_SERVER_ERROR
+              message: Error interno del servidor
+              details: Error interno
+
+  # ==================== SEGURIDAD ====================
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: |
+        Token JWT para autenticación (implementación opcional).
+        
+        Ejemplo de uso:
+        ```
+        Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+        ```
+
+# Aplicar seguridad globalmente (opcional)
+# security:
+#   - BearerAuth: []

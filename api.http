@@ -1,0 +1,287 @@
+
+### VARIABLES GLOBALES
+@baseUrl = http://localhost:3000/api/v1
+@json = application/json
+
+### ==========================
+### USUARIOS
+### ==========================
+# Crear usuario (OK)
+POST {{baseUrl}}/usuarios
+Content-Type: {{json}}
+
+{
+  "email": "ana.garcia@example.com",
+  "password": "Secr3t0!",
+  "fecha_nac": "1995-05-20",
+  "sexo": "F",
+  "cp": "4600",
+  "id_pais": 10,
+  "tipo_usuario_actual": 1
+}
+
+### Crear usuario (ERROR: falta email)
+POST {{baseUrl}}/usuarios
+Content-Type: {{json}}
+
+{
+  "password": "Secr3t0!",
+  "fecha_nac": "1995-05-20"
+}
+
+### Listar usuarios
+GET {{baseUrl}}/usuarios?page=1&limit=20
+
+### Obtener usuario por ID
+GET {{baseUrl}}/usuarios/1
+
+### Actualizar usuario (cambio de password → actualiza fecha_ult_mod_password)
+PUT {{baseUrl}}/usuarios/1
+Content-Type: {{json}}
+
+{
+  "password": "Nuev4Clave!"
+}
+
+### Listar usuarios con password vencida (>90 días)
+GET {{baseUrl}}/usuarios/password-vencidas
+
+
+### ==========================
+### ARTISTAS
+### ==========================
+# Crear artista
+POST {{baseUrl}}/artistas
+Content-Type: {{json}}
+
+{
+  "nombre": "Fito Paez",
+  "imagen_url": "https://cdn.example.com/fito.jpg"
+}
+
+### Listar artistas
+GET {{baseUrl}}/artistas
+
+
+### ==========================
+### ÁLBUMES
+### ==========================
+# Crear álbum (UNIQUE por artista+titulo)
+POST {{baseUrl}}/albumes
+Content-Type: {{json}}
+
+{
+  "titulo": "El Amor Después Del Amor",
+  "id_artista": 1,
+  "id_discografica": 4,
+  "anio_publicacion": 1992
+}
+
+### Listar álbumes por artista
+GET {{baseUrl}}/albumes?artistaId=1
+
+### Canciones de un álbum
+GET {{baseUrl}}/albumes/1/canciones
+
+
+### ==========================
+### CANCIONES
+### ==========================
+# Crear canción (OK: duracion en segundos)
+POST {{baseUrl}}/canciones
+Content-Type: {{json}}
+
+{
+  "titulo": "Mariposa Tecknicolor",
+  "duracion_seg": 255,
+  "id_album": 1
+}
+
+### Crear canción (ERROR: duracion en mm.ss)
+POST {{baseUrl}}/canciones
+Content-Type: {{json}}
+
+{
+  "titulo": "DuracionMala",
+  "duracion_seg": 3.25,
+  "id_album": 1
+}
+
+### Listar canciones (filtros)
+GET {{baseUrl}}/canciones?genero=Pop&albumId=1
+
+### Asociar género a canción
+POST {{baseUrl}}/canciones/1/generos
+Content-Type: {{json}}
+
+{
+  "id_genero": 3
+}
+
+### Quitar género de canción
+DELETE {{baseUrl}}/canciones/1/generos/3
+
+
+### ==========================
+### GÉNEROS
+### ==========================
+# Crear género
+POST {{baseUrl}}/generos
+Content-Type: {{json}}
+
+{
+  "nombre": "Pop"
+}
+
+### Listar géneros
+GET {{baseUrl}}/generos
+
+
+### ==========================
+### PLAYLISTS
+### ==========================
+# Crear playlist (activa por defecto)
+POST {{baseUrl}}/playlists
+Content-Type: {{json}}
+
+{
+  "titulo": "Para correr",
+  "id_usuario": 1
+}
+
+### Agregar canción a playlist
+POST {{baseUrl}}/playlists/1/canciones
+Content-Type: {{json}}
+
+{
+  "id_cancion": 1,
+  "orden": 1
+}
+
+### Quitar canción de playlist
+DELETE {{baseUrl}}/playlists/1/canciones/1
+
+### Eliminar (soft-delete) playlist → debe enviar fecha_eliminada
+PUT {{baseUrl}}/playlists/1
+Content-Type: {{json}}
+
+{
+  "estado": "eliminada",
+  "fecha_eliminada": "2025-10-02T10:00:00Z"
+}
+
+### ERROR: soft-delete sin fecha
+PUT {{baseUrl}}/playlists/1
+Content-Type: {{json}}
+
+{
+  "estado": "eliminada"
+}
+
+
+### ==========================
+### SUSCRIPCIONES
+### ==========================
+# Crear suscripción (fecha_renovacion > fecha_inicio)
+POST {{baseUrl}}/suscripciones
+Content-Type: {{json}}
+
+{
+  "id_usuario": 1,
+  "id_tipo_usuario": 1,
+  "fecha_inicio": "2025-10-01T00:00:00Z",
+  "fecha_renovacion": "2025-11-01T00:00:00Z"
+}
+
+### ERROR: fechas inválidas
+POST {{baseUrl}}/suscripciones
+Content-Type: {{json}}
+
+{
+  "id_usuario": 1,
+  "id_tipo_usuario": 1,
+  "fecha_inicio": "2025-10-01T00:00:00Z",
+  "fecha_renovacion": "2025-09-01T00:00:00Z"
+}
+
+
+### ==========================
+### MÉTODOS DE PAGO
+### ==========================
+# Crear método de pago (sin CVC; tarjeta enmascarada por el servidor)
+POST {{baseUrl}}/metodos-pago
+Content-Type: {{json}}
+
+{
+  "id_usuario": 1,
+  "tipo_forma_pago": "Tarjeta de crédito",
+  "nro_tarjeta": "4519000000001234",
+  "mes_caduca": 12,
+  "anio_caduca": 2027,
+  "banco_codigo": "BANK01"
+}
+
+### Listar métodos de pago por usuario
+GET {{baseUrl}}/metodos-pago?usuarioId=1
+
+
+### ==========================
+### PAGOS
+### ==========================
+# Registrar pago (referenciando suscripción y método de pago válidos)
+POST {{baseUrl}}/pagos
+Content-Type: {{json}}
+
+{
+  "id_usuario": 1,
+  "id_suscripcion": 1,
+  "id_metodo_pago": 1,
+  "importe": 100,
+  "fecha_pago": "2025-10-01T00:00:00Z"
+}
+
+### Listar pagos por usuario y rango
+GET {{baseUrl}}/pagos?usuarioId=1&desde=2025-09-01&hasta=2025-12-31
+
+
+### ==========================
+### VISTAS AVANZADAS CON JOINS (EJERCICIOS ADICIONALES)
+### ==========================
+
+### EJERCICIO 1: Canciones populares por país
+# Obtener las canciones más reproducidas agrupadas por país de usuarios
+# Incluye: nombre_cancion, nombre_artista, nombre_album, nombre_pais, total_reproducciones, apariciones_en_playlists
+GET {{baseUrl}}/vistas/canciones-populares-por-pais
+
+### EJERCICIO 1: Con filtros opcionales (por país específico)
+GET {{baseUrl}}/vistas/canciones-populares-por-pais?pais=Argentina
+
+### EJERCICIO 1: Con límite de resultados
+GET {{baseUrl}}/vistas/canciones-populares-por-pais?limit=10
+
+### EJERCICIO 2: Ingresos por artista y discográfica
+# Analizar ingresos generados por cada combinación artista-discográfica
+# Incluye: nombre_artista, nombre_discografica, nombre_pais_discografica, total_ingresos, cantidad_suscripciones_activas, total_canciones, promedio_reproducciones
+GET {{baseUrl}}/vistas/ingresos-por-artista-discografica
+
+### EJERCICIO 2: Con filtro por país de discográfica
+GET {{baseUrl}}/vistas/ingresos-por-artista-discografica?pais=Argentina
+
+### EJERCICIO 2: Con filtro por monto mínimo de ingresos
+GET {{baseUrl}}/vistas/ingresos-por-artista-discografica?minimo_ingresos=50
+
+### EJERCICIO 2: Con ordenamiento por cantidad de suscripciones
+GET {{baseUrl}}/vistas/ingresos-por-artista-discografica?orden=suscripciones
+
+### ==========================
+### PRUEBAS ADICIONALES PARA VISTAS
+### ==========================
+
+### Verificar que las vistas manejen casos sin datos
+GET {{baseUrl}}/vistas/canciones-populares-por-pais?pais=PaisInexistente
+
+### Verificar rendimiento con parámetros de paginación
+GET {{baseUrl}}/vistas/ingresos-por-artista-discografica?page=1&limit=5
+
+### Probar combinación de filtros
+GET {{baseUrl}}/vistas/canciones-populares-por-pais?pais=Argentina&limit=3&orden=reproducciones
