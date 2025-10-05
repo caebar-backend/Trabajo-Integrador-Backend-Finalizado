@@ -25,6 +25,24 @@ const getTodosLosUsuarios = async (req, res) => {
         console.table(usuariosDatos)
         console.log(chalk.greenBright('<----- ------------------->'))
     }
+
+    else if(req.headers['content-type'] === 'users-id'){
+        const id = req.params.id
+        const idp = parseInt(id)
+        const usuario = await Usuario.findByPk(idp)
+        let usuarioDatos = {
+            Usuario: usuario.id_usuario,
+            Email: usuario.email,
+            Sexo: usuario.sexo,
+            Pais: usuario.id_pais,
+        }
+        res.status(200).json(usuario)
+        console.log(chalk.greenBright(`<----- Usuario encontrado con ID ${id} ----->`))
+        console.table(usuarioDatos)
+        console.log(chalk.greenBright('<----- ------------------->'))
+        
+    }
+
     else if(req.headers['content-type'] === 'users-p-l'){
         const page = parseInt(req.query.page) || 1;
         const limit = parseInt(req.query.limit) || 5;
@@ -50,6 +68,8 @@ const getTodosLosUsuarios = async (req, res) => {
         console.table(usuariosDatos);
         console.log(chalk.greenBright('<----- ------------------->'));
     }
+
+    
 }
     
     catch(error){

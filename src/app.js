@@ -74,6 +74,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/', raizRoutes)
 app.use('/api/v1', usuariosRoutes)
 
+
 app.use((req, res) => {
   console.log(chalk.yellowBright(`Ruta no encontrada: ${req.originalUrl}`))
   res.status(404).json('Error 404: Ruta no existente en el servidor')

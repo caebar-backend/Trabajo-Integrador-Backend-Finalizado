@@ -13,6 +13,7 @@ const { getTodosLosUsuarios} = require('../controllers/usuariosController')
 
 
 router.get('/usuarios', getTodosLosUsuarios)
+router.get('/usuarios/:id', getTodosLosUsuarios)
  
 
 module.exports = router

@@ -34,11 +34,11 @@ GET {{baseUrl}}/usuarios
 Content-Type: users-todos
 
 ### Listar usuarios con limite de resultados
-GET {{baseUrl}}/usuarios?page=1&limit=10
+GET {{baseUrl}}/usuarios?page=1&limit=5
 Content-Type: users-p-l
 
 ### Obtener usuario por ID
-GET {{baseUrl}}/usuarios/1
+GET {{baseUrl}}/usuarios/4
 Content-Type: users-id
 
 ### Actualizar usuario (cambio de password → actualiza fecha_ult_mod_password)
