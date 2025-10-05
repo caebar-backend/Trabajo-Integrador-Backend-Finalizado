@@ -126,7 +126,7 @@ const putModificarPassword = async (req, res) => {
             Pais: usuario.id_pais,
             IdRol: usuario.id_rol,
         }
-        res.status(200).json({message: 'Usuario actualizado'})
+        res.status(200).json({message: 'Usuario actualizado', usuarioDatos})
         console.log(chalk.greenBright(`<----- Usuario actualizado con ID ${id} ----->`))
         console.table(usuarioDatos)
         console.log(chalk.greenBright('<----- ------------------->'))
@@ -139,4 +139,88 @@ const putModificarPassword = async (req, res) => {
     }
 }
 
-module.exports = { getTodosLosUsuarios, putModificarPassword }
+const getPasswordVencidas = async (req, res) => {
+ try {
+    const numeroFecha = parseInt(req.params.numeroFecha)
+     if(isNaN(numeroFecha)){
+        console.log(chalk.yellowBright('<----- El número de días debe ser un número entero ----->'))
+        res.status(400).json({message: 'El número de días debe ser un número entero'})
+        return;
+    }
+
+    const fechaLimite = new Date()
+    fechaLimite.setDate(fechaLimite.getDate() - numeroFecha)// Cambiar el dato de la const numeroFecha por un número mucho menor, y obtendrás resultados
+
+    const usuarios = await Usuario.findAll({
+      attributes: ['id_usuario', 'email', 'password_hash'],
+      where: {
+        ultima_modificacion_password: {
+          [Op.lt]: fechaLimite
+        }
+      },
+      order: [['ultima_modificacion_password', 'ASC']] // Orden por antigüedad
+    })
+
+    if(usuarios.length === 0){
+      console.log(chalk.blueBright('<----- No se encontraron usuarios con contraseñas antiguas ----->'))
+      res.status(404).json({message: 'No se encontraron usuarios con contraseñas antiguas'})
+      return;
+    }
+    const mapeoUsuarios = usuarios.map((user) => {
+        return {
+            Usuario: user.id_usuario,
+            Email: user.email,
+            Password: user.password_hash,
+        }
+    })
+    res.status(200).json(usuarios)
+    console.log(chalk.greenBright(`<----- Usuarios encontrados con contraseñas antiguas ----->`))
+    console.table(mapeoUsuarios)
+    console.log(chalk.greenBright('<----- ------------------->'))
+  } catch (error) {
+    console.error('Error al obtener contraseñas antiguas:', error)
+    res.status(500).json({ error: 'Error interno del servidor' })
+  }
+}
+
+const crearUser = async (req, res) => {
+    try {
+     const { email, password_hash, fecha_nacimiento, 
+        sexo, codigo_postal, id_pais } = req.body
+     
+       //Validacion simple de datos
+        if(!email || !password_hash || !fecha_nacimiento || !sexo || !id_pais){
+           res.status(400).json({ error: 'Faltan datos para la alta del nuevo usuario'}) 
+           console.log(chalk.yellowBright('<----- Faltan datos para la alta del nuevo usuario ----->'))
+           return;
+        }
+        
+        const UsuarioNuevo = await Usuario.create({ 
+        email,
+        password_hash,
+        fecha_nacimiento,
+        sexo,
+        codigo_postal,
+        id_pais,
+        })
+
+        let UsuarioNuevoDatos = {
+            Usuario: UsuarioNuevo.id_usuario,
+            Email: UsuarioNuevo.email,
+            Password: UsuarioNuevo.password_hash,
+            Sexo: UsuarioNuevo.sexo,
+            CodigoPostal: UsuarioNuevo.codigo_postal,
+            Pais: UsuarioNuevo.id_pais,
+        }
+
+        res.status(201).json({message: 'Usuario Nuevo Registrado', UsuarioNuevoDatos})
+        console.log(chalk.greenBright(`<----- Usuario Nuevo Registrado con ID ${UsuarioNuevo.id_usuario} ----->`))
+        console.table(UsuarioNuevoDatos)
+        console.log(chalk.greenBright('<----- ------------------->'))
+    }catch(error){
+        res.status(500).json({ error: 'El servidor no está funcionando, intente más tarde!', description: error.message })
+        console.log(chalk.redBright('<----- Error al crear usuario, servidor no funciona! -----> ' + error))
+    }
+}
+
+module.exports = { getTodosLosUsuarios, putModificarPassword, getPasswordVencidas, crearUser }

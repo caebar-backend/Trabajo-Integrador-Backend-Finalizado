@@ -11,15 +11,12 @@ POST {{baseUrl}}/usuarios
 Content-Type: {{json}}
 
 {
-  "email": "ana.garcia@example.com",
-  "password": "Secr3t0!",
+  "email": "ana.garcia.@yahoo.com.ar",
+  "password_hash": "Secr3t0!",
   "fecha_nacimiento": "1995-05-20",
   "sexo": "F",
   "codigo_postal": "4600",
-  "id_pais": 10,
-  "fecha_registro": "2025-10-04 24:00:00",
-  "ultima_modificacion_password": "2025-10-04 24:00:00",
-  "id_rol": 1
+  "id_pais": 10
 }
 
 ### Crear usuario (ERROR: falta email)
@@ -31,7 +28,7 @@ Content-Type: {{json}}
   "fecha_nac": "1995-05-20"
 }
 
-### Listar todos los usuarios (Creado Por el Alumno)
+### Listar todos los usuarios (Agregado por Budano, Cristian)
 GET {{baseUrl}}/usuarios
 Content-Type: users-todos
 
@@ -60,7 +57,7 @@ Content-Type: {{json}}
 { 
   "id_usuario": 19,
   "email": "caebar@gmail.com",
-  "password_hash": "Claveajajs3232nuega",
+  "password_hash": "Clakaskaklsaassasosasaasoo91291299219a",
   "fecha_nacimiento": "1983-09-15",
   "sexo": "M",
   "codigo_postal": "BHY2800K",
@@ -71,7 +68,8 @@ Content-Type: {{json}}
 }
 
 ### Listar usuarios con password vencida (>90 días)
-GET {{baseUrl}}/usuarios/password-vencidas
+### Cambiar el número 90 por un número menor para obtener resultados
+GET {{baseUrl}}/usuarios/password-vencidas/90
 
 
 ### ==========================
