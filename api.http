@@ -13,11 +13,13 @@ Content-Type: {{json}}
 {
   "email": "ana.garcia@example.com",
   "password": "Secr3t0!",
-  "fecha_nac": "1995-05-20",
+  "fecha_nacimiento": "1995-05-20",
   "sexo": "F",
-  "cp": "4600",
+  "codigo_postal": "4600",
   "id_pais": 10,
-  "tipo_usuario_actual": 1
+  "fecha_registro": "2025-10-04 24:00:00",
+  "ultima_modificacion_password": "2025-10-04 24:00:00",
+  "id_rol": 1
 }
 
 ### Crear usuario (ERROR: falta email)
@@ -41,12 +43,31 @@ Content-Type: users-p-l
 GET {{baseUrl}}/usuarios/4
 Content-Type: users-id
 
-### Actualizar usuario (cambio de password → actualiza fecha_ult_mod_password)
+### PUT -> Actualizar usuario (cambio de password → actualiza fecha_ult_mod_password)
+### Esta solicitud da error porque no se puede actualizar el password solamente, se tiene que actualizar completamente los campos del usuario
 PUT {{baseUrl}}/usuarios/1
 Content-Type: {{json}}
 
 {
-  "password": "Nuev4Clave!"
+  "password_hash": "Nuev4Clave!"
+}
+
+### PUT -> Actualizar usuario (cambio de password → actualiza fecha_ult_mod_password)
+### Esta solicitud funciona porque se actualizan todos los campos del usuario
+PUT {{baseUrl}}/usuarios/19
+Content-Type: {{json}}
+
+{ 
+  "id_usuario": 19,
+  "email": "caebar@gmail.com",
+  "password_hash": "Claveajajs3232nuega",
+  "fecha_nacimiento": "1983-09-15",
+  "sexo": "M",
+  "codigo_postal": "BHY2800K",
+  "id_pais": 16,
+  "fecha_registro": "2025-10-04 24:00:00",
+  "ultima_modificacion_password": "2025-10-04 24:00:00",
+  "id_rol": 4
 }
 
 ### Listar usuarios con password vencida (>90 días)

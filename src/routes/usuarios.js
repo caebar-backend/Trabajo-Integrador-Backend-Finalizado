@@ -7,13 +7,14 @@ const express = require("express")
 
 const router = express.Router()
 
-const { getTodosLosUsuarios} = require('../controllers/usuariosController')
+const { getTodosLosUsuarios, putModificarPassword} = require('../controllers/usuariosController')
 
 
 
 
 router.get('/usuarios', getTodosLosUsuarios)
 router.get('/usuarios/:id', getTodosLosUsuarios)
+router.put('/usuarios/:id', putModificarPassword)
  
 
 module.exports = router
