@@ -9,6 +9,7 @@ const sequelize = require('../config/database')
 
 const getTodosLosUsuarios = async (req, res) => {
     try {
+        if(req.headers['content-type'] === 'users-todos'){
         await sequelize.authenticate()
         const usuarios = await Usuario.findAll()
         const usuariosDatos = usuarios.map((datos) => {
@@ -24,6 +25,32 @@ const getTodosLosUsuarios = async (req, res) => {
         console.table(usuariosDatos)
         console.log(chalk.greenBright('<----- ------------------->'))
     }
+    else if(req.headers['content-type'] === 'users-p-l'){
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 5;
+        const offset = (page - 1) * limit;
+
+        // Consulta con paginación
+        const usuarios = await Usuario.findAll({
+          limit,
+          offset
+        });
+
+        const usuariosDatos = usuarios.map((datos) => {
+          return {
+            Usuario: datos.id_usuario,
+            Email: datos.email,
+            Sexo: datos.sexo,
+            Pais: datos.id_pais,
+          };
+        });
+
+        res.status(200).json(usuarios);
+        console.log(chalk.greenBright(`<----- Usuarios encontrados (página ${page}, límite ${limit}) ----->`));
+        console.table(usuariosDatos);
+        console.log(chalk.greenBright('<----- ------------------->'));
+    }
+}
     
     catch(error){
         console.log(chalk.redBright('<----- Error al obtener usuarios -----> ' + error))
@@ -31,5 +58,6 @@ const getTodosLosUsuarios = async (req, res) => {
     }
     
 }
+
 
 module.exports = { getTodosLosUsuarios }

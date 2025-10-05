@@ -29,14 +29,17 @@ Content-Type: {{json}}
   "fecha_nac": "1995-05-20"
 }
 
-### Listar todos los usuarios
+### Listar todos los usuarios (Creado Por el Alumno)
 GET {{baseUrl}}/usuarios
+Content-Type: users-todos
 
 ### Listar usuarios con limite de resultados
-GET {{baseUrl}}/usuarios?page=1&limit=20
+GET {{baseUrl}}/usuarios?page=1&limit=10
+Content-Type: users-p-l
 
 ### Obtener usuario por ID
 GET {{baseUrl}}/usuarios/1
+Content-Type: users-id
 
 ### Actualizar usuario (cambio de password → actualiza fecha_ult_mod_password)
 PUT {{baseUrl}}/usuarios/1

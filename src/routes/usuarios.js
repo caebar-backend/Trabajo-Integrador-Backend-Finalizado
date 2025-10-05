@@ -4,10 +4,15 @@
  */
 
 const express = require("express")
+
 const router = express.Router()
 
-const { getTodosLosUsuarios } = require('../controllers/usuariosController')
+const { getTodosLosUsuarios} = require('../controllers/usuariosController')
+
+
+
 
 router.get('/usuarios', getTodosLosUsuarios)
+ 
 
 module.exports = router
