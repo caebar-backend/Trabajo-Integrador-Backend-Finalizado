@@ -1,0 +1,11 @@
+### ---------------------
+@baseUrl = http://localhost:3000
+
+### Solicitud para obtener un token
+POST {{baseUrl}}/jwt/login/
+Content-Type: application/json
+
+{
+  "email": "caebar@yahoo.com.ar",
+  "password_hash": "Password123"
+}

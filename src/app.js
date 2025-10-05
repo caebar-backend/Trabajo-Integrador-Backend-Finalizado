@@ -1,6 +1,14 @@
 /**
  * Configuración principal de la aplicación Express
  * Los estudiantes deben completar la configuración de middlewares y rutas
+ * // TODO: Importar las rutas
+   // TODO: Configurar CORS
+   // TODO: Configurar parseo de JSON
+// Ejemplo: app.use(express.json())
+// TODO: Configurar rutas
+// Ejemplo: app.use('/api/v1/usuarios', usuariosRoutes);
+// TODO: Configurar middleware de manejo de errores (debe ir al final)
+// TODO: Configurar ruta 404
  */
 
 
@@ -8,6 +16,7 @@
 
 const raizRoutes = require('./routes/raiz')
 const usuariosRoutes = require('./routes/usuarios')
+const auth = require('./routes/auth')
 
 const sequelize = require("./config/database")
 const express = require("express")
@@ -21,18 +30,13 @@ const app = express()
 
 let BD_Funciona = false
 
-// TODO: Importar las rutas
-
-// TODO: Configurar CORS
 app.use(cors())
 
-// TODO: Configurar parseo de JSON
-// Ejemplo: app.use(express.json());
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 
-// módulo HELMET para proteger la aplicación
+//módulo HELMET para proteger la aplicación
 app.use(helmet())
 
 // module rateLimit para limitar el número de peticiones
@@ -43,16 +47,6 @@ const limiter = rateLimit({
 })
 
 app.use(limiter) // aplica el límite a todas las rutas
-
-
-
-// TODO: Configurar rutas
-// Ejemplo: app.use('/api/v1/usuarios', usuariosRoutes);
-
-// TODO: Configurar middleware de manejo de errores (debe ir al final)
-
-
-// TODO: Configurar ruta 404
 
 app.use(async (req, res, next) => {
   try {
@@ -71,7 +65,9 @@ app.use(async (req, res, next) => {
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+
 app.use('/', raizRoutes)
+app.use('/jwt',auth)
 app.use('/api/v1', usuariosRoutes)
 
 

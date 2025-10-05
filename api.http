@@ -1,14 +1,20 @@
 
-### VARIABLES GLOBALES
+### VARIABLES GLOBALES --------------------
 @baseUrl = http://localhost:3000/api/v1
+
+### Simplificar el contenido de los headers
 @json = application/json
+@token = "Puede_Insertar_Su_Token_Aquí"
+#### -------------------------------------------
 
 ### ==========================
 ### USUARIOS
 ### ==========================
-# Crear usuario (OK)
+### Crear usuario (OK)
+### Debe Solicitar Token para Crear Usuario
 POST {{baseUrl}}/usuarios
 Content-Type: {{json}}
+Authorization: Bearer "Ingresar_Token_Aquí"
 
 {
   "email": "ana.garcia.@yahoo.com.ar",
@@ -19,10 +25,27 @@ Content-Type: {{json}}
   "id_pais": 10
 }
 
-### Crear usuario (ERROR: falta email)
+### Crear usuario (OK)
+### Debe Solicitar Token para intentar Crear Usuario
 POST {{baseUrl}}/usuarios
 Content-Type: {{json}}
+Authorization: Bearer "Ingresar_Token_Aquí"
 
+{
+  "email": "caebar@yahoo.com.ar",
+  "password_hash": "Password123",
+  "fecha_nacimiento": "1983-09-15",
+  "sexo": "M",
+  "codigo_postal": "2800",
+  "id_pais": 10
+}
+
+
+### Crear usuario (ERROR: falta email)
+### Debe Solicitar Token para intentar Crear Usuario
+POST {{baseUrl}}/usuarios
+Content-Type: {{json}}
+Authorization: Bearer "Ingresar_Token_Aquí"
 {
   "password": "Secr3t0!",
   "fecha_nac": "1995-05-20"
@@ -42,8 +65,10 @@ Content-Type: users-id
 
 ### PUT -> Actualizar usuario (cambio de password → actualiza fecha_ult_mod_password)
 ### Esta solicitud da error porque no se puede actualizar el password solamente, se tiene que actualizar completamente los campos del usuario
+### Debe Solicitar Token para intentar Actualizar Usuario
 PUT {{baseUrl}}/usuarios/1
 Content-Type: {{json}}
+Authorization: Bearer "Ingresar_Token_Aquí"
 
 {
   "password_hash": "Nuev4Clave!"
@@ -51,8 +76,10 @@ Content-Type: {{json}}
 
 ### PUT -> Actualizar usuario (cambio de password → actualiza fecha_ult_mod_password)
 ### Esta solicitud funciona porque se actualizan todos los campos del usuario
+### Debe Solicitar Token para Actualizar Usuario
 PUT {{baseUrl}}/usuarios/19
 Content-Type: {{json}}
+Authorization: Bearer "Ingresar_Token_Aquí"
 
 { 
   "id_usuario": 19,
