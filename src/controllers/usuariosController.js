@@ -196,9 +196,22 @@ const crearUser = async (req, res) => {
            console.log(chalk.yellowBright('<----- Faltan datos para la alta del nuevo usuario ----->'))
            return;
         }
+
+        const emailExistente = await Usuario.findOne({ where: { email } })
+        if(emailExistente){
+            res.status(400).json({ error: 'El email ya existe, debe elegir otro'}) 
+            console.log(chalk.yellowBright('<----- El email ya existe, debe elegir otro ----->'))
+            return;
+        }
+
+        if(email !== email.toLowerCase()){
+            res.status(400).json({ error: 'El email debe ser en letras minúscula'}) 
+            console.log(chalk.yellowBright('<----- El email debe ser en letras minúscula ----->'))
+            return;
+        }
         
         const passwordHasheada = await bcrypt.hash(password_hash, 10) // hasheo de password
-
+        
         const UsuarioNuevo = await Usuario.create({ 
         email,
         password_hash: passwordHasheada,

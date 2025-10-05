@@ -13,7 +13,7 @@
 
 
 
-
+const artistasRoutes = require('./routes/artistas')
 const raizRoutes = require('./routes/raiz')
 const usuariosRoutes = require('./routes/usuarios')
 const auth = require('./routes/auth')
@@ -68,7 +68,7 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use('/', raizRoutes)
 app.use('/jwt',auth)
-app.use('/api/v1', usuariosRoutes)
+app.use('/api/v1', usuariosRoutes, artistasRoutes)
 
 
 app.use((req, res) => {

@@ -29,10 +29,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhc
 ### Debe Solicitar Token para intentar Crear Usuario
 POST {{baseUrl}}/usuarios
 Content-Type: {{json}}
-Authorization: Bearer Ingresar_Token_Aquí
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckBnbWFpbC5jb20iLCJpYXQiOjE3NTk3MDYyNzYsImV4cCI6MTc1OTcwOTg3Nn0.6lbc89HATKGC0lh0GauG1O5aNSuiOaUMkLOI7Bj1WBM
 
 {
-  "email": "caebar@yahoo.com.ar",
+  "email": "caebarlp@yahoo.com.ar",
   "password_hash": "Password123",
   "fecha_nacimiento": "1983-09-15",
   "sexo": "M",
@@ -103,6 +103,7 @@ GET {{baseUrl}}/usuarios/password-vencidas/90
 ### ARTISTAS
 ### ==========================
 # Crear artista
+### Dá error porque no se puede crear un artista con nombre ya existente
 POST {{baseUrl}}/artistas
 Content-Type: {{json}}
 
@@ -112,7 +113,9 @@ Content-Type: {{json}}
 }
 
 ### Listar artistas
+### Agrego palabra "Pedido" al header para posterior procesamiento (Budano, Cristian)
 GET {{baseUrl}}/artistas
+Pedido: artistas-todos
 
 
 ### ==========================
