@@ -4,7 +4,7 @@
 
 ### Simplificar el contenido de los headers
 @json = application/json
-@token = "Puede_Insertar_Su_Token_Aquí"
+@token = Puede_Insertar_Su_Token_Aquí
 #### -------------------------------------------
 
 ### ==========================
@@ -14,10 +14,10 @@
 ### Debe Solicitar Token para Crear Usuario
 POST {{baseUrl}}/usuarios
 Content-Type: {{json}}
-Authorization: Bearer "Ingresar_Token_Aquí"
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckB5YWhvby5jb20uYXIiLCJpYXQiOjE3NTk3MDAxNzUsImV4cCI6MTc1OTcwMzc3NX0.Di_P6LGuxPA0VBLnophn_tiBMkSNRPdexX-SQM1cV_Y
 
 {
-  "email": "ana.garcia.@yahoo.com.ar",
+  "email": "ana.garcia.me_locu@yahoo.com.ar",
   "password_hash": "Secr3t0!",
   "fecha_nacimiento": "1995-05-20",
   "sexo": "F",
@@ -29,7 +29,7 @@ Authorization: Bearer "Ingresar_Token_Aquí"
 ### Debe Solicitar Token para intentar Crear Usuario
 POST {{baseUrl}}/usuarios
 Content-Type: {{json}}
-Authorization: Bearer "Ingresar_Token_Aquí"
+Authorization: Bearer Ingresar_Token_Aquí
 
 {
   "email": "caebar@yahoo.com.ar",
@@ -45,7 +45,7 @@ Authorization: Bearer "Ingresar_Token_Aquí"
 ### Debe Solicitar Token para intentar Crear Usuario
 POST {{baseUrl}}/usuarios
 Content-Type: {{json}}
-Authorization: Bearer "Ingresar_Token_Aquí"
+Authorization: Bearer Ingresar_Token_Aquí
 {
   "password": "Secr3t0!",
   "fecha_nac": "1995-05-20"
@@ -68,7 +68,7 @@ Content-Type: users-id
 ### Debe Solicitar Token para intentar Actualizar Usuario
 PUT {{baseUrl}}/usuarios/1
 Content-Type: {{json}}
-Authorization: Bearer "Ingresar_Token_Aquí"
+Authorization: Bearer Ingresar_Token_Aquí
 
 {
   "password_hash": "Nuev4Clave!"
@@ -79,12 +79,12 @@ Authorization: Bearer "Ingresar_Token_Aquí"
 ### Debe Solicitar Token para Actualizar Usuario
 PUT {{baseUrl}}/usuarios/19
 Content-Type: {{json}}
-Authorization: Bearer "Ingresar_Token_Aquí"
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckB5YWhvby5jb20uYXIiLCJpYXQiOjE3NTk3MDA2MDYsImV4cCI6MTc1OTcwNDIwNn0.DBRx4WdkXclDL7wPFVDzCcJFxVkHvkV_FVeXBqZUiCw
 
 { 
   "id_usuario": 19,
   "email": "caebar@gmail.com",
-  "password_hash": "Clakaskaklsaassasosasaasoo91291299219a",
+  "password_hash": "caebarXsiempre2026",
   "fecha_nacimiento": "1983-09-15",
   "sexo": "M",
   "codigo_postal": "BHY2800K",

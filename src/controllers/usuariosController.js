@@ -6,6 +6,7 @@ const chalk = require('chalk')
 const Usuario = require('../models/Usuario')
 const { Op } = require('sequelize')
 const sequelize = require('../config/database')
+const bcrypt = require('bcrypt')
 
 
 const getTodosLosUsuarios = async (req, res) => {
@@ -103,11 +104,12 @@ const putModificarPassword = async (req, res) => {
            res.status(400).json({message: 'Faltan datos del usuario a modificiar para completar la solicitud'})
            return;
        }
-
+        
+        const passwordHasheada = await bcrypt.hash(password_hash, 10) // hasheo de password
         await usuario.update({
             id_usuario: idp,
             email,
-            password_hash,
+            password_hash: passwordHasheada,
             fecha_nacimiento,
             sexo,
             codigo_postal,
@@ -195,9 +197,11 @@ const crearUser = async (req, res) => {
            return;
         }
         
+        const passwordHasheada = await bcrypt.hash(password_hash, 10) // hasheo de password
+
         const UsuarioNuevo = await Usuario.create({ 
         email,
-        password_hash,
+        password_hash: passwordHasheada,
         fecha_nacimiento,
         sexo,
         codigo_postal,

@@ -6,6 +6,7 @@ POST {{baseUrl}}/jwt/login/
 Content-Type: application/json
 
 {
-  "email": "caebar@yahoo.com.ar",
-  "password_hash": "Password123"
+  "email": "caebar@gmail.com",
+  "password_hash": "$2b$10$NRlX6rmL6blXK9vRi8wUHu7Q7jZPWLOGqE8o6uGKokVs/c.pBrf7W",
+  "id_rol": 4
 }

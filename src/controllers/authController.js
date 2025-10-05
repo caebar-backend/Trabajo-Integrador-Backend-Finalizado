@@ -3,8 +3,8 @@ const chalk = require('chalk')
 
 async function loginController(req, res) {
   try {
-    const { email, password_hash} = req.body
-    const token = await login(email, password_hash)
+    const { email, password_hash, id_rol } = req.body
+    const token = await login(email, password_hash, id_rol)
     console.log(chalk.greenBright('Token generado: '), token)
     res.json({ token })
   } catch (error) {
