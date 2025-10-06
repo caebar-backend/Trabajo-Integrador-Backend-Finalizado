@@ -29,10 +29,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhc
 ### Debe Solicitar Token para intentar Crear Usuario
 POST {{baseUrl}}/usuarios
 Content-Type: {{json}}
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckBnbWFpbC5jb20iLCJpYXQiOjE3NTk3MDYyNzYsImV4cCI6MTc1OTcwOTg3Nn0.6lbc89HATKGC0lh0GauG1O5aNSuiOaUMkLOI7Bj1WBM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckBnbWFpbC5jb20iLCJpYXQiOjE3NTk3MTAzMDUsImV4cCI6MTc1OTcxMzkwNX0.NH_A5h7swhdOxzbb0O-QpPyhM4ltmPrZj4cE9TK1FuM
 
 {
-  "email": "caebarlp@yahoo.com.ar",
+  "email": "caebarlwep@yahoo.com.ar",
   "password_hash": "Password123",
   "fecha_nacimiento": "1983-09-15",
   "sexo": "M",
@@ -133,11 +133,10 @@ Content-Type: {{json}}
 }
 
 ### Listar álbumes por artista
-GET {{baseUrl}}/albumes?artistaId=1
+GET {{baseUrl}}/albumes?artistaId=5
 
 ### Canciones de un álbum
-GET {{baseUrl}}/albumes/1/canciones
-
+GET {{baseUrl}}/albumes/82/canciones
 
 ### ==========================
 ### CANCIONES

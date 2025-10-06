@@ -75,7 +75,7 @@ const crearArtista = async (req, res) => {
       }
     catch(error){
         res.status(500).json({ error: 'El servidor no está funcionando, intente más tarde!', description: error.message })
-        console.log(chalk.redBright('<----- Error al crear artista, servidor no funciona! -----> ' + error))
+        console.log(chalk.redBright('<----- Error al crear artista, servidor no funciona! -----> ' + error.message))
     }
 }
 

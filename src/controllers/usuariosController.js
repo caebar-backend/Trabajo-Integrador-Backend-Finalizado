@@ -188,7 +188,7 @@ const getPasswordVencidas = async (req, res) => {
 const crearUser = async (req, res) => {
     try {
      const { email, password_hash, fecha_nacimiento, 
-        sexo, codigo_postal, id_pais } = req.body
+        sexo, codigo_postal, id_pais, fecha_registro } = req.body
      
        //Validacion simple de datos
         if(!email || !password_hash || !fecha_nacimiento || !sexo || !id_pais){
@@ -219,6 +219,7 @@ const crearUser = async (req, res) => {
         sexo,
         codigo_postal,
         id_pais,
+        fecha_registro,
         })
 
         let UsuarioNuevoDatos = {

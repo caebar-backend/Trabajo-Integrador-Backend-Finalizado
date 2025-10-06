@@ -17,6 +17,7 @@ const artistasRoutes = require('./routes/artistas')
 const raizRoutes = require('./routes/raiz')
 const usuariosRoutes = require('./routes/usuarios')
 const auth = require('./routes/auth')
+const albumesRoutes = require('./routes/albumes')
 
 const sequelize = require("./config/database")
 const express = require("express")
@@ -68,7 +69,7 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use('/', raizRoutes)
 app.use('/jwt',auth)
-app.use('/api/v1', usuariosRoutes, artistasRoutes)
+app.use('/api/v1', usuariosRoutes, artistasRoutes, albumesRoutes)
 
 
 app.use((req, res) => {
