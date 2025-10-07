@@ -20,6 +20,9 @@ const Cancion = sequelize.define('Cancion',{
     },
     duracion_segundos: {
         type: DataTypes.INTEGER,
+        validate:{
+            min: 100
+        },
         allowNull: true
     },
     id_album: {
@@ -47,5 +50,20 @@ const Cancion = sequelize.define('Cancion',{
     timestamps: false,
 }
 )
+
+// En las asociaciones del modelo Cancion
+Cancion.associate = function(models) {
+  Cancion.belongsTo(models.Album, {
+    foreignKey: 'id_album',
+    as: 'Album'
+  });
+  
+  Cancion.belongsToMany(models.Genero, {
+    through: 'canciones_generos',
+    foreignKey: 'id_cancion',
+    otherKey: 'id_genero',
+    as: 'Generos'
+  });
+}
 
 module.exports = Cancion

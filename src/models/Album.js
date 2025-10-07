@@ -45,11 +45,29 @@ const Album = sequelize.define('Album',{
         allowNull: true,
         defaultValue: 0
     },
+    id_genero: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            defaultValue: null
     },
+},
     {
         tableName: 'albumes',
         timestamps: false,
     }
 )
+
+// ASOCIACIONES
+Album.associate = function(models) {
+  Album.hasMany(models.Cancion, {
+    foreignKey: 'id_album',
+    as: 'Canciones'
+  });
+  
+  Album.belongsTo(models.Genero, {
+    foreignKey: 'id_genero',
+    as: 'Genero'
+  });
+};
 
 module.exports = Album

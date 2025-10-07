@@ -4,9 +4,7 @@
  */
 
 const chalk = require('chalk')
-const Artista = require('../models/Artista')
-const { Op } = require('sequelize')
-const sequelize = require('../config/database')
+const { Artista, sequelize } = require('../models/index')
 
 const getTodosLosArtistas = async(req, res) => {
     try{

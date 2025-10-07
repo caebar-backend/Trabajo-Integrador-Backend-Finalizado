@@ -1,0 +1,31 @@
+// models/index.js
+const sequelize = require('../config/database')
+
+// Importar modelos
+const Usuario = require('./Usuario')
+const Cancion = require('./Cancion')
+const Album = require('./Album')
+const Genero = require('./Genero')
+const CancionesGeneros = require('./Canciones_Generos')
+const Artista = require('./Artista')
+
+const models = {
+  Usuario,
+  Cancion,
+  Album,
+  Genero,
+  CancionesGeneros,
+  Artista
+};
+
+// 🔥 EJECUTAR ASOCIACIONES - ESTO ES ESENCIAL 🔥
+Object.keys(models).forEach(modelName => {
+  if (models[modelName].associate) {
+    models[modelName].associate(models);
+  }
+});
+
+module.exports = {
+  sequelize,
+  ...models
+};

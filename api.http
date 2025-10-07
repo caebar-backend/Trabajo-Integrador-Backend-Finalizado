@@ -14,10 +14,10 @@
 ### Debe Solicitar Token para Crear Usuario
 POST {{baseUrl}}/usuarios
 Content-Type: {{json}}
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckB5YWhvby5jb20uYXIiLCJpYXQiOjE3NTk3MDAxNzUsImV4cCI6MTc1OTcwMzc3NX0.Di_P6LGuxPA0VBLnophn_tiBMkSNRPdexX-SQM1cV_Y
+Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckBnbWFpbC5jb20iLCJpYXQiOjE3NTk3OTk3MzAsImV4cCI6MTc1OTgwMzMzMH0.gsJdOxmqt5zx9LxRlB2nqTxnwtQW2brYj5DlTPkRbkY
 
 {
-  "email": "ana.garcia.me_locu@yahoo.com.ar",
+  "email": "ana.garcia.me_locu_4@yahoo.com.ar",
   "password_hash": "Secr3t0!",
   "fecha_nacimiento": "1995-05-20",
   "sexo": "F",
@@ -29,10 +29,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhc
 ### Debe Solicitar Token para intentar Crear Usuario
 POST {{baseUrl}}/usuarios
 Content-Type: {{json}}
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckBnbWFpbC5jb20iLCJpYXQiOjE3NTk3MTAzMDUsImV4cCI6MTc1OTcxMzkwNX0.NH_A5h7swhdOxzbb0O-QpPyhM4ltmPrZj4cE9TK1FuM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckBnbWFpbC5jb20iLCJpYXQiOjE3NTk3OTk3MzAsImV4cCI6MTc1OTgwMzMzMH0.gsJdOxmqt5zx9LxRlB2nqTxnwtQW2brYj5DlTPkRbkY
 
 {
-  "email": "caebarlwep@yahoo.com.ar",
+  "email": "caebarlwetyp@yahoo.com.ar",
   "password_hash": "Password123",
   "fecha_nacimiento": "1983-09-15",
   "sexo": "M",
@@ -45,10 +45,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhc
 ### Debe Solicitar Token para intentar Crear Usuario
 POST {{baseUrl}}/usuarios
 Content-Type: {{json}}
-Authorization: Bearer Ingresar_Token_Aquí
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckBnbWFpbC5jb20iLCJpYXQiOjE3NTk3OTk3MzAsImV4cCI6MTc1OTgwMzMzMH0.gsJdOxmqt5zx9LxRlB2nqTxnwtQW2brYj5DlTPkRbkY
+
 {
   "password": "Secr3t0!",
-  "fecha_nac": "1995-05-20"
+  "fecha_nacimiento": "1995-05-20"
 }
 
 ### Listar todos los usuarios (Agregado por Budano, Cristian)
@@ -146,8 +147,8 @@ POST {{baseUrl}}/canciones
 Content-Type: {{json}}
 
 {
-  "titulo": "Mariposa Tecknicolor",
-  "duracion_seg": 255,
+  "titulo": "Mariposa Tecknicolor3",
+  "duracion_segundos": 255,
   "id_album": 1
 }
 
@@ -156,24 +157,25 @@ POST {{baseUrl}}/canciones
 Content-Type: {{json}}
 
 {
-  "titulo": "DuracionMala",
-  "duracion_seg": 3.25,
+  "titulo": "DuracionMala9",
+  "duracion_segundos": 3.25,
   "id_album": 1
 }
 
 ### Listar canciones (filtros)
-GET {{baseUrl}}/canciones?genero=Pop&albumId=1
+GET {{baseUrl}}/canciones?genero=2&albumid=69
+
 
 ### Asociar género a canción
 POST {{baseUrl}}/canciones/1/generos
 Content-Type: {{json}}
 
 {
-  "id_genero": 3
+  "id_genero": 9
 }
 
 ### Quitar género de canción
-DELETE {{baseUrl}}/canciones/1/generos/3
+DELETE {{baseUrl}}/canciones/1/generos/9
 
 
 ### ==========================

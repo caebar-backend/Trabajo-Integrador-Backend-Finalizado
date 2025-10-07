@@ -3,10 +3,9 @@
  * Los estudiantes deben implementar toda la lógica de negocio para usuarios
  */
 const chalk = require('chalk')
-const Usuario = require('../models/Usuario')
-const { Op } = require('sequelize')
-const sequelize = require('../config/database')
 const bcrypt = require('bcrypt')
+const { Usuario, sequelize } = require('../models/index')
+const { Op } = require('sequelize')
 
 
 const getTodosLosUsuarios = async (req, res) => {

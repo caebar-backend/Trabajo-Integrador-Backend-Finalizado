@@ -4,10 +4,7 @@
  */
 
 const chalk = require('chalk')
-const Album = require('../models/Album')
-const Cancion = require('../models/Cancion')
-const { Op } = require('sequelize')
-const sequelize = require('../config/database')
+const { Album, Cancion } = require('../models/index')
 
 const crearAlbum = async (req, res) => {
     try{
