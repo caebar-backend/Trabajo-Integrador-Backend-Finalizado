@@ -246,9 +246,9 @@ Content-Type: {{json}}
 
 {
   "id_usuario": 1,
-  "id_tipo_usuario": 1,
-  "fecha_inicio": "2025-10-01T00:00:00Z",
-  "fecha_renovacion": "2025-11-01T00:00:00Z"
+  "id_tipo_suscripcion": 1,
+  "fecha_inicio": "2025-10-07",
+  "fecha_renovacion": "2025-11-07"
 }
 
 ### ERROR: fechas inválidas
