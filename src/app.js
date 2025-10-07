@@ -12,7 +12,7 @@
  */
 
 
-
+const generosRoutes = require('./routes/generos')
 const artistasRoutes = require('./routes/artistas')
 const raizRoutes = require('./routes/raiz')
 const usuariosRoutes = require('./routes/usuarios')
@@ -70,7 +70,7 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use('/', raizRoutes)
 app.use('/jwt',auth)
-app.use('/api/v1', usuariosRoutes, artistasRoutes, albumesRoutes, cancionesRoutes)
+app.use('/api/v1', usuariosRoutes, artistasRoutes, albumesRoutes, cancionesRoutes, generosRoutes )
 
 
 app.use((req, res) => {

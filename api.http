@@ -69,7 +69,7 @@ Content-Type: users-id
 ### Debe Solicitar Token para intentar Actualizar Usuario
 PUT {{baseUrl}}/usuarios/1
 Content-Type: {{json}}
-Authorization: Bearer Ingresar_Token_Aquí
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckBnbWFpbC5jb20iLCJpYXQiOjE3NTk3OTk3MzAsImV4cCI6MTc1OTgwMzMzMH0.gsJdOxmqt5zx9LxRlB2nqTxnwtQW2brYj5DlTPkRbkY
 
 {
   "password_hash": "Nuev4Clave!"
@@ -78,13 +78,13 @@ Authorization: Bearer Ingresar_Token_Aquí
 ### PUT -> Actualizar usuario (cambio de password → actualiza fecha_ult_mod_password)
 ### Esta solicitud funciona porque se actualizan todos los campos del usuario
 ### Debe Solicitar Token para Actualizar Usuario
-PUT {{baseUrl}}/usuarios/19
+PUT {{baseUrl}}/usuarios/43
 Content-Type: {{json}}
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckB5YWhvby5jb20uYXIiLCJpYXQiOjE3NTk3MDA2MDYsImV4cCI6MTc1OTcwNDIwNn0.DBRx4WdkXclDL7wPFVDzCcJFxVkHvkV_FVeXBqZUiCw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckBnbWFpbC5jb20iLCJpYXQiOjE3NTk3OTk3MzAsImV4cCI6MTc1OTgwMzMzMH0.gsJdOxmqt5zx9LxRlB2nqTxnwtQW2brYj5DlTPkRbkY
 
 { 
-  "id_usuario": 19,
-  "email": "caebar@gmail.com",
+  "id_usuario": 43,
+  "email": "caebar2026@gmail.com",
   "password_hash": "caebarXsiempre2026",
   "fecha_nacimiento": "1983-09-15",
   "sexo": "M",
@@ -127,7 +127,7 @@ POST {{baseUrl}}/albumes
 Content-Type: {{json}}
 
 {
-  "titulo": "El Amor Después Del Amor",
+  "titulo": "El Amor Después Del Amor 2",
   "id_artista": 1,
   "id_discografica": 4,
   "anio_publicacion": 1992
@@ -186,7 +186,7 @@ POST {{baseUrl}}/generos
 Content-Type: {{json}}
 
 {
-  "nombre": "Pop"
+  "nombre": "Cumbia Callejera Mkkkkkas"
 }
 
 ### Listar géneros
