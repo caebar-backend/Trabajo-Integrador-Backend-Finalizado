@@ -8,6 +8,8 @@ const Album = require('./Album')
 const Genero = require('./Genero')
 const CancionesGeneros = require('./Canciones_Generos')
 const Artista = require('./Artista')
+const Playlist = require('./Playlist')
+const PlaylistsCanciones = require('./Playlists_Canciones')
 
 const models = {
   Usuario,
@@ -15,17 +17,19 @@ const models = {
   Album,
   Genero,
   CancionesGeneros,
-  Artista
-};
+  Artista,
+  Playlist,
+  PlaylistsCanciones,
+}
 
 // 🔥 EJECUTAR ASOCIACIONES - ESTO ES ESENCIAL 🔥
 Object.keys(models).forEach(modelName => {
   if (models[modelName].associate) {
-    models[modelName].associate(models);
+    models[modelName].associate(models)
   }
-});
+})
 
 module.exports = {
   sequelize,
   ...models
-};
+}

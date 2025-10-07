@@ -201,12 +201,12 @@ POST {{baseUrl}}/playlists
 Content-Type: {{json}}
 
 {
-  "titulo": "Para correr",
-  "id_usuario": 1
+  "titulo": "Para corrernos",
+  "id_usuario": 2
 }
 
 ### Agregar canción a playlist
-POST {{baseUrl}}/playlists/1/canciones
+POST {{baseUrl}}/playlists/17/canciones
 Content-Type: {{json}}
 
 {
@@ -215,23 +215,25 @@ Content-Type: {{json}}
 }
 
 ### Quitar canción de playlist
-DELETE {{baseUrl}}/playlists/1/canciones/1
+DELETE {{baseUrl}}/playlists/17/cancion/1
 
 ### Eliminar (soft-delete) playlist → debe enviar fecha_eliminada
-PUT {{baseUrl}}/playlists/1
+PATCH  {{baseUrl}}/playlists/18
 Content-Type: {{json}}
 
 {
-  "estado": "eliminada",
-  "fecha_eliminada": "2025-10-02T10:00:00Z"
+  "fecha_eliminacion": "2025-10-02T10:00:00Z",
+  "activa": 0,
+  "estado": "changueada"
 }
 
 ### ERROR: soft-delete sin fecha
-PUT {{baseUrl}}/playlists/1
+PATCH {{baseUrl}}/playlists/16
 Content-Type: {{json}}
 
 {
-  "estado": "eliminada"
+  "activa": 0,
+  "estado": "horizantoa"
 }
 
 
