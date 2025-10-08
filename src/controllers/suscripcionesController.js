@@ -18,13 +18,13 @@ const postParaSuscripciones = async (req, res) => {
         }
 
         // SOLUCIÓN: Normalizar fechas para comparar solo la parte de fecha (sin hora)
-        const hoy = new Date();
-        hoy.setHours(0, 0, 0, 0); // Establecer a medianoche
+        const hoy = new Date()
+        hoy.setHours(0, 0, 0, 0)// Establecer a medianoche
         
-        const fechaInicio = new Date(fecha_inicio);
+        const fechaInicio = new Date(fecha_inicio)
         fechaInicio.setHours(0, 0, 0, 0); // Normalizar a medianoche
         
-        const fechaRenovacion = new Date(fecha_renovacion);
+        const fechaRenovacion = new Date(fecha_renovacion)
         fechaRenovacion.setHours(0, 0, 0, 0); // Normalizar a medianoche
         
         // Validación corregida - comparar timestamps

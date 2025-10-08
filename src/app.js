@@ -21,6 +21,7 @@ const albumesRoutes = require('./routes/albumes')
 const cancionesRoutes = require('./routes/canciones')
 const playlistsRoutes = require('./routes/playlists')
 const suscripcionesRoutes = require('./routes/suscripciones')
+const pagosRoutes = require('./routes/pagos')
 
 const sequelize = require("./config/database")
 const express = require("express")
@@ -73,7 +74,8 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/', raizRoutes)
 app.use('/jwt',auth)
 app.use('/api/v1', usuariosRoutes, artistasRoutes, albumesRoutes, 
-  cancionesRoutes, generosRoutes, playlistsRoutes, suscripcionesRoutes )
+  cancionesRoutes, generosRoutes, playlistsRoutes, suscripcionesRoutes,
+pagosRoutes )
 
 
 app.use((req, res) => {

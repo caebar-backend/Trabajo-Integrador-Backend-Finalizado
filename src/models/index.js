@@ -11,6 +11,8 @@ const Artista = require('./Artista')
 const Playlist = require('./Playlist')
 const PlaylistsCanciones = require('./Playlists_Canciones')
 const Suscripcion = require('./Suscripcion')
+const Pago = require('./Pago')
+const MetodosPagos = require('./MetodosPagos')
 
 const models = {
   Usuario,
@@ -22,6 +24,8 @@ const models = {
   Playlist,
   PlaylistsCanciones,
   Suscripcion,
+  Pago,
+  MetodosPagos,
 }
 
 // 🔥 EJECUTAR ASOCIACIONES - ESTO ES ESENCIAL 🔥
