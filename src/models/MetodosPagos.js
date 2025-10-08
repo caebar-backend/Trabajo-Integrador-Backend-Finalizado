@@ -47,8 +47,7 @@ const MetodosPagos = sequelize.define("MetodosPagos", {
     },
     fecha_creacion: {
         type: DataTypes.DATE,
-        allowNull: true,
-        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+        allowNull: false
     },
     activo: {
         type: DataTypes.TINYINT,

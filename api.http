@@ -271,16 +271,17 @@ POST {{baseUrl}}/metodos-pago
 Content-Type: {{json}}
 
 {
-  "id_usuario": 1,
+  "id_usuario": 2,
   "tipo_forma_pago": "Tarjeta de crédito",
   "nro_tarjeta": "4519000000001234",
   "mes_caduca": 12,
   "anio_caduca": 2027,
-  "cvc": "1236"
+  "cvc": "123",
+  "fecha_creacion": "2025-10-09"
 }
 
 ### Listar métodos de pago por usuario
-GET {{baseUrl}}/metodos-pago?usuarioId=1
+GET {{baseUrl}}/metodos-pago?usuarioId=2
 
 
 ### ==========================
