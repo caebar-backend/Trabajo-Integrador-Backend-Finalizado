@@ -5,10 +5,11 @@
 
 const express = require("express")
 const router = express.Router()
+const verificarToken = require('../middlewares/verificarToken')
 
 const { postRegistrarPago, getListarPagosSolicitados } = require("../controllers/pagosController")
 
 router.get("/pagos", getListarPagosSolicitados)
-router.post("/pagos", postRegistrarPago)
+router.post("/pagos", verificarToken, postRegistrarPago)
 
 module.exports = router

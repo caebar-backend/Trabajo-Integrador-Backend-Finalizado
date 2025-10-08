@@ -54,7 +54,7 @@ const postRegistrarMetodoPago = async (req, res) => {
             nro_tarjeta: numeroTarjetaTapado,
             mes_caduca,
             anio_caduca,
-            cvc,
+            cvc: '****',
             fecha_creacion
         })
 

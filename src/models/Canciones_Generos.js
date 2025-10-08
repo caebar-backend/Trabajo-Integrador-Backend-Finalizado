@@ -16,7 +16,7 @@ const CancionesGeneros = sequelize.define('CancionesGeneros',{
         type: DataTypes.INTEGER,
         validate:{
             min: 1,
-            max: 9
+            max: 50
         },
         primaryKey: true,
         allowNull: false,

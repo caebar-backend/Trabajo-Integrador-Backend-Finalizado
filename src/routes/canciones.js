@@ -6,12 +6,14 @@
 const express = require("express")
 const router = express.Router()
 
+const verificarToken = require('../middlewares/verificarToken')
+
 const { crearCancion, buscarCanciones, asociarGeneroParaCancion, eliminarAsociacionGeneroCancion } = require('../controllers/cancionesController')
 
 router.get('/canciones', buscarCanciones)
-router.post('/canciones', crearCancion)
-router.post('/canciones/:id_cancion/generos', asociarGeneroParaCancion)
-router.delete('/canciones/:id_cancion/generos/:id_genero', eliminarAsociacionGeneroCancion)
+router.post('/canciones', verificarToken, crearCancion)
+router.post('/canciones/:id_cancion/generos', verificarToken, asociarGeneroParaCancion)
+router.delete('/canciones/:id_cancion/generos/:id_genero', verificarToken, eliminarAsociacionGeneroCancion)
 
 
 

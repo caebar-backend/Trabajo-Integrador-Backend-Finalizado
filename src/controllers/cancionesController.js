@@ -26,9 +26,9 @@ const crearCancion = async(req, res) => {
             return;
         }
       
-        if(duracion_segundos < 100){
-            res.status(400).json({ error: 'La duración de la canción debe ser mayor a 100 segundos'}) 
-            console.log(chalk.yellowBright('<----- La duración de la canción debe ser mayor a 100 segundos ----->'))
+        if(duracion_segundos < 100 || Number.isInteger(duracion_segundos) === false){
+            res.status(400).json({ error: 'La duración de la canción debe ser mayor a 100 segundos y número entero'}) 
+            console.log(chalk.yellowBright('<----- La duración de la canción debe ser mayor a 100 segundos y número entero ----->'))
             return;
         }
 
@@ -68,6 +68,7 @@ const crearCancion = async(req, res) => {
 }
 
 const asociarGeneroParaCancion = async (req, res) => {
+  
   try {
    const { id_cancion }  = req.params
    const { id_genero } = req.body

@@ -4,7 +4,7 @@
 
 ### Simplificar el contenido de los headers
 @json = application/json
-@token = Puede_Insertar_Su_Token_Aquí
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckBnbWFpbC5jb20iLCJpYXQiOjE3NTk5NTU3NzIsImV4cCI6MTc1OTk1OTM3Mn0.z8Q7LXBKCB6cJUrnD37IZQruPfg_18EPkEcIlmNwTCU
 #### -------------------------------------------
 
 ### ==========================
@@ -14,10 +14,10 @@
 ### Debe Solicitar Token para Crear Usuario
 POST {{baseUrl}}/usuarios
 Content-Type: {{json}}
-Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckBnbWFpbC5jb20iLCJpYXQiOjE3NTk3OTk3MzAsImV4cCI6MTc1OTgwMzMzMH0.gsJdOxmqt5zx9LxRlB2nqTxnwtQW2brYj5DlTPkRbkY
+Authorization: Bear {{token}}
 
 {
-  "email": "ana.garcia.me_locu_4@yahoo.com.ar",
+  "email": "melochor_y_romero_096@yahoo.com.ar",
   "password_hash": "Secr3t0!",
   "fecha_nacimiento": "1995-05-20",
   "sexo": "F",
@@ -25,27 +25,11 @@ Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckB
   "id_pais": 10
 }
 
-### Crear usuario (OK)
-### Debe Solicitar Token para intentar Crear Usuario
-POST {{baseUrl}}/usuarios
-Content-Type: {{json}}
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckBnbWFpbC5jb20iLCJpYXQiOjE3NTk3OTk3MzAsImV4cCI6MTc1OTgwMzMzMH0.gsJdOxmqt5zx9LxRlB2nqTxnwtQW2brYj5DlTPkRbkY
-
-{
-  "email": "caebarlwetyp@yahoo.com.ar",
-  "password_hash": "Password123",
-  "fecha_nacimiento": "1983-09-15",
-  "sexo": "M",
-  "codigo_postal": "2800",
-  "id_pais": 10
-}
-
-
 ### Crear usuario (ERROR: falta email)
 ### Debe Solicitar Token para intentar Crear Usuario
 POST {{baseUrl}}/usuarios
 Content-Type: {{json}}
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckBnbWFpbC5jb20iLCJpYXQiOjE3NTk3OTk3MzAsImV4cCI6MTc1OTgwMzMzMH0.gsJdOxmqt5zx9LxRlB2nqTxnwtQW2brYj5DlTPkRbkY
+Authorization: Bearer {{token}}
 
 {
   "password": "Secr3t0!",
@@ -61,29 +45,30 @@ GET {{baseUrl}}/usuarios?page=1&limit=5
 Content-Type: users-p-l
 
 ### Obtener usuario por ID
-GET {{baseUrl}}/usuarios/4
+GET {{baseUrl}}/usuarios/1
 Content-Type: users-id
 
 ### PUT -> Actualizar usuario (cambio de password → actualiza fecha_ult_mod_password)
 ### Esta solicitud da error porque no se puede actualizar el password solamente, se tiene que actualizar completamente los campos del usuario
 ### Debe Solicitar Token para intentar Actualizar Usuario
-PUT {{baseUrl}}/usuarios/1
+PUT {{baseUrl}}/usuarios/17
 Content-Type: {{json}}
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckBnbWFpbC5jb20iLCJpYXQiOjE3NTk3OTk3MzAsImV4cCI6MTc1OTgwMzMzMH0.gsJdOxmqt5zx9LxRlB2nqTxnwtQW2brYj5DlTPkRbkY
+Authorization: Bearer {{token}}
 
 {
   "password_hash": "Nuev4Clave!"
 }
+
 
 ### PUT -> Actualizar usuario (cambio de password → actualiza fecha_ult_mod_password)
 ### Esta solicitud funciona porque se actualizan todos los campos del usuario
 ### Debe Solicitar Token para Actualizar Usuario
 PUT {{baseUrl}}/usuarios/43
 Content-Type: {{json}}
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckBnbWFpbC5jb20iLCJpYXQiOjE3NTk3OTk3MzAsImV4cCI6MTc1OTgwMzMzMH0.gsJdOxmqt5zx9LxRlB2nqTxnwtQW2brYj5DlTPkRbkY
+Authorization: Bearer {{token}}
 
 { 
-  "id_usuario": 43,
+  "id_usuario": 45,
   "email": "caebar2026@gmail.com",
   "password_hash": "caebarXsiempre2026",
   "fecha_nacimiento": "1983-09-15",
@@ -95,9 +80,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhc
   "id_rol": 4
 }
 
+
 ### Listar usuarios con password vencida (>90 días)
 ### Cambiar el número 90 por un número menor para obtener resultados
-GET {{baseUrl}}/usuarios/password-vencidas/90
+GET {{baseUrl}}/usuarios/password-vencidas/10
 
 
 ### ==========================
@@ -107,6 +93,7 @@ GET {{baseUrl}}/usuarios/password-vencidas/90
 ### Dá error porque no se puede crear un artista con nombre ya existente
 POST {{baseUrl}}/artistas
 Content-Type: {{json}}
+Authorization: Bearer {{token}}
 
 {
   "nombre": "Fito Paez",
@@ -125,9 +112,10 @@ Pedido: artistas-todos
 # Crear álbum (UNIQUE por artista+titulo)
 POST {{baseUrl}}/albumes
 Content-Type: {{json}}
+Authorization: Bearer {{token}}
 
 {
-  "titulo": "El Amor Después Del Amor 2",
+  "titulo": "El Amor Después Del Amor",
   "id_artista": 1,
   "id_discografica": 4,
   "anio_publicacion": 1992
@@ -145,9 +133,10 @@ GET {{baseUrl}}/albumes/82/canciones
 # Crear canción (OK: duracion en segundos)
 POST {{baseUrl}}/canciones
 Content-Type: {{json}}
+Authorization: Bearer {{token}}
 
 {
-  "titulo": "Mariposa Tecknicolor3",
+  "titulo": "Mariposa Tecknicolor4",
   "duracion_segundos": 255,
   "id_album": 1
 }
@@ -155,9 +144,10 @@ Content-Type: {{json}}
 ### Crear canción (ERROR: duracion en mm.ss)
 POST {{baseUrl}}/canciones
 Content-Type: {{json}}
+Authorization: Bearer {{token}}
 
 {
-  "titulo": "DuracionMala9",
+  "titulo": "DuracionMala",
   "duracion_segundos": 3.25,
   "id_album": 1
 }
@@ -169,13 +159,15 @@ GET {{baseUrl}}/canciones?genero=2&albumid=69
 ### Asociar género a canción
 POST {{baseUrl}}/canciones/1/generos
 Content-Type: {{json}}
+Authorization: Bearer {{token}}
 
 {
-  "id_genero": 9
+  "id_genero": 25
 }
 
 ### Quitar género de canción
-DELETE {{baseUrl}}/canciones/1/generos/9
+DELETE {{baseUrl}}/canciones/1/generos/25
+Authorization: Bearer {{token}}
 
 
 ### ==========================
@@ -184,9 +176,10 @@ DELETE {{baseUrl}}/canciones/1/generos/9
 # Crear género
 POST {{baseUrl}}/generos
 Content-Type: {{json}}
+Authorization: Bearer {{token}}
 
 {
-  "nombre": "Cumbia Callejera Mkkkkkas"
+  "nombre": "Cumbia Callejera Kiloas"
 }
 
 ### Listar géneros
@@ -199,15 +192,17 @@ GET {{baseUrl}}/generos
 # Crear playlist (activa por defecto)
 POST {{baseUrl}}/playlists
 Content-Type: {{json}}
+Authorization: Bearer {{token}}
 
 {
-  "titulo": "Para corrernos",
+  "titulo": "Para correr",
   "id_usuario": 2
 }
 
 ### Agregar canción a playlist
 POST {{baseUrl}}/playlists/17/canciones
 Content-Type: {{json}}
+Authorization: Bearer {{token}}
 
 {
   "id_cancion": 1,
@@ -216,24 +211,27 @@ Content-Type: {{json}}
 
 ### Quitar canción de playlist
 DELETE {{baseUrl}}/playlists/17/cancion/1
+Authorization: Bearer {{token}}
 
 ### Eliminar (soft-delete) playlist → debe enviar fecha_eliminada
-PATCH  {{baseUrl}}/playlists/18
+PATCH  {{baseUrl}}/playlists/19
 Content-Type: {{json}}
+Authorization: Bearer {{token}}
 
 {
   "fecha_eliminacion": "2025-10-02T10:00:00Z",
   "activa": 0,
-  "estado": "changueada"
+  "estado": "Eliminada"
 }
 
 ### ERROR: soft-delete sin fecha
-PATCH {{baseUrl}}/playlists/16
+PATCH {{baseUrl}}/playlists/19
 Content-Type: {{json}}
+Authorization: Bearer {{token}}
 
 {
   "activa": 0,
-  "estado": "horizantoa"
+  "estado": "Eliminada"
 }
 
 
@@ -243,10 +241,11 @@ Content-Type: {{json}}
 # Crear suscripción (fecha_renovacion > fecha_inicio)
 POST {{baseUrl}}/suscripciones
 Content-Type: {{json}}
+Authorization: Bearer {{token}}
 
 {
-  "id_usuario": 11,
-  "id_tipo_suscripcion": 1,
+  "id_usuario": 43,
+  "id_tipo_suscripcion": 2,
   "fecha_inicio": "2025-11-08",
   "fecha_renovacion": "2025-12-08"
 }
@@ -254,12 +253,13 @@ Content-Type: {{json}}
 ### ERROR: fechas inválidas
 POST {{baseUrl}}/suscripciones
 Content-Type: {{json}}
+Authorization: Bearer {{token}}
 
 {
   "id_usuario": 12,
   "id_tipo_suscripcion": 1,
-  "fecha_inicio": "2025-05-04",
-  "fecha_renovacion": "2025-08-05"
+  "fecha_inicio": "2025-09-04",
+  "fecha_renovacion": "2025-10-05"
 }
 
 
@@ -269,19 +269,20 @@ Content-Type: {{json}}
 # Crear método de pago (tarjeta enmascarada por el servidor)
 POST {{baseUrl}}/metodos-pago
 Content-Type: {{json}}
+Authorization: Bearer {{token}}
 
 {
-  "id_usuario": 2,
+  "id_usuario": 11,
   "tipo_forma_pago": "Tarjeta de crédito",
   "nro_tarjeta": "4519000000001234",
   "mes_caduca": 12,
   "anio_caduca": 2027,
   "cvc": "123",
-  "fecha_creacion": "2025-10-09"
+  "fecha_creacion": "2025-12-09"
 }
 
 ### Listar métodos de pago por usuario
-GET {{baseUrl}}/metodos-pago?usuarioId=2
+GET {{baseUrl}}/metodos-pago?usuarioId=19
 
 
 ### ==========================
@@ -290,6 +291,7 @@ GET {{baseUrl}}/metodos-pago?usuarioId=2
 # Registrar pago (referenciando suscripción y método de pago válidos)
 POST {{baseUrl}}/pagos
 Content-Type: {{json}}
+Authorization: Bearer {{token}}
 
 {
   "id_suscripcion": 2,

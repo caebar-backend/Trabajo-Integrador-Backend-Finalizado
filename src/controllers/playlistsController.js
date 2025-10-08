@@ -172,6 +172,13 @@ const modificacionParcialPlaylist = async (req, res) => {
             console.log(chalk.yellowBright('<----- Falta el ID del playlist o no es un número ----->'))
             return;
         }
+
+        if(!fecha_eliminacion){
+            res.status(400).json({ error: 'Falta la fecha de eliminación para realizar la operación'}) 
+            console.log(chalk.yellowBright('<----- Falta la fecha de eliminación para realizar la operación ----->'))
+            return;
+        }
+
         const playlistExistente = await Playlist.findByPk(idPlaylist)
         if(!playlistExistente){
             res.status(404).json({ error: 'La playlist no existe'}) 

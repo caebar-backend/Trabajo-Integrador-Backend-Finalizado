@@ -5,14 +5,15 @@
 
 const express = require("express")
 const router = express.Router()
+const verificarToken = require('../middlewares/verificarToken')
 
 const { crearPlaylist, agregarCancionParaPlaylist, eliminarCancionDePlaylist, modificacionParcialPlaylist } = require('../controllers/playlistsController')
 
  
-router.post('/playlists', crearPlaylist)
-router.patch('/playlists/:idPlaylist', modificacionParcialPlaylist)
-router.post('/playlists/:idPlaylist/canciones', agregarCancionParaPlaylist)
-router.delete('/playlists/:idPlaylist/cancion/:idCancion', eliminarCancionDePlaylist)
+router.post('/playlists', verificarToken, crearPlaylist)
+router.patch('/playlists/:idPlaylist', verificarToken, modificacionParcialPlaylist)
+router.post('/playlists/:idPlaylist/canciones', verificarToken, agregarCancionParaPlaylist)
+router.delete('/playlists/:idPlaylist/cancion/:idCancion', verificarToken, eliminarCancionDePlaylist)
 
 
 module.exports = router
