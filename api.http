@@ -312,14 +312,15 @@ GET {{baseUrl}}/pagos?usuarioId=1&desde=2020-01-01&hasta=2025-12-31
 
 ### EJERCICIO 1: Canciones populares por país
 # Obtener las canciones más reproducidas agrupadas por país de usuarios
-# Incluye: nombre_cancion, nombre_artista, nombre_album, nombre_pais, total_reproducciones, apariciones_en_playlists
-GET {{baseUrl}}/vistas/canciones-populares-por-pais
+# Incluye: nombre_cancion, nombre_artista, nombre_album, nombre_pais, total_reproducciones
+###
+GET {{baseUrl}}/vistas/canciones-populares-todas
 
 ### EJERCICIO 1: Con filtros opcionales (por país específico)
-GET {{baseUrl}}/vistas/canciones-populares-por-pais?pais=Argentina
+GET {{baseUrl}}/vistas/canciones-populares-por-pais?pais=uruguay
 
 ### EJERCICIO 1: Con límite de resultados
-GET {{baseUrl}}/vistas/canciones-populares-por-pais?limit=10
+GET {{baseUrl}}/vistas/canciones-populares-por-pais?pais=argentina&limit=4
 
 ### EJERCICIO 2: Ingresos por artista y discográfica
 # Analizar ingresos generados por cada combinación artista-discográfica
@@ -346,4 +347,4 @@ GET {{baseUrl}}/vistas/canciones-populares-por-pais?pais=PaisInexistente
 GET {{baseUrl}}/vistas/ingresos-por-artista-discografica?page=1&limit=5
 
 ### Probar combinación de filtros
-GET {{baseUrl}}/vistas/canciones-populares-por-pais?pais=Argentina&limit=3&orden=reproducciones
+GET {{baseUrl}}/vistas/canciones-populares-por-pais?pais=Argentina&limit=3&orden=id_reproduccion

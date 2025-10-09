@@ -23,6 +23,7 @@ const playlistsRoutes = require('./routes/playlists')
 const suscripcionesRoutes = require('./routes/suscripciones')
 const pagosRoutes = require('./routes/pagos')
 const registrarMetodosPagosRoutes = require('./routes/metodospagos')
+const VistaUnoRoutes = require('./routes/VistaUno')
 
 const sequelize = require("./config/database")
 const express = require("express")
@@ -76,7 +77,7 @@ app.use('/', raizRoutes)
 app.use('/jwt',auth)
 app.use('/api/v1', usuariosRoutes, artistasRoutes, albumesRoutes, 
   cancionesRoutes, generosRoutes, playlistsRoutes, suscripcionesRoutes,
-pagosRoutes, registrarMetodosPagosRoutes )
+pagosRoutes, registrarMetodosPagosRoutes, VistaUnoRoutes)
 
 
 app.use((req, res) => {
