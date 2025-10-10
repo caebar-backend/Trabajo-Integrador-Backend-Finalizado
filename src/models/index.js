@@ -14,6 +14,7 @@ const Suscripcion = require('./Suscripcion')
 const Pago = require('./Pago')
 const MetodosPagos = require('./MetodosPagos')
 const VistaUno = require('./VistaUno')
+const VistaDos = require('./VistaDos')
 
 const models = {
   Usuario,
@@ -28,6 +29,7 @@ const models = {
   Pago,
   MetodosPagos,
   VistaUno,
+  VistaDos,
 }
 
 // 🔥 EJECUTAR ASOCIACIONES - ESTO ES ESENCIAL 🔥

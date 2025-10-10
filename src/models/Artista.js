@@ -34,6 +34,11 @@ const Artista = sequelize.define('Artista',{
         allowNull: true,
         defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     },
+    ingreso:{
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        defaultValue: 0
+    }
     },
     {
         tableName: 'artistas',

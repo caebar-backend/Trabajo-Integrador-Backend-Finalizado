@@ -1,8 +1,20 @@
 
-const { VistaUno, sequelize } = require('../models')
+const { VistaUno} = require('../models')
+const { sequelize } = require('../models')
+const { Op, INTEGER } = require('sequelize')
 const chalk = require('chalk')
 
+
+function generarRegex(palabra) {
+  // Divide la palabra en letras y entre cada letra inserta una expresión que ignore espacios y puntos
+  const letras = palabra.split('')
+  const regex = letras.map(letra => `${letra}[\\s\\.]*`).join('')
+  return regex;
+}
+
+
 const todosDatos = async (req, res) => {
+ 
  try{
 const vistaUno = await VistaUno.findAll({})
     
@@ -58,9 +70,9 @@ const busquedaPorPais = async (req, res) => {
         console.log(chalk.bgRed('Falta el parámetro pais'))
         return
     }
-    
-    const vistaUnoControlaPais = await VistaUno.findOne({
-        where: { nombre_pais: pais }
+
+   const vistaUnoControlaPais = await VistaUno.findOne({
+        where: { nombre_pais: { [Op.regexp]: generarRegex(pais) } }
     })
 
     if (!vistaUnoControlaPais) {
@@ -70,9 +82,9 @@ const busquedaPorPais = async (req, res) => {
     }
 
      const vistaUno = await VistaUno.findAll({ 
-        where: { nombre_pais: pais },
-        order: [[orden, 'DESC']],
-        limit: limits
+        where: { nombre_pais: { [Op.regexp]: generarRegex(pais) } },
+        limit: limits || INTEGER.MAX_VALUE, 
+        order: [[orden || 'id_cancion', 'DESC']],
     })
 
     const vistaUnoDatos = vistaUno.map(vistaUnoM => {

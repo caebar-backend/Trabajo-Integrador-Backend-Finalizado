@@ -317,24 +317,21 @@ GET {{baseUrl}}/pagos?usuarioId=1&desde=2020-01-01&hasta=2025-12-31
 GET {{baseUrl}}/vistas/canciones-populares-todas
 
 ### EJERCICIO 1: Con filtros opcionales (por país específico)
-GET {{baseUrl}}/vistas/canciones-populares-por-pais?pais=uruguay
+GET {{baseUrl}}/vistas/canciones-populares-por-pais?pais=EstadosUnidos
 
 ### EJERCICIO 1: Con límite de resultados
-GET {{baseUrl}}/vistas/canciones-populares-por-pais?pais=argentina&limit=4
+GET {{baseUrl}}/vistas/canciones-populares-por-pais?pais=estadosunidos&limit=4
 
 ### EJERCICIO 2: Ingresos por artista y discográfica
 # Analizar ingresos generados por cada combinación artista-discográfica
-# Incluye: nombre_artista, nombre_discografica, nombre_pais_discografica, total_ingresos, cantidad_suscripciones_activas, total_canciones, promedio_reproducciones
-GET {{baseUrl}}/vistas/ingresos-por-artista-discografica
+# Incluye: nombre_artista, nombre_discografica, nombre_pais_discografica, total_ingresos
+GET {{baseUrl}}/vistas/ingresos-por-artista-discografica-todos
 
 ### EJERCICIO 2: Con filtro por país de discográfica
-GET {{baseUrl}}/vistas/ingresos-por-artista-discografica?pais=Argentina
+GET {{baseUrl}}/vistas/ingresos-por-artista-discografica?pais=estadosunidos
 
 ### EJERCICIO 2: Con filtro por monto mínimo de ingresos
-GET {{baseUrl}}/vistas/ingresos-por-artista-discografica?minimo_ingresos=50
-
-### EJERCICIO 2: Con ordenamiento por cantidad de suscripciones
-GET {{baseUrl}}/vistas/ingresos-por-artista-discografica?orden=suscripciones
+GET {{baseUrl}}/vistas/ingresos-por-artista-discografica-ingresos?minimo_ingresos=300000
 
 ### ==========================
 ### PRUEBAS ADICIONALES PARA VISTAS
@@ -344,7 +341,7 @@ GET {{baseUrl}}/vistas/ingresos-por-artista-discografica?orden=suscripciones
 GET {{baseUrl}}/vistas/canciones-populares-por-pais?pais=PaisInexistente
 
 ### Verificar rendimiento con parámetros de paginación
-GET {{baseUrl}}/vistas/ingresos-por-artista-discografica?page=1&limit=5
+GET {{baseUrl}}/vistas/ingresos-por-artista-discografica-todos?page=11&limit=5
 
 ### Probar combinación de filtros
 GET {{baseUrl}}/vistas/canciones-populares-por-pais?pais=Argentina&limit=3&orden=id_reproduccion
