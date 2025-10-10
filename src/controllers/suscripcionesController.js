@@ -7,6 +7,146 @@ const { Suscripcion, sequelize } = require("../models")
 const { Op } = require("sequelize")
 const chalk = require("chalk")
 
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Suscripcion:
+ *       type: object
+ *       properties:
+ *         id_suscripcion:
+ *           type: integer
+ *           readOnly: true
+ *           example: 1
+ *         id_usuario:
+ *           type: integer
+ *           example: 1
+ *         id_tipo_suscripcion:
+ *           type: integer
+ *           example: 1
+ *         fecha_inicio:
+ *           type: string
+ *           format: date-time
+ *           example: "2024-01-15T10:30:00.000Z"
+ *         fecha_renovacion:
+ *           type: string
+ *           format: date-time
+ *           example: "2024-02-15T10:30:00.000Z"
+ *         activa:
+ *           type: boolean
+ *           default: true
+ *           example: true
+ *         created_at:
+ *           type: string
+ *           format: date-time
+ *         updated_at:
+ *           type: string
+ *           format: date-time
+ * 
+ *     SuscripcionInput:
+ *       type: object
+ *       required:
+ *         - id_usuario
+ *         - id_tipo_suscripcion
+ *         - fecha_inicio
+ *         - fecha_renovacion
+ *       properties:
+ *         id_usuario:
+ *           type: integer
+ *           example: 1
+ *         id_tipo_suscripcion:
+ *           type: integer
+ *           example: 1
+ *         fecha_inicio:
+ *           type: string
+ *           format: date
+ *           description: Fecha de inicio (debe ser posterior a hoy)
+ *           example: "2024-01-16"
+ *         fecha_renovacion:
+ *           type: string
+ *           format: date
+ *           description: Fecha de renovación (debe ser posterior a fecha_inicio)
+ *           example: "2024-02-16"
+ *         activa:
+ *           type: boolean
+ *           default: true
+ *           example: true
+ * 
+ *     SuscripcionResponse:
+ *       type: object
+ *       properties:
+ *         message:
+ *           type: string
+ *           example: "Suscripcion creada"
+ *         suscripcionNueva:
+ *           $ref: '#/components/schemas/Suscripcion'
+ */
+
+/**
+ * @swagger
+ * /api/suscripciones:
+ *   post:
+ *     summary: Crear una nueva suscripción
+ *     description: Crea una nueva suscripción para un usuario. Valida que no existan suscripciones activas vigentes y que las fechas sean válidas.
+ *     tags: [Suscripciones]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/SuscripcionInput'
+ *           examples:
+ *             suscripcionMensual:
+ *               summary: Suscripción mensual
+ *               value:
+ *                 id_usuario: 1
+ *                 id_tipo_suscripcion: 1
+ *                 fecha_inicio: "2024-01-16"
+ *                 fecha_renovacion: "2024-02-16"
+ *                 activa: true
+ *             suscripcionAnual:
+ *               summary: Suscripción anual
+ *               value:
+ *                 id_usuario: 2
+ *                 id_tipo_suscripcion: 2
+ *                 fecha_inicio: "2024-01-16"
+ *                 fecha_renovacion: "2025-01-16"
+ *                 activa: true
+ *     responses:
+ *       201:
+ *         description: Suscripción creada exitosamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/SuscripcionResponse'
+ *       400:
+ *         description: Error en los datos de entrada
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensaje:
+ *                   type: string
+ *                   examples:
+ *                     parametrosFaltantes: "Faltan parametros para crear suscripcion"
+ *                     fechaInicioAnterior: "La fecha de inicio debe ser posterior a hoy"
+ *                     fechaRenovacionAnterior: "La fecha de renovación debe ser posterior a la fecha de inicio"
+ *                     suscripcionExistente: "Ya existe una suscripción para ese usuario con esos parametros"
+ *                     suscripcionVigente: "Ya existe una suscripción activa que no ha vencido"
+ *       500:
+ *         description: Error interno del servidor
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensaje:
+ *                   type: string
+ *                   example: "Error al crear suscripcion"
+ */
+
 const postParaSuscripciones = async (req, res) => {
     try {
         const { id_usuario, id_tipo_suscripcion, fecha_inicio, fecha_renovacion, activa } = req.body
