@@ -44,6 +44,14 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 
+
+const { specs, swaggerUi } = require('./config/swagger');
+// Configuración de Swagger
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs, {
+  explorer: true,
+  customCss: '.swagger-ui .topbar { display: none }'
+}));
+
 //módulo HELMET para proteger la aplicación
 app.use(helmet())
 
@@ -70,9 +78,10 @@ app.use(async (req, res, next) => {
   }
 })
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-
+// Ruta para verificar specs en JSON
+app.get('/api/swagger-json', (req, res) => {
+  res.json(specs);
+});
 
 app.use('/', raizRoutes)
 app.use('/jwt',auth)

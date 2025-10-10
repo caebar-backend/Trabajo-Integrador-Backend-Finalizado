@@ -6,6 +6,7 @@
 const app = require("./src/app")
 process.loadEnvFile()
 const puerto = 3000
+const chalk = require("chalk")
 
 // TODO: Configurar el servidor para escuchar en el puerto especificado
 // TODO: Agregar manejo de errores del servidor
@@ -17,6 +18,8 @@ const puerto = 3000
 
 
 app.listen(puerto, () => {
-  console.log(`Server is running on port ${puerto}`)
-  console.log(`http://localhost:${puerto}/`)
+  console.log(chalk.yellow(`Server is running on port ${puerto}`))
+  console.log(chalk.bgCyan(`http://localhost:${puerto}/api-docs`))
+  console.log(chalk.bgMagentaBright(`http://localhost:${puerto}/`))
+  console.log(chalk.bgBlue(`http://localhost:${puerto}/raiz/`))
 })
