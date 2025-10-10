@@ -8,6 +8,135 @@
 const { Genero, sequelize } = require('../models/index')
 const chalk = require('chalk')
 
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Genero:
+ *       type: object
+ *       properties:
+ *         id_genero:
+ *           type: integer
+ *           readOnly: true
+ *           example: 1
+ *         nombre:
+ *           type: string
+ *           maxLength: 255
+ *           example: "Rock"
+ *         descripcion:
+ *           type: string
+ *           nullable: true
+ *           example: "Género musical que combina ritmos fuertes con guitarras eléctricas"
+ *         created_at:
+ *           type: string
+ *           format: date-time
+ *         updated_at:
+ *           type: string
+ *           format: date-time
+ * 
+ *     GeneroInput:
+ *       type: object
+ *       required:
+ *         - nombre
+ *       properties:
+ *         nombre:
+ *           type: string
+ *           maxLength: 255
+ *           example: "Rock"
+ *         descripcion:
+ *           type: string
+ *           nullable: true
+ *           example: "Género musical que combina ritmos fuertes con guitarras eléctricas"
+ * 
+ *     GeneroResponse:
+ *       type: object
+ *       properties:
+ *         message:
+ *           type: string
+ *           example: "Género Nuevo Registrado"
+ *         generoNuevoDatos:
+ *           type: object
+ *           properties:
+ *             nombre:
+ *               type: string
+ *               example: "Rock"
+ *             descripcion:
+ *               type: string
+ *               example: "Género musical que combina ritmos fuertes con guitarras eléctricas"
+ * 
+ *     GeneroDatos:
+ *       type: object
+ *       properties:
+ *         id_genero:
+ *           type: integer
+ *           example: 1
+ *         nombre:
+ *           type: string
+ *           example: "Rock"
+ *         descripcion:
+ *           type: string
+ *           example: "Género musical que combina ritmos fuertes con guitarras eléctricas"
+ */
+
+/**
+ * @swagger
+ * /api/generos:
+ *   post:
+ *     summary: Crear un nuevo género musical
+ *     description: Registra un nuevo género musical en la plataforma
+ *     tags: [Géneros]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/GeneroInput'
+ *           examples:
+ *             rock:
+ *               summary: Género Rock
+ *               value:
+ *                 nombre: "Rock"
+ *                 descripcion: "Género musical que combina ritmos fuertes con guitarras eléctricas"
+ *             pop:
+ *               summary: Género Pop
+ *               value:
+ *                 nombre: "Pop"
+ *                 descripcion: "Música popular comercial orientada al gran público"
+ *             jazz:
+ *               summary: Género Jazz
+ *               value:
+ *                 nombre: "Jazz"
+ *                 descripcion: "Género musical originario de Estados Unidos con improvisación"
+ *     responses:
+ *       201:
+ *         description: Género creado exitosamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/GeneroResponse'
+ *       400:
+ *         description: Error en los datos de entrada
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Error'
+ *             examples:
+ *               nombreFaltante:
+ *                 summary: Falta el nombre del género
+ *                 value:
+ *                   error: "El nombre del género es obligatorio"
+ *               generoExistente:
+ *                 summary: Género ya existe
+ *                 value:
+ *                   error: "El nombre del género ya existe, debe elegir otro"
+ *       500:
+ *         description: Error interno del servidor
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Error'
+ */
+
 const crearGenero = async (req, res) => {
 
     try{
@@ -46,6 +175,49 @@ const crearGenero = async (req, res) => {
     }
 
 }
+
+/**
+ * @swagger
+ * /api/generos:
+ *   get:
+ *     summary: Obtener todos los géneros musicales
+ *     description: Retorna una lista completa de todos los géneros musicales registrados en la plataforma
+ *     tags: [Géneros]
+ *     responses:
+ *       200:
+ *         description: Lista de géneros obtenida exitosamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Genero'
+ *             examples:
+ *               listaGeneros:
+ *                 summary: Lista de géneros musicales
+ *                 value:
+ *                   - id_genero: 1
+ *                     nombre: "Rock"
+ *                     descripcion: "Género musical que combina ritmos fuertes con guitarras eléctricas"
+ *                     created_at: "2024-01-15T10:30:00.000Z"
+ *                     updated_at: "2024-01-15T10:30:00.000Z"
+ *                   - id_genero: 2
+ *                     nombre: "Pop"
+ *                     descripcion: "Música popular comercial orientada al gran público"
+ *                     created_at: "2024-01-15T10:30:00.000Z"
+ *                     updated_at: "2024-01-15T10:30:00.000Z"
+ *                   - id_genero: 3
+ *                     nombre: "Jazz"
+ *                     descripcion: "Género musical originario de Estados Unidos con improvisación"
+ *                     created_at: "2024-01-15T10:30:00.000Z"
+ *                     updated_at: "2024-01-15T10:30:00.000Z"
+ *       500:
+ *         description: Error interno del servidor
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Error'
+ */
 
 const getTodosLosGeneros = async (req, res) => {
     try{
