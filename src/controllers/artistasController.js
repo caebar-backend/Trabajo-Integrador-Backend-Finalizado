@@ -103,7 +103,7 @@ const { Artista, sequelize } = require('../models/index')
  * /api/artistas:
  *   get:
  *     summary: Obtener todos los artistas
- *     description: Retorna una lista completa de todos los artistas registrados en la plataforma. Requiere header especial 'pedido: artistas-todos'
+ *     description: Retorna una lista completa de todos los artistas registrados en la plataforma
  *     tags: [Artistas]
  *     parameters:
  *       - in: header
