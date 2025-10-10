@@ -6,6 +6,145 @@
 const chalk = require('chalk')
 const { Artista, sequelize } = require('../models/index')
 
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Artista:
+ *       type: object
+ *       properties:
+ *         id_artista:
+ *           type: integer
+ *           readOnly: true
+ *           example: 1
+ *         nombre:
+ *           type: string
+ *           maxLength: 255
+ *           example: "Michael Jackson"
+ *         imagen_url:
+ *           type: string
+ *           format: uri
+ *           nullable: true
+ *           example: "https://ejemplo.com/imagen.jpg"
+ *         biografia:
+ *           type: string
+ *           nullable: true
+ *           example: "Cantante, compositor y bailarín estadounidense"
+ *         fecha_registro:
+ *           type: string
+ *           format: date-time
+ *           example: "2024-01-15T10:30:00.000Z"
+ *         created_at:
+ *           type: string
+ *           format: date-time
+ *         updated_at:
+ *           type: string
+ *           format: date-time
+ * 
+ *     ArtistaInput:
+ *       type: object
+ *       required:
+ *         - nombre
+ *       properties:
+ *         nombre:
+ *           type: string
+ *           maxLength: 255
+ *           example: "Michael Jackson"
+ *         imagen_url:
+ *           type: string
+ *           format: uri
+ *           nullable: true
+ *           example: "https://ejemplo.com/imagen.jpg"
+ *         biografia:
+ *           type: string
+ *           nullable: true
+ *           example: "Cantante, compositor y bailarín estadounidense"
+ * 
+ *     ArtistaResponse:
+ *       type: object
+ *       properties:
+ *         message:
+ *           type: string
+ *           example: "Artista Nuevo Registrado"
+ *         ArtistaNuevoDatos:
+ *           type: object
+ *           properties:
+ *             id_artista:
+ *               type: integer
+ *               example: 1
+ *             nombre:
+ *               type: string
+ *               example: "Michael Jackson"
+ *             imagen_url:
+ *               type: string
+ *               example: "https://ejemplo.com/imagen.jpg"
+ *             biografia:
+ *               type: string
+ *               example: "Cantante, compositor y bailarín estadounidense"
+ * 
+ *     ArtistaDatos:
+ *       type: object
+ *       properties:
+ *         id_artista:
+ *           type: integer
+ *           example: 1
+ *         nombre:
+ *           type: string
+ *           example: "Michael Jackson"
+ *         fecha_registro:
+ *           type: string
+ *           format: date-time
+ *           example: "2024-01-15T10:30:00.000Z"
+ */
+
+/**
+ * @swagger
+ * /api/artistas:
+ *   get:
+ *     summary: Obtener todos los artistas
+ *     description: Retorna una lista completa de todos los artistas registrados en la plataforma. Requiere header especial 'pedido: artistas-todos'
+ *     tags: [Artistas]
+ *     parameters:
+ *       - in: header
+ *         name: pedido
+ *         required: true
+ *         schema:
+ *           type: string
+ *           enum: [artistas-todos]
+ *         description: Header especial para autorizar la consulta
+ *         example: "artistas-todos"
+ *     responses:
+ *       200:
+ *         description: Lista de artistas obtenida exitosamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Artista'
+ *       400:
+ *         description: Header incorrecto o faltante
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Error al obtener artistas"
+ *       500:
+ *         description: Error interno del servidor
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Error al obtener artistas"
+ */
+
 const getTodosLosArtistas = async(req, res) => {
     try{
         if(req.headers['pedido'] === 'artistas-todos'){
@@ -33,6 +172,65 @@ const getTodosLosArtistas = async(req, res) => {
         res.status(500).json({message: 'Error al obtener artistas'})
     }
 }
+
+
+/**
+ * @swagger
+ * /api/artistas:
+ *   post:
+ *     summary: Crear un nuevo artista
+ *     description: Registra un nuevo artista en la plataforma (requiere autenticación JWT)
+ *     tags: [Artistas]
+ *     security:
+ *       - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/ArtistaInput'
+ *           examples:
+ *             artistaCompleto:
+ *               summary: Artista con todos los campos
+ *               value:
+ *                 nombre: "Michael Jackson"
+ *                 imagen_url: "https://ejemplo.com/michael.jpg"
+ *                 biografia: "El Rey del Pop, cantante, compositor y bailarín estadounidense"
+ *             artistaMinimo:
+ *               summary: Artista con solo nombre obligatorio
+ *               value:
+ *                 nombre: "Nuevo Artista"
+ *     responses:
+ *       201:
+ *         description: Artista creado exitosamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ArtistaResponse'
+ *       400:
+ *         description: Error en los datos de entrada
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Error'
+ *             examples:
+ *               nombreFaltante:
+ *                 summary: Falta el nombre del artista
+ *                 value:
+ *                   error: "El nombre del artista es obligatorio"
+ *               artistaExistente:
+ *                 summary: Artista ya existe
+ *                 value:
+ *                   error: "El nombre del artista ya existe, debe elegir otro"
+ *       401:
+ *         description: No autorizado - Token inválido o faltante
+ *       500:
+ *         description: Error interno del servidor
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Error'
+ */
 
 const crearArtista = async (req, res) => {
     try{
