@@ -342,6 +342,13 @@ const asociarGeneroParaCancion = async (req, res) => {
     return;
    }
 
+   const generoExisteOrNo = await Genero.findByPk(id_genero)
+   if (!generoExisteOrNo) {
+    res.status(400).json({ error: 'El género no existe. Debe crear el género antes de agregar canciones a él' })
+    console.log(chalk.yellowBright('<----- El género no existe. Debe crear el género antes de agregar canciones a él ----->'))
+    return;
+   }
+
    // Buscar la asociación existente
     const asociacionExistente = await CancionesGeneros.findOne({
       where: {

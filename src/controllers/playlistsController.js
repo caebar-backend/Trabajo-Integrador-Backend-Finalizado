@@ -342,6 +342,11 @@ const agregarCancionParaPlaylist = async (req, res) => {
            fecha_agregada: new Date(),
            orden,
        })
+       
+       // Incrementar en 1 la columna 'visitas' del usuario con id 1
+       await Playlist.increment('numero_canciones', { by: 1, where: { id_playlist: idPlaylist } })
+       
+
        let playlistsCancionesNuevaDatos = {
            id_playlist: playlistsCancionesNueva.id_playlist,
            id_cancion: playlistsCancionesNueva.id_cancion,
@@ -475,6 +480,9 @@ const eliminarCancionDePlaylist = async (req, res) => {
                 id_cancion: parseInt(idCancion)
             }
         })
+
+          // Decrementar en 1 la columna 'visitas' del usuario
+       await Playlist.decrement('numero_canciones', { by: 1, where: { id_playlist: idPlaylist } });
 
         const playListDatos = {
             id_playlist: playlistExistente.id_playlist,

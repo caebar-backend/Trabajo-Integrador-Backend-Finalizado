@@ -324,21 +324,9 @@ const getDatosPorPais = async (req, res) => {
                               }
                               }
         })
-
-            const vistaDosDatos = vistaDos.map(vistaDosM => {
-                return {
-                    id_artista: vistaDosM.id_artista,
-                    art_ingreso: vistaDosM.art_ingreso,
-                    id_discografica: vistaDosM.id_discografica,
-                    discograf_nombre: vistaDosM.discograf_nombre,
-                    discograf_ingreso: vistaDosM.discograf_ingreso,
-                    id_pais: vistaDosM.id_pais,
-                    pais_nombre: vistaDosM.pais_nombre,
-                    ingreso_total: vistaDosM.ingreso_total
-                }
-            })
-
-            res.status(200).json(vistaDos) 
+        
+        res.status(200).json(vistaDos) 
+            
         }catch(error){
             res.status(500).json({error: 'Error al obtener todos los datos -> ' + error})
             console.log(chalk.bgRed('Error al obtener todos los datos -> ' + error))

@@ -4,7 +4,7 @@
 
 ### Simplificar el contenido de los headers
 @json = application/json
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckBnbWFpbC5jb20iLCJpYXQiOjE3NTk5NTU3NzIsImV4cCI6MTc1OTk1OTM3Mn0.z8Q7LXBKCB6cJUrnD37IZQruPfg_18EPkEcIlmNwTCU
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckBnbWFpbC5jb20iLCJpYXQiOjE3NjAxMzY4MTksImV4cCI6MTc2MDE0MDQxOX0.vyjiiKeySDD4DK4LRuUWhyZKPMvKLnpRlaEkgsoxxQ4
 #### -------------------------------------------
 
 ### ==========================
@@ -17,7 +17,7 @@ Content-Type: {{json}}
 Authorization: Bear {{token}}
 
 {
-  "email": "melochor_y_romero_096@yahoo.com.ar",
+  "email": "usuariodeprueba@yahoo.com.ar",
   "password_hash": "Secr3t0!",
   "fecha_nacimiento": "1995-05-20",
   "sexo": "F",
@@ -27,6 +27,7 @@ Authorization: Bear {{token}}
 
 ### Crear usuario (ERROR: falta email)
 ### Debe Solicitar Token para intentar Crear Usuario
+### Faltan datos para la alta del nuevo usuario (email, password_hash, id_pais, codigo_postal, sexo, fecha_nacimiento)
 POST {{baseUrl}}/usuarios
 Content-Type: {{json}}
 Authorization: Bearer {{token}}
@@ -51,7 +52,7 @@ Content-Type: users-id
 ### PUT -> Actualizar usuario (cambio de password → actualiza fecha_ult_mod_password)
 ### Esta solicitud da error porque no se puede actualizar el password solamente, se tiene que actualizar completamente los campos del usuario
 ### Debe Solicitar Token para intentar Actualizar Usuario
-PUT {{baseUrl}}/usuarios/17
+PUT {{baseUrl}}/usuarios/1
 Content-Type: {{json}}
 Authorization: Bearer {{token}}
 
@@ -63,13 +64,13 @@ Authorization: Bearer {{token}}
 ### PUT -> Actualizar usuario (cambio de password → actualiza fecha_ult_mod_password)
 ### Esta solicitud funciona porque se actualizan todos los campos del usuario
 ### Debe Solicitar Token para Actualizar Usuario
-PUT {{baseUrl}}/usuarios/43
+PUT {{baseUrl}}/usuarios/47
 Content-Type: {{json}}
 Authorization: Bearer {{token}}
 
 { 
-  "id_usuario": 45,
-  "email": "caebar2026@gmail.com",
+  "id_usuario": 47,
+  "email": "caebar202647@gmail.com",
   "password_hash": "caebarXsiempre2026",
   "fecha_nacimiento": "1983-09-15",
   "sexo": "M",
@@ -115,7 +116,7 @@ Content-Type: {{json}}
 Authorization: Bearer {{token}}
 
 {
-  "titulo": "El Amor Después Del Amor",
+  "titulo": "El Amor Después Del Amor por PALENQUE",
   "id_artista": 1,
   "id_discografica": 4,
   "anio_publicacion": 1992
@@ -153,20 +154,24 @@ Authorization: Bearer {{token}}
 }
 
 ### Listar canciones (filtros)
+### Muestra las canciones que sean parte del genero 2 
+### y del album 69 (agrupadas en una lista)
 GET {{baseUrl}}/canciones?genero=2&albumid=69
 
 
 ### Asociar género a canción
-POST {{baseUrl}}/canciones/1/generos
+### ANTES DE ASOCIAR GÉNERO A CANCIÓN, 
+### DEBE VERIFICAR LA EXISTENCIA DEL GÉNERO Y DE LA CANCIÓN
+POST {{baseUrl}}/canciones/275/generos
 Content-Type: {{json}}
 Authorization: Bearer {{token}}
 
 {
-  "id_genero": 25
+  "id_genero": 5
 }
 
 ### Quitar género de canción
-DELETE {{baseUrl}}/canciones/1/generos/25
+DELETE {{baseUrl}}/canciones/275/generos/28
 Authorization: Bearer {{token}}
 
 
@@ -200,21 +205,21 @@ Authorization: Bearer {{token}}
 }
 
 ### Agregar canción a playlist
-POST {{baseUrl}}/playlists/17/canciones
+POST {{baseUrl}}/playlists/20/canciones
 Content-Type: {{json}}
 Authorization: Bearer {{token}}
 
 {
-  "id_cancion": 1,
+  "id_cancion": 13,
   "orden": 1
 }
 
 ### Quitar canción de playlist
-DELETE {{baseUrl}}/playlists/17/cancion/1
+DELETE {{baseUrl}}/playlists/20/cancion/2
 Authorization: Bearer {{token}}
 
 ### Eliminar (soft-delete) playlist → debe enviar fecha_eliminada
-PATCH  {{baseUrl}}/playlists/19
+PATCH  {{baseUrl}}/playlists/20
 Content-Type: {{json}}
 Authorization: Bearer {{token}}
 
@@ -244,7 +249,7 @@ Content-Type: {{json}}
 Authorization: Bearer {{token}}
 
 {
-  "id_usuario": 43,
+  "id_usuario": 13,
   "id_tipo_suscripcion": 2,
   "fecha_inicio": "2025-11-08",
   "fecha_renovacion": "2025-12-08"
@@ -272,7 +277,7 @@ Content-Type: {{json}}
 Authorization: Bearer {{token}}
 
 {
-  "id_usuario": 11,
+  "id_usuario": 13,
   "tipo_forma_pago": "Tarjeta de crédito",
   "nro_tarjeta": "4519000000001234",
   "mes_caduca": 12,
@@ -299,7 +304,7 @@ Authorization: Bearer {{token}}
   "fecha_pago": "2025-12-09",
   "metodo_pago": "Tarjeta Debito",
   "estado": "Pagado",
-  "id_usuario": 2
+  "id_usuario": 13
 }
 
 ### Listar pagos por usuario y rango
