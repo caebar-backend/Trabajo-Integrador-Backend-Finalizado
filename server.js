@@ -19,7 +19,10 @@ const chalk = require("chalk")
 
 app.listen(puerto, () => {
   console.log(chalk.yellow(`Server is running on port ${puerto}`))
+  // Url que se usa para ver la documentación 
   console.log(chalk.bgCyan(`http://localhost:${puerto}/api-docs`))
-  console.log(chalk.bgMagentaBright(`http://localhost:${puerto}/`))
+  // Url que se usa mayormente en el api.http
+  console.log(chalk.bgMagentaBright(`http://localhost:${puerto}/api/v1`))
+  // Url que se usa para ver el mensaje de bienvenida
   console.log(chalk.bgBlue(`http://localhost:${puerto}/raiz/`))
 })
