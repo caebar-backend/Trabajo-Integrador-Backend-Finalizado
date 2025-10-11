@@ -2,9 +2,13 @@
 ### VARIABLES GLOBALES --------------------
 @baseUrl = http://localhost:3000/api/v1
 
+### ------------------------>
+### SOLICITAR TOKEN EN -> api.jwt.http
+### ----------------------->
+
 ### Simplificar el contenido de los headers
 @json = application/json
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhZWJhckBnbWFpbC5jb20iLCJpYXQiOjE3NjAxMzY4MTksImV4cCI6MTc2MDE0MDQxOX0.vyjiiKeySDD4DK4LRuUWhyZKPMvKLnpRlaEkgsoxxQ4
+@token = 
 #### -------------------------------------------
 
 ### ==========================
@@ -116,8 +120,8 @@ Content-Type: {{json}}
 Authorization: Bearer {{token}}
 
 {
-  "titulo": "El Amor Después Del Amor por PALENQUE",
-  "id_artista": 1,
+  "titulo": "El Amor Después Del Amor",
+  "id_artista": 8,
   "id_discografica": 4,
   "anio_publicacion": 1992
 }
@@ -137,7 +141,7 @@ Content-Type: {{json}}
 Authorization: Bearer {{token}}
 
 {
-  "titulo": "Mariposa Tecknicolor4",
+  "titulo": "Mariposa Tecknicolor",
   "duracion_segundos": 255,
   "id_album": 1
 }
@@ -171,7 +175,7 @@ Authorization: Bearer {{token}}
 }
 
 ### Quitar género de canción
-DELETE {{baseUrl}}/canciones/275/generos/28
+DELETE {{baseUrl}}/canciones/275/generos/5
 Authorization: Bearer {{token}}
 
 
@@ -184,7 +188,7 @@ Content-Type: {{json}}
 Authorization: Bearer {{token}}
 
 {
-  "nombre": "Cumbia Callejera Kiloas"
+  "nombre": "Folklore del Artico"
 }
 
 ### Listar géneros
@@ -205,7 +209,7 @@ Authorization: Bearer {{token}}
 }
 
 ### Agregar canción a playlist
-POST {{baseUrl}}/playlists/20/canciones
+POST {{baseUrl}}/playlists/10/canciones
 Content-Type: {{json}}
 Authorization: Bearer {{token}}
 
@@ -215,11 +219,11 @@ Authorization: Bearer {{token}}
 }
 
 ### Quitar canción de playlist
-DELETE {{baseUrl}}/playlists/20/cancion/2
+DELETE {{baseUrl}}/playlists/10/cancion/13
 Authorization: Bearer {{token}}
 
 ### Eliminar (soft-delete) playlist → debe enviar fecha_eliminada
-PATCH  {{baseUrl}}/playlists/20
+PATCH  {{baseUrl}}/playlists/10
 Content-Type: {{json}}
 Authorization: Bearer {{token}}
 
@@ -230,7 +234,7 @@ Authorization: Bearer {{token}}
 }
 
 ### ERROR: soft-delete sin fecha
-PATCH {{baseUrl}}/playlists/19
+PATCH {{baseUrl}}/playlists/10
 Content-Type: {{json}}
 Authorization: Bearer {{token}}
 
@@ -249,7 +253,7 @@ Content-Type: {{json}}
 Authorization: Bearer {{token}}
 
 {
-  "id_usuario": 13,
+  "id_usuario": 14,
   "id_tipo_suscripcion": 2,
   "fecha_inicio": "2025-11-08",
   "fecha_renovacion": "2025-12-08"
@@ -261,7 +265,7 @@ Content-Type: {{json}}
 Authorization: Bearer {{token}}
 
 {
-  "id_usuario": 12,
+  "id_usuario": 14,
   "id_tipo_suscripcion": 1,
   "fecha_inicio": "2025-09-04",
   "fecha_renovacion": "2025-10-05"
@@ -277,7 +281,7 @@ Content-Type: {{json}}
 Authorization: Bearer {{token}}
 
 {
-  "id_usuario": 13,
+  "id_usuario": 14,
   "tipo_forma_pago": "Tarjeta de crédito",
   "nro_tarjeta": "4519000000001234",
   "mes_caduca": 12,
@@ -287,7 +291,7 @@ Authorization: Bearer {{token}}
 }
 
 ### Listar métodos de pago por usuario
-GET {{baseUrl}}/metodos-pago?usuarioId=19
+GET {{baseUrl}}/metodos-pago?usuarioId=14
 
 
 ### ==========================
@@ -304,7 +308,7 @@ Authorization: Bearer {{token}}
   "fecha_pago": "2025-12-09",
   "metodo_pago": "Tarjeta Debito",
   "estado": "Pagado",
-  "id_usuario": 13
+  "id_usuario": 14
 }
 
 ### Listar pagos por usuario y rango
