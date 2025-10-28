@@ -141,9 +141,9 @@ Content-Type: {{json}}
 Authorization: Bearer {{token}}
 
 {
-  "titulo": "Mariposa Tecknicolor",
+  "titulo": "Mariposa Tecknicolor 2025API",
   "duracion_segundos": 255,
-  "id_album": 1
+  "id_album": 54
 }
 
 ### Crear canción (ERROR: duracion en mm.ss)

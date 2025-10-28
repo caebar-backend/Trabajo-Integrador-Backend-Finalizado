@@ -7,7 +7,6 @@ const chalk = require('chalk')
 const { Playlist, Cancion, PlaylistsCanciones, sequelize } = require('../models/index')
 
 
-
 /**
  * @swagger
  * components:
@@ -17,36 +16,31 @@ const { Playlist, Cancion, PlaylistsCanciones, sequelize } = require('../models/
  *       properties:
  *         id_playlist:
  *           type: integer
- *           readOnly: true
- *           example: 1
+ *           description: ID único de la playlist
  *         titulo:
  *           type: string
- *           maxLength: 255
- *           example: "Mis Favoritas"
+ *           description: Título de la playlist
  *         id_usuario:
  *           type: integer
- *           example: 1
+ *           description: ID del usuario dueño de la playlist
+ *         fecha_creacion:
+ *           type: string
+ *           format: date-time
+ *           description: Fecha de creación de la playlist
  *         fecha_eliminacion:
  *           type: string
  *           format: date-time
- *           nullable: true
- *           example: "2024-01-15T10:30:00.000Z"
+ *           description: Fecha de eliminación (soft delete)
  *         activa:
- *           type: boolean
- *           default: true
- *           example: true
+ *           type: integer
+ *           description: Estado activo/inactivo de la playlist
  *         estado:
  *           type: string
- *           enum: [activa, inactiva, eliminada]
- *           example: "activa"
- *         created_at:
- *           type: string
- *           format: date-time
- *         updated_at:
- *           type: string
- *           format: date-time
- * 
- *     PlaylistInput:
+ *           description: Estado descriptivo de la playlist
+ *         numero_canciones:
+ *           type: integer
+ *           description: Número de canciones en la playlist
+ *     NuevaPlaylist:
  *       type: object
  *       required:
  *         - titulo
@@ -54,115 +48,129 @@ const { Playlist, Cancion, PlaylistsCanciones, sequelize } = require('../models/
  *       properties:
  *         titulo:
  *           type: string
- *           maxLength: 255
- *           example: "Mis Favoritas"
+ *           example: "Para correr"
  *         id_usuario:
  *           type: integer
- *           example: 1
- * 
+ *           example: 2
  *     PlaylistResponse:
  *       type: object
  *       properties:
  *         message:
  *           type: string
- *           example: "Playlist Nueva Registrada"
  *         playlistNuevaDatos:
  *           type: object
  *           properties:
  *             id_playlist:
  *               type: integer
- *               example: 1
  *             titulo:
  *               type: string
- *               example: "Mis Favoritas"
  *             id_usuario:
  *               type: integer
- *               example: 1
- * 
- *     PlaylistCancionInput:
+ *     AgregarCancionPlaylist:
  *       type: object
  *       required:
  *         - id_cancion
  *       properties:
  *         id_cancion:
  *           type: integer
- *           example: 1
+ *           example: 13
  *         orden:
  *           type: integer
- *           minimum: 1
+ *           description: Orden de la canción en la playlist
  *           example: 1
- * 
- *     PlaylistCancionResponse:
+ *     CancionPlaylistResponse:
  *       type: object
  *       properties:
  *         message:
  *           type: string
- *           example: "Canción agregada a la playlist"
  *         playlistsCancionesNuevaDatos:
  *           type: object
  *           properties:
  *             id_playlist:
  *               type: integer
- *               example: 1
  *             id_cancion:
  *               type: integer
- *               example: 1
  *             fecha_agregada:
  *               type: string
  *               format: date-time
- *               example: "2024-01-15T10:30:00.000Z"
  *             orden:
  *               type: integer
- *               example: 1
- * 
- *     PlaylistUpdateInput:
+ *     ActualizarPlaylist:
  *       type: object
- *       required:
- *         - fecha_eliminacion
  *       properties:
  *         titulo:
  *           type: string
- *           maxLength: 255
- *           example: "Mis Favoritas Actualizada"
+ *           example: "Nuevo título"
  *         id_usuario:
  *           type: integer
- *           example: 1
+ *           example: 2
  *         fecha_eliminacion:
  *           type: string
  *           format: date-time
- *           example: "2024-01-15T10:30:00.000Z"
+ *           description: Fecha de eliminación (requerida para soft delete)
+ *           example: "2025-10-02T10:00:00Z"
  *         activa:
- *           type: boolean
- *           example: true
+ *           type: integer
+ *           enum: [0, 1]
+ *           example: 0
  *         estado:
  *           type: string
- *           enum: [activa, inactiva, eliminada]
- *           example: "activa"
+ *           example: "Eliminada"
+ *     PlaylistActualizadaResponse:
+ *       type: object
+ *       properties:
+ *         message:
+ *           type: string
+ *         playlistNuevaDatos:
+ *           type: object
+ *           properties:
+ *             id_playlist:
+ *               type: integer
+ *             titulo:
+ *               type: string
+ *             id_usuario:
+ *               type: integer
+ *             fecha_eliminacion:
+ *               type: string
+ *               format: date-time
+ *             activa:
+ *               type: integer
+ *     Error:
+ *       type: object
+ *       properties:
+ *         error:
+ *           type: string
+ *         description:
+ *           type: string
  */
 
 /**
  * @swagger
- * /api/playlists:
+ * tags:
+ *   name: Playlists
+ *   description: Gestión de playlists y sus canciones
+ */
+
+/**
+ * @swagger
+ * /api/v1/playlists:
  *   post:
  *     summary: Crear una nueva playlist
- *     description: Crea una nueva playlist para un usuario específico
+ *     description: Crea una nueva playlist para un usuario. La playlist se crea activa por defecto.
  *     tags: [Playlists]
+ *     security:
+ *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/PlaylistInput'
+ *             $ref: '#/components/schemas/NuevaPlaylist'
  *           examples:
- *             playlistFavoritas:
- *               summary: Playlist de favoritas
+ *             playlistEjemplo:
+ *               summary: Playlist para correr
  *               value:
- *                 titulo: "Mis Favoritas"
- *                 id_usuario: 1
- *             playlistViaje:
- *               summary: Playlist para viajes
- *               value:
- *                 titulo: "Música para Viajar"
+ *                 titulo: "Para correr"
  *                 id_usuario: 2
  *     responses:
  *       201:
@@ -171,6 +179,15 @@ const { Playlist, Cancion, PlaylistsCanciones, sequelize } = require('../models/
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/PlaylistResponse'
+ *             examples:
+ *               success:
+ *                 summary: Playlist creada
+ *                 value:
+ *                   message: "Playlist Nueva Registrada"
+ *                   playlistNuevaDatos:
+ *                     id_playlist: 10
+ *                     titulo: "Para correr"
+ *                     id_usuario: 2
  *       400:
  *         description: Error en los datos de entrada
  *         content:
@@ -179,7 +196,7 @@ const { Playlist, Cancion, PlaylistsCanciones, sequelize } = require('../models/
  *               $ref: '#/components/schemas/Error'
  *             examples:
  *               datosFaltantes:
- *                 summary: Faltan datos obligatorios
+ *                 summary: Faltan datos requeridos
  *                 value:
  *                   error: "Faltan datos para la creación de la playlist"
  *               playlistExistente:
@@ -187,7 +204,7 @@ const { Playlist, Cancion, PlaylistsCanciones, sequelize } = require('../models/
  *                 value:
  *                   error: "La playlist ya existe, debe elegir otra"
  *       500:
- *         description: Error interno del servidor
+ *         description: Error del servidor
  */
 
 const crearPlaylist = async (req, res) => {
@@ -226,52 +243,67 @@ const crearPlaylist = async (req, res) => {
     }
 
 
-
-/**
+ /**
  * @swagger
- * /api/playlists/{idPlaylist}/canciones:
+ * /api/v1/playlists/{idPlaylist}/canciones:
  *   post:
- *     summary: Agregar canción a una playlist
- *     description: Agrega una canción específica a una playlist existente
+ *     summary: Agregar una canción a una playlist
+ *     description: Agrega una canción existente a una playlist existente. Incrementa automáticamente el contador de canciones.
  *     tags: [Playlists]
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: idPlaylist
  *         required: true
  *         schema:
  *           type: integer
- *           minimum: 1
  *         description: ID de la playlist
- *         example: 1
+ *         example: 10
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/PlaylistCancionInput'
+ *             $ref: '#/components/schemas/AgregarCancionPlaylist'
  *           examples:
- *             cancionConOrden:
- *               summary: Canción con orden específico
+ *             agregarCancion:
+ *               summary: Agregar canción con orden
  *               value:
- *                 id_cancion: 1
+ *                 id_cancion: 13
  *                 orden: 1
- *             cancionSinOrden:
- *               summary: Canción sin orden específico
- *               value:
- *                 id_cancion: 2
  *     responses:
  *       201:
  *         description: Canción agregada exitosamente a la playlist
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/PlaylistCancionResponse'
+ *               $ref: '#/components/schemas/CancionPlaylistResponse'
+ *             examples:
+ *               success:
+ *                 summary: Canción agregada
+ *                 value:
+ *                   message: "Canción agregada a la playlist"
+ *                   playlistsCancionesNuevaDatos:
+ *                     id_playlist: 10
+ *                     id_cancion: 13
+ *                     fecha_agregada: "2025-12-09T10:30:00.000Z"
+ *                     orden: 1
  *       400:
  *         description: Error en los parámetros
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Error'
+ *             examples:
+ *               idPlaylistInvalido:
+ *                 summary: ID de playlist inválido
+ *                 value:
+ *                   error: "Falta el ID del playlist o no es un número"
+ *               idCancionInvalido:
+ *                 summary: ID de canción inválido
+ *                 value:
+ *                   error: "Falta el ID de la canción o no es un número"
  *       404:
  *         description: Recurso no encontrado
  *         content:
@@ -288,12 +320,12 @@ const crearPlaylist = async (req, res) => {
  *                 value:
  *                   error: "La canción no existe"
  *               cancionYaAgregada:
- *                 summary: Canción ya en playlist
+ *                 summary: Canción ya existe en playlist
  *                 value:
  *                   error: "La canción ya fué agregada anteriormente a la playlist"
  *       500:
- *         description: Error interno del servidor
- */
+ *         description: Error del servidor
+ */   
 
 const agregarCancionParaPlaylist = async (req, res) => {
     try{
@@ -364,31 +396,30 @@ const agregarCancionParaPlaylist = async (req, res) => {
 }
 
 
-
 /**
  * @swagger
- * /api/playlists/{idPlaylist}/canciones/{idCancion}:
+ * /api/v1/playlists/{idPlaylist}/cancion/{idCancion}:
  *   delete:
- *     summary: Eliminar canción de una playlist
- *     description: Remueve una canción específica de una playlist existente
+ *     summary: Quitar una canción de una playlist
+ *     description: Elimina una canción específica de una playlist. Decrementa automáticamente el contador de canciones.
  *     tags: [Playlists]
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: idPlaylist
  *         required: true
  *         schema:
  *           type: integer
- *           minimum: 1
  *         description: ID de la playlist
- *         example: 1
+ *         example: 10
  *       - in: path
  *         name: idCancion
  *         required: true
  *         schema:
  *           type: integer
- *           minimum: 1
  *         description: ID de la canción a eliminar
- *         example: 1
+ *         example: 13
  *     responses:
  *       200:
  *         description: Canción eliminada exitosamente de la playlist
@@ -399,22 +430,23 @@ const agregarCancionParaPlaylist = async (req, res) => {
  *               properties:
  *                 message:
  *                   type: string
- *                   example: "Canción eliminada de la playlist!"
  *                 playListDatos:
  *                   type: object
  *                   properties:
  *                     id_playlist:
  *                       type: integer
- *                       example: 1
  *                     id_cancion:
  *                       type: integer
- *                       example: 1
+ *             examples:
+ *               success:
+ *                 summary: Canción eliminada
+ *                 value:
+ *                   message: "Canción eliminada de la playlist!"
+ *                   playListDatos:
+ *                     id_playlist: 10
+ *                     id_cancion: 13
  *       400:
  *         description: Error en los parámetros
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/Error'
  *       404:
  *         description: Recurso no encontrado
  *         content:
@@ -435,7 +467,7 @@ const agregarCancionParaPlaylist = async (req, res) => {
  *                 value:
  *                   error: "La canción no fue agregada a la playlist"
  *       500:
- *         description: Error interno del servidor
+ *         description: Error del servidor
  */
 
 const eliminarCancionDePlaylist = async (req, res) => {
@@ -501,72 +533,65 @@ const eliminarCancionDePlaylist = async (req, res) => {
 }
 
 
-
 /**
  * @swagger
- * /api/playlists/{idPlaylist}:
+ * /api/v1/playlists/{idPlaylist}:
  *   patch:
- *     summary: Actualización parcial de una playlist
- *     description: Actualiza parcialmente los datos de una playlist existente. Requiere fecha_eliminacion para realizar la operación.
+ *     summary: Actualizar parcialmente una playlist (soft delete)
+ *     description: |
+ *       Actualiza parcialmente una playlist. Para realizar soft delete es obligatorio enviar fecha_eliminacion.
+ *       **Nota:** El soft delete requiere fecha_eliminacion, activa=0 y estado="Eliminada"
  *     tags: [Playlists]
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: idPlaylist
  *         required: true
  *         schema:
  *           type: integer
- *           minimum: 1
  *         description: ID de la playlist a actualizar
- *         example: 1
+ *         example: 10
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/PlaylistUpdateInput'
+ *             $ref: '#/components/schemas/ActualizarPlaylist'
  *           examples:
+ *             softDeleteCorrecto:
+ *               summary: Soft delete correcto (con fecha)
+ *               value:
+ *                 fecha_eliminacion: "2025-10-02T10:00:00Z"
+ *                 activa: 0
+ *                 estado: "Eliminada"
+ *             softDeleteError:
+ *               summary: Soft delete incorrecto (sin fecha)
+ *               value:
+ *                 activa: 0
+ *                 estado: "Eliminada"
  *             actualizarTitulo:
- *               summary: Actualizar título y estado
+ *               summary: Actualizar solo título
  *               value:
- *                 titulo: "Mis Favoritas Actualizadas"
- *                 fecha_eliminacion: "2024-01-15T10:30:00.000Z"
- *                 estado: "activa"
- *             desactivarPlaylist:
- *               summary: Desactivar playlist
- *               value:
- *                 activa: false
- *                 fecha_eliminacion: "2024-01-15T10:30:00.000Z"
- *                 estado: "inactiva"
+ *                 titulo: "Nuevo título para correr"
  *     responses:
  *       200:
  *         description: Playlist actualizada exitosamente
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 message:
- *                   type: string
- *                   example: "Playlist actualizada"
- *                 playlistNuevaDatos:
- *                   type: object
- *                   properties:
- *                     id_playlist:
- *                       type: integer
- *                       example: 1
- *                     titulo:
- *                       type: string
- *                       example: "Mis Favoritas Actualizadas"
- *                     id_usuario:
- *                       type: integer
- *                       example: 1
- *                     fecha_eliminacion:
- *                       type: string
- *                       format: date-time
- *                       example: "2024-01-15T10:30:00.000Z"
- *                     activa:
- *                       type: boolean
- *                       example: true
+ *               $ref: '#/components/schemas/PlaylistActualizadaResponse'
+ *             examples:
+ *               success:
+ *                 summary: Playlist actualizada
+ *                 value:
+ *                   message: "Playlist actualizada"
+ *                   playlistNuevaDatos:
+ *                     id_playlist: 10
+ *                     titulo: "Para correr"
+ *                     id_usuario: 2
+ *                     fecha_eliminacion: "2025-10-02T10:00:00Z"
+ *                     activa: 0
  *       400:
  *         description: Error en los datos de entrada
  *         content:
@@ -574,12 +599,12 @@ const eliminarCancionDePlaylist = async (req, res) => {
  *             schema:
  *               $ref: '#/components/schemas/Error'
  *             examples:
- *               idInvalido:
- *                 summary: ID inválido
+ *               idPlaylistInvalido:
+ *                 summary: ID de playlist inválido
  *                 value:
  *                   error: "Falta el ID del playlist o no es un número"
- *               fechaFaltante:
- *                 summary: Fecha de eliminación faltante
+ *               fechaEliminacionFaltante:
+ *                 summary: Falta fecha de eliminación
  *                 value:
  *                   error: "Falta la fecha de eliminación para realizar la operación"
  *       404:
@@ -588,8 +613,10 @@ const eliminarCancionDePlaylist = async (req, res) => {
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Error'
+ *             example:
+ *               error: "La playlist no existe"
  *       500:
- *         description: Error interno del servidor
+ *         description: Error del servidor
  */
 
 const modificacionParcialPlaylist = async (req, res) => {

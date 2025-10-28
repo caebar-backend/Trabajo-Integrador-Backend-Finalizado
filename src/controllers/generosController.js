@@ -17,96 +17,77 @@ const chalk = require('chalk')
  *       properties:
  *         id_genero:
  *           type: integer
- *           readOnly: true
- *           example: 1
+ *           description: ID único del género
  *         nombre:
  *           type: string
- *           maxLength: 255
- *           example: "Rock"
+ *           description: Nombre del género musical
  *         descripcion:
  *           type: string
- *           nullable: true
- *           example: "Género musical que combina ritmos fuertes con guitarras eléctricas"
- *         created_at:
- *           type: string
- *           format: date-time
- *         updated_at:
- *           type: string
- *           format: date-time
- * 
- *     GeneroInput:
+ *           description: Descripción del género musical
+ *     NuevoGenero:
  *       type: object
  *       required:
  *         - nombre
  *       properties:
  *         nombre:
  *           type: string
- *           maxLength: 255
- *           example: "Rock"
+ *           example: "Folklore del Artico"
  *         descripcion:
  *           type: string
- *           nullable: true
- *           example: "Género musical que combina ritmos fuertes con guitarras eléctricas"
- * 
+ *           example: "Género musical inspirado en las regiones árticas"
  *     GeneroResponse:
  *       type: object
  *       properties:
  *         message:
  *           type: string
- *           example: "Género Nuevo Registrado"
  *         generoNuevoDatos:
  *           type: object
  *           properties:
  *             nombre:
  *               type: string
- *               example: "Rock"
  *             descripcion:
  *               type: string
- *               example: "Género musical que combina ritmos fuertes con guitarras eléctricas"
- * 
- *     GeneroDatos:
+ *     Error:
  *       type: object
  *       properties:
- *         id_genero:
- *           type: integer
- *           example: 1
- *         nombre:
+ *         error:
  *           type: string
- *           example: "Rock"
- *         descripcion:
+ *         description:
  *           type: string
- *           example: "Género musical que combina ritmos fuertes con guitarras eléctricas"
  */
 
 /**
  * @swagger
- * /api/generos:
+ * tags:
+ *   name: Géneros
+ *   description: Gestión de géneros musicales
+ */
+
+/**
+ * @swagger
+ * /api/v1/generos:
  *   post:
  *     summary: Crear un nuevo género musical
- *     description: Registra un nuevo género musical en la plataforma
+ *     description: Crea un nuevo género musical. El nombre debe ser único.
  *     tags: [Géneros]
+ *     security:
+ *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/GeneroInput'
+ *             $ref: '#/components/schemas/NuevoGenero'
  *           examples:
- *             rock:
- *               summary: Género Rock
+ *             ejemploFolklore:
+ *               summary: Ejemplo de creación de género
  *               value:
- *                 nombre: "Rock"
- *                 descripcion: "Género musical que combina ritmos fuertes con guitarras eléctricas"
- *             pop:
- *               summary: Género Pop
+ *                 nombre: "Folklore del Artico"
+ *                 descripcion: "Género musical inspirado en las regiones árticas"
+ *             ejemploMinimo:
+ *               summary: Ejemplo mínimo (solo nombre)
  *               value:
- *                 nombre: "Pop"
- *                 descripcion: "Música popular comercial orientada al gran público"
- *             jazz:
- *               summary: Género Jazz
- *               value:
- *                 nombre: "Jazz"
- *                 descripcion: "Género musical originario de Estados Unidos con improvisación"
+ *                 nombre: "Rock Progresivo"
  *     responses:
  *       201:
  *         description: Género creado exitosamente
@@ -114,6 +95,14 @@ const chalk = require('chalk')
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/GeneroResponse'
+ *             examples:
+ *               success:
+ *                 summary: Género creado exitosamente
+ *                 value:
+ *                   message: "Género Nuevo Registrado"
+ *                   generoNuevoDatos:
+ *                     nombre: "Folklore del Artico"
+ *                     descripcion: "Género musical inspirado en las regiones árticas"
  *       400:
  *         description: Error en los datos de entrada
  *         content:
@@ -121,8 +110,8 @@ const chalk = require('chalk')
  *             schema:
  *               $ref: '#/components/schemas/Error'
  *             examples:
- *               nombreFaltante:
- *                 summary: Falta el nombre del género
+ *               nombreObligatorio:
+ *                 summary: Nombre obligatorio
  *                 value:
  *                   error: "El nombre del género es obligatorio"
  *               generoExistente:
@@ -130,11 +119,14 @@ const chalk = require('chalk')
  *                 value:
  *                   error: "El nombre del género ya existe, debe elegir otro"
  *       500:
- *         description: Error interno del servidor
+ *         description: Error del servidor
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Error'
+ *             example:
+ *               error: "El servidor no está funcionando, intente más tarde!"
+ *               description: "Detalles del error aquí"
  */
 
 const crearGenero = async (req, res) => {
@@ -178,10 +170,10 @@ const crearGenero = async (req, res) => {
 
 /**
  * @swagger
- * /api/generos:
+ * /api/v1/generos:
  *   get:
  *     summary: Obtener todos los géneros musicales
- *     description: Retorna una lista completa de todos los géneros musicales registrados en la plataforma
+ *     description: Retorna la lista completa de géneros musicales registrados en el sistema
  *     tags: [Géneros]
  *     responses:
  *       200:
@@ -193,32 +185,28 @@ const crearGenero = async (req, res) => {
  *               items:
  *                 $ref: '#/components/schemas/Genero'
  *             examples:
- *               listaGeneros:
- *                 summary: Lista de géneros musicales
+ *               generos:
+ *                 summary: Lista de géneros
  *                 value:
  *                   - id_genero: 1
  *                     nombre: "Rock"
- *                     descripcion: "Género musical que combina ritmos fuertes con guitarras eléctricas"
- *                     created_at: "2024-01-15T10:30:00.000Z"
- *                     updated_at: "2024-01-15T10:30:00.000Z"
+ *                     descripcion: "Género musical tradicional del rock"
  *                   - id_genero: 2
  *                     nombre: "Pop"
- *                     descripcion: "Música popular comercial orientada al gran público"
- *                     created_at: "2024-01-15T10:30:00.000Z"
- *                     updated_at: "2024-01-15T10:30:00.000Z"
+ *                     descripcion: "Música popular"
  *                   - id_genero: 3
- *                     nombre: "Jazz"
- *                     descripcion: "Género musical originario de Estados Unidos con improvisación"
- *                     created_at: "2024-01-15T10:30:00.000Z"
- *                     updated_at: "2024-01-15T10:30:00.000Z"
+ *                     nombre: "Folklore del Artico"
+ *                     descripcion: "Género musical inspirado en las regiones árticas"
  *       500:
- *         description: Error interno del servidor
+ *         description: Error del servidor
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Error'
+ *             example:
+ *               error: "El servidor no está funcionando, intente más tarde!"
+ *               description: "Detalles del error aquí"
  */
-
 const getTodosLosGeneros = async (req, res) => {
     try{
         const losGeneros = await Genero.findAll()

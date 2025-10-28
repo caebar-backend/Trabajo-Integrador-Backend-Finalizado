@@ -43,14 +43,17 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-
-
+// Swagger UI
 const { specs, swaggerUi } = require('./config/swagger');
-// Configuración de Swagger
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs, {
   explorer: true,
-  customCss: '.swagger-ui .topbar { display: none }'
+  customSiteTitle: 'Spotify API Docs',
+  customCss: '.swagger-ui .topbar { display: none }',
+  swaggerOptions: {
+    persistAuthorization: true,
+  }
 }));
+
 
 //módulo HELMET para proteger la aplicación
 app.use(helmet())

@@ -7,7 +7,6 @@ const chalk = require('chalk')
 
 const { Cancion, Album, Genero, CancionesGeneros, sequelize } = require('../models/index.js')
 
-
 /**
  * @swagger
  * components:
@@ -17,37 +16,27 @@ const { Cancion, Album, Genero, CancionesGeneros, sequelize } = require('../mode
  *       properties:
  *         id_cancion:
  *           type: integer
- *           readOnly: true
- *           example: 1
+ *           description: ID único de la canción
  *         titulo:
  *           type: string
- *           maxLength: 255
- *           example: "Bohemian Rhapsody"
+ *           description: Título de la canción
  *         duracion_segundos:
  *           type: integer
- *           minimum: 100
- *           example: 354
+ *           description: Duración en segundos (número entero)
  *         id_album:
  *           type: integer
- *           example: 1
+ *           description: ID del álbum al que pertenece
  *         numero_reproducciones:
  *           type: integer
- *           example: 1500000
+ *           description: Número de reproducciones
  *         numero_likes:
  *           type: integer
- *           example: 250000
+ *           description: Número de likes
  *         fecha_agregada:
  *           type: string
  *           format: date-time
- *           example: "2024-01-15T10:30:00.000Z"
- *         created_at:
- *           type: string
- *           format: date-time
- *         updated_at:
- *           type: string
- *           format: date-time
- * 
- *     CancionInput:
+ *           description: Fecha en que se agregó la canción
+ *     NuevaCancion:
  *       type: object
  *       required:
  *         - titulo
@@ -56,12 +45,12 @@ const { Cancion, Album, Genero, CancionesGeneros, sequelize } = require('../mode
  *       properties:
  *         titulo:
  *           type: string
- *           maxLength: 255
- *           example: "Bohemian Rhapsody"
+ *           example: "Mariposa Tecknicolor"
  *         duracion_segundos:
  *           type: integer
  *           minimum: 100
- *           example: 354
+ *           description: Duración en segundos (mínimo 100, número entero)
+ *           example: 255
  *         id_album:
  *           type: integer
  *           example: 1
@@ -74,112 +63,110 @@ const { Cancion, Album, Genero, CancionesGeneros, sequelize } = require('../mode
  *         fecha_agregada:
  *           type: string
  *           format: date-time
- *           example: "2024-01-15T10:30:00.000Z"
- * 
+ *           example: "2023-10-15T10:30:00.000Z"
  *     CancionResponse:
  *       type: object
  *       properties:
  *         message:
  *           type: string
- *           example: "Canción Nueva Registrada"
  *         cancionNuevaDatos:
  *           type: object
  *           properties:
  *             id_cancion:
  *               type: integer
- *               example: 1
  *             titulo:
  *               type: string
- *               example: "Bohemian Rhapsody"
  *             duracion_segundos:
  *               type: integer
- *               example: 354
  *             id_album:
  *               type: integer
- *               example: 1
- * 
- *     AsociacionGeneroInput:
+ *     AsociacionGenero:
  *       type: object
  *       required:
  *         - id_genero
  *       properties:
  *         id_genero:
  *           type: integer
- *           example: 1
- * 
- *     AsociacionGeneroResponse:
+ *           example: 5
+ *     AsociacionResponse:
  *       type: object
  *       properties:
  *         message:
  *           type: string
- *           example: "Asociación de género creada"
  *         cancionNuevaDatos:
  *           type: object
  *           properties:
  *             id_cancion:
  *               type: integer
- *               example: 1
  *             id_genero:
  *               type: integer
- *               example: 1
- * 
  *     BusquedaCancionesResponse:
  *       type: object
  *       properties:
  *         success:
  *           type: boolean
- *           example: true
  *         message:
  *           type: string
- *           example: "Canciones del álbum 1 O con género 2"
  *         count:
  *           type: integer
- *           example: 10
  *         filters:
  *           type: object
  *           properties:
  *             genero:
- *               type: string
+ *               type: integer
  *               nullable: true
- *               example: "2"
  *             albumid:
- *               type: string
+ *               type: integer
  *               nullable: true
- *               example: "1"
  *         data:
  *           type: array
  *           items:
  *             $ref: '#/components/schemas/Cancion'
+ *     Error:
+ *       type: object
+ *       properties:
+ *         error:
+ *           type: string
+ *         description:
+ *           type: string
+ *         message:
+ *           type: string
  */
 
 /**
  * @swagger
- * /api/canciones:
+ * tags:
+ *   name: Canciones
+ *   description: Gestión de canciones y asociación con géneros
+ */
+
+/**
+ * @swagger
+ * /api/v1/canciones:
  *   post:
  *     summary: Crear una nueva canción
- *     description: Registra una nueva canción en la plataforma asociada a un álbum existente
+ *     description: Crea una nueva canción. La duración debe ser en segundos (número entero mayor a 100)
  *     tags: [Canciones]
+ *     security:
+ *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/CancionInput'
+ *             $ref: '#/components/schemas/NuevaCancion'
  *           examples:
- *             cancionCompleta:
- *               summary: Canción con todos los campos
+ *             ejemploCorrecto:
+ *               summary: Ejemplo correcto (duración en segundos)
  *               value:
- *                 titulo: "Bohemian Rhapsody"
- *                 duracion_segundos: 354
+ *                 titulo: "Mariposa Tecknicolor"
+ *                 duracion_segundos: 255
  *                 id_album: 1
- *                 numero_reproducciones: 0
- *                 numero_likes: 0
- *                 fecha_agregada: "2024-01-15T10:30:00.000Z"
- *             cancionMinima:
- *               summary: Canción con campos obligatorios
+ *             ejemploError:
+ *               summary: Ejemplo incorrecto (duración con decimales)
  *               value:
- *                 titulo: "Nueva Canción"
- *                 duracion_segundos: 180
+ *                 titulo: "DuracionMala"
+ *                 duracion_segundos: 3.25
  *                 id_album: 1
  *     responses:
  *       201:
@@ -188,6 +175,16 @@ const { Cancion, Album, Genero, CancionesGeneros, sequelize } = require('../mode
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/CancionResponse'
+ *             examples:
+ *               success:
+ *                 summary: Canción creada
+ *                 value:
+ *                   message: "Canción Nueva Registrada"
+ *                   cancionNuevaDatos:
+ *                     id_cancion: 275
+ *                     titulo: "Mariposa Tecknicolor"
+ *                     duracion_segundos: 255
+ *                     id_album: 1
  *       400:
  *         description: Error en los datos de entrada
  *         content:
@@ -196,7 +193,7 @@ const { Cancion, Album, Genero, CancionesGeneros, sequelize } = require('../mode
  *               $ref: '#/components/schemas/Error'
  *             examples:
  *               datosFaltantes:
- *                 summary: Faltan datos obligatorios
+ *                 summary: Faltan datos requeridos
  *                 value:
  *                   error: "Faltan datos importantes para la creación de la canción"
  *               duracionInvalida:
@@ -212,7 +209,7 @@ const { Cancion, Album, Genero, CancionesGeneros, sequelize } = require('../mode
  *                 value:
  *                   error: "La canción ya existe, debe elegir otra"
  *       500:
- *         description: Error interno del servidor
+ *         description: Error del servidor
  */
 
 const crearCancion = async(req, res) => {
@@ -277,57 +274,64 @@ const crearCancion = async(req, res) => {
 
 /**
  * @swagger
- * /api/canciones/{id_cancion}/generos:
+ * /api/v1/canciones/{id_cancion}/generos:
  *   post:
  *     summary: Asociar un género a una canción
- *     description: Crea una asociación entre una canción existente y un género musical
+ *     description: Asocia un género existente a una canción existente. Verifica la existencia de ambos antes de crear la asociación.
  *     tags: [Canciones]
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id_cancion
  *         required: true
  *         schema:
  *           type: integer
- *           minimum: 1
  *         description: ID de la canción
- *         example: 1
+ *         example: 275
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/AsociacionGeneroInput'
- *           examples:
- *             rock:
- *               summary: Asociar género rock
- *               value:
- *                 id_genero: 1
- *             pop:
- *               summary: Asociar género pop
- *               value:
- *                 id_genero: 2
+ *             $ref: '#/components/schemas/AsociacionGenero'
+ *           example:
+ *             id_genero: 5
  *     responses:
  *       201:
  *         description: Asociación creada exitosamente
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/AsociacionGeneroResponse'
+ *               $ref: '#/components/schemas/AsociacionResponse'
+ *             example:
+ *               message: "Asociación de género creada"
+ *               cancionNuevaDatos:
+ *                 id_cancion: 275
+ *                 id_genero: 5
  *       400:
- *         description: Canción no existe
+ *         description: Error en los datos de entrada
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Error'
- *       404:
- *         description: Asociación ya existe
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/Error'
+ *             examples:
+ *               cancionNoExiste:
+ *                 summary: Canción no existe
+ *                 value:
+ *                   error: "La canción no existe. Debe crear la canción antes de agregar géneros a ella"
+ *               generoNoExiste:
+ *                 summary: Género no existe
+ *                 value:
+ *                   error: "El género no existe. Debe crear el género antes de agregar canciones a él"
+ *               asociacionExistente:
+ *                 summary: Asociación ya existe
+ *                 value:
+ *                   error: "La asociación a crear ya existe"
  *       500:
- *         description: Error interno del servidor
+ *         description: Error del servidor
  */
+
 
 const asociarGeneroParaCancion = async (req, res) => {
   
@@ -388,28 +392,28 @@ const asociarGeneroParaCancion = async (req, res) => {
 
 /**
  * @swagger
- * /api/canciones/{id_cancion}/generos/{id_genero}:
+ * /api/v1/canciones/{id_cancion}/generos/{id_genero}:
  *   delete:
- *     summary: Eliminar asociación entre canción y género
- *     description: Remueve la asociación existente entre una canción y un género musical
+ *     summary: Eliminar asociación de género de una canción
+ *     description: Elimina la asociación entre una canción y un género específico
  *     tags: [Canciones]
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id_cancion
  *         required: true
  *         schema:
  *           type: integer
- *           minimum: 1
  *         description: ID de la canción
- *         example: 1
+ *         example: 275
  *       - in: path
  *         name: id_genero
  *         required: true
  *         schema:
  *           type: integer
- *           minimum: 1
  *         description: ID del género
- *         example: 1
+ *         example: 5
  *     responses:
  *       200:
  *         description: Asociación eliminada exitosamente
@@ -420,16 +424,18 @@ const asociarGeneroParaCancion = async (req, res) => {
  *               properties:
  *                 message:
  *                   type: string
- *                   example: "Asociación eliminada exitosamente"
  *                 data:
  *                   type: object
  *                   properties:
  *                     id_cancion:
  *                       type: integer
- *                       example: 1
  *                     id_genero:
  *                       type: integer
- *                       example: 1
+ *             example:
+ *               message: "Asociación eliminada exitosamente"
+ *               data:
+ *                 id_cancion: 275
+ *                 id_genero: 5
  *       404:
  *         description: Recurso no encontrado
  *         content:
@@ -450,7 +456,7 @@ const asociarGeneroParaCancion = async (req, res) => {
  *                 value:
  *                   error: "La asociación a eliminar no existe"
  *       500:
- *         description: Error interno del servidor
+ *         description: Error del servidor
  */
 
 const eliminarAsociacionGeneroCancion = async (req, res) => {
@@ -526,35 +532,51 @@ const eliminarAsociacionGeneroCancion = async (req, res) => {
   }
 };
 
+
 /**
  * @swagger
- * /api/canciones/buscar:
+ * /api/v1/canciones:
  *   get:
- *     summary: Buscar canciones por género y/o álbum
- *     description: Busca canciones filtrando por género musical y/o álbum (búsqueda OR)
+ *     summary: Buscar canciones con filtros
+ *     description: Buscar canciones por género y/o álbum (búsqueda OR - género O álbum)
  *     tags: [Canciones]
  *     parameters:
  *       - in: query
  *         name: genero
  *         schema:
- *           type: string
- *         description: ID del género musical para filtrar
- *         example: "2"
+ *           type: integer
+ *         description: ID del género para filtrar
+ *         example: 2
  *       - in: query
  *         name: albumid
  *         schema:
- *           type: string
+ *           type: integer
  *         description: ID del álbum para filtrar
- *         example: "1"
+ *         example: 69
  *     responses:
  *       200:
- *         description: Búsqueda exitosa
+ *         description: Canciones encontradas exitosamente
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/BusquedaCancionesResponse'
+ *             examples:
+ *               conFiltros:
+ *                 summary: Con filtros de género y álbum
+ *                 value:
+ *                   success: true
+ *                   message: "Canciones del álbum 69 O con género 2"
+ *                   count: 5
+ *                   filters:
+ *                     genero: 2
+ *                     albumid: 69
+ *                   data:
+ *                     - id_cancion: 275
+ *                       titulo: "Canción 1"
+ *                       duracion_segundos: 240
+ *                       id_album: 69
  *       400:
- *         description: Faltan parámetros de búsqueda
+ *         description: Faltan filtros de búsqueda
  *         content:
  *           application/json:
  *             schema:
@@ -562,14 +584,14 @@ const eliminarAsociacionGeneroCancion = async (req, res) => {
  *               properties:
  *                 success:
  *                   type: boolean
- *                   example: false
  *                 message:
  *                   type: string
- *                   example: "Debe proporcionar al menos un filtro (genero o albumid)"
+ *             example:
+ *               success: false
+ *               message: "Debe proporcionar al menos un filtro (genero o albumid)"
  *       500:
- *         description: Error interno del servidor
+ *         description: Error del servidor
  */
-
 const buscarCanciones = async (req, res) => {
   try {
     const { genero, albumid } = req.query;

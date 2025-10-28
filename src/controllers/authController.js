@@ -16,40 +16,45 @@ const chalk = require('chalk')
  *         email:
  *           type: string
  *           format: email
- *           description: Email del usuario registrado
- *           example: "usuario@ejemplo.com"
+ *           description: Email del usuario
+ *           example: "caebar@gmail.com"
  *         password_hash:
  *           type: string
- *           format: password
  *           description: Hash de la contraseña del usuario
- *           example: "$2b$10$hashedPasswordExample123456789"
+ *           example: "$2b$10$NRlX6rmL6blXK9vRi8wUHu7Q7jZPWLOGqE8o6uGKokVs/c.pBrf7W"
  *         id_rol:
  *           type: integer
  *           description: ID del rol del usuario
- *           example: 1
- * 
+ *           example: 4
  *     LoginResponse:
  *       type: object
  *       properties:
  *         token:
  *           type: string
- *           description: Token JWT para autenticar requests
+ *           description: Token JWT generado
  *           example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
- * 
- *     LoginError:
+ *     ErrorResponse:
  *       type: object
  *       properties:
  *         mensaje:
  *           type: string
+ *           description: Mensaje de error
  *           example: "Credenciales inválidas"
  */
 
 /**
  * @swagger
- * /api/auth/login:
+ * tags:
+ *   name: Autenticación
+ *   description: Endpoints para login y generación de tokens JWT
+ */
+
+/**
+ * @swagger
+ * /jwt/login:
  *   post:
- *     summary: Iniciar sesión en la aplicación
- *     description: Autentica un usuario con email, password_hash y id_rol, retorna un token JWT
+ *     summary: Obtener token JWT de autenticación
+ *     description: Endpoint para autenticar usuario y generar token JWT
  *     tags: [Autenticación]
  *     requestBody:
  *       required: true
@@ -58,21 +63,15 @@ const chalk = require('chalk')
  *           schema:
  *             $ref: '#/components/schemas/LoginRequest'
  *           examples:
- *             usuarioAdmin:
- *               summary: Usuario administrador
+ *             ejemploLogin:
+ *               summary: Ejemplo de login
  *               value:
- *                 email: "admin@spotify.com"
- *                 password_hash: "$2b$10$hashedPasswordExample123456789"
- *                 id_rol: 1
- *             usuarioRegular:
- *               summary: Usuario regular
- *               value:
- *                 email: "usuario@spotify.com"
- *                 password_hash: "$2b$10$hashedPasswordExample123456789"
- *                 id_rol: 2
+ *                 email: "caebar@gmail.com"
+ *                 password_hash: "$2b$10$NRlX6rmL6blXK9vRi8wUHu7Q7jZPWLOGqE8o6uGKokVs/c.pBrf7W"
+ *                 id_rol: 4
  *     responses:
  *       200:
- *         description: Login exitoso, token JWT generado
+ *         description: Login exitoso, token generado
  *         content:
  *           application/json:
  *             schema:
@@ -81,32 +80,24 @@ const chalk = require('chalk')
  *               success:
  *                 summary: Token generado exitosamente
  *                 value:
- *                   token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+ *                   token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
  *       401:
  *         description: Credenciales inválidas o usuario no autorizado
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/LoginError'
+ *               $ref: '#/components/schemas/ErrorResponse'
  *             examples:
- *               credencialesInvalidas:
+ *               invalidCredentials:
  *                 summary: Credenciales incorrectas
  *                 value:
  *                   mensaje: "Credenciales inválidas"
- *               usuarioNoEncontrado:
- *                 summary: Usuario no existe
- *                 value:
- *                   mensaje: "Usuario no encontrado"
  *       500:
  *         description: Error interno del servidor
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 mensaje:
- *                   type: string
- *                   example: "Error en el servidor"
+ *               $ref: '#/components/schemas/ErrorResponse'
  */
 
 async function loginController(req, res) {

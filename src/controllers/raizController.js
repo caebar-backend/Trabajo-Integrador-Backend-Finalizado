@@ -6,23 +6,59 @@ const sequelize = require('../config/database')
  * @swagger
  * components:
  *   schemas:
- *     MensajeBienvenida:
+ *     RaizResponse:
  *       type: object
  *       properties:
- *         mensaje:
+ *         message:
  *           type: string
- *         timestamp:
+ *           example: "Bienvenido a la API de Spotify"
+ *     ErrorResponse:
+ *       type: object
+ *       properties:
+ *         message:
  *           type: string
- *           format: date-time
- *         status:
- *           type: integer
- *         version:
- *           type: string
- *       example:
- *         mensaje: "¡Bienvenido a la API de Spotify!"
- *         timestamp: "2024-01-15T10:30:00.000Z"
- *         status: 200
- *         version: "1.0.0"
+ *           example: "Error al conectarse al servidor"
+ */
+
+/**
+ * @swagger
+ * tags:
+ *   name: Raíz
+ *   description: Endpoint principal para verificar el estado de la API
+ */
+
+/**
+ * @swagger
+ * /raiz:
+ *   get:
+ *     summary: Endpoint raíz de la API
+ *     description: |
+ *       Verifica la conexión con la base de datos y devuelve un mensaje de bienvenida.
+ *       **Propósito:** Comprobar que la API está funcionando correctamente.
+ *     tags: [Raíz]
+ *     responses:
+ *       200:
+ *         description: API funcionando correctamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/RaizResponse'
+ *             examples:
+ *               success:
+ *                 summary: Bienvenida exitosa
+ *                 value:
+ *                   message: "Bienvenido a la API de Spotify"
+ *       500:
+ *         description: Error de conexión con la base de datos
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *             examples:
+ *               error:
+ *                 summary: Error de servidor
+ *                 value:
+ *                   message: "Error al conectarse al servidor"
  */
 
 const getRaiz = async (req, res) => {

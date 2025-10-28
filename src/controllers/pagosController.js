@@ -9,8 +9,6 @@ const chalk = require("chalk")
 
 //TO DO: Registrar pago (referenciando suscripcion y método de pago válidos)
 
-
-
 /**
  * @swagger
  * components:
@@ -20,39 +18,28 @@ const chalk = require("chalk")
  *       properties:
  *         id_pago:
  *           type: integer
- *           readOnly: true
- *           example: 1
+ *           description: ID único del pago
  *         id_usuario:
  *           type: integer
- *           example: 1
+ *           description: ID del usuario que realiza el pago
  *         id_suscripcion:
  *           type: integer
- *           example: 1
- *         metodo_pago:
- *           type: string
- *           enum: [tarjeta_credito, tarjeta_debito, transferencia_bancaria, mercadopago]
- *           example: "tarjeta_credito"
+ *           description: ID de la suscripción asociada al pago
  *         monto:
  *           type: number
  *           format: float
- *           minimum: 0.01
- *           example: 9.99
+ *           description: Monto del pago
  *         fecha_pago:
  *           type: string
- *           format: date-time
- *           example: "2024-01-15T10:30:00.000Z"
+ *           format: date
+ *           description: Fecha en que se realizó el pago
+ *         metodo_pago:
+ *           type: string
+ *           description: Método de pago utilizado
  *         estado:
  *           type: string
- *           enum: [pendiente, completado, fallido, rechazado]
- *           example: "completado"
- *         created_at:
- *           type: string
- *           format: date-time
- *         updated_at:
- *           type: string
- *           format: date-time
- * 
- *     PagoInput:
+ *           description: Estado del pago
+ *     NuevoPago:
  *       type: object
  *       required:
  *         - id_usuario
@@ -63,117 +50,108 @@ const chalk = require("chalk")
  *       properties:
  *         id_usuario:
  *           type: integer
- *           example: 1
+ *           example: 14
  *         id_suscripcion:
  *           type: integer
- *           example: 1
+ *           example: 2
  *         metodo_pago:
  *           type: string
- *           enum: [tarjeta_credito, tarjeta_debito, transferencia_bancaria, mercadopago]
- *           example: "tarjeta_credito"
+ *           example: "Tarjeta Debito"
  *         monto:
  *           type: number
  *           format: float
- *           minimum: 0.01
- *           example: 9.99
+ *           example: 100
  *         fecha_pago:
  *           type: string
  *           format: date
- *           example: "2024-01-15"
+ *           example: "2025-12-09"
  *         estado:
  *           type: string
- *           enum: [pendiente, completado, fallido, rechazado]
- *           default: "completado"
- *           example: "completado"
- * 
+ *           example: "Pagado"
  *     PagoResponse:
  *       type: object
  *       properties:
  *         message:
  *           type: string
- *           example: "Pago Exitoso"
  *         pagoNuevo:
  *           $ref: '#/components/schemas/Pago'
- * 
- *     PagoConsulta:
- *       type: object
- *       properties:
- *         id_pago:
- *           type: integer
- *           example: 1
- *         monto:
- *           type: number
- *           example: 9.99
- *         fecha_pago:
- *           type: string
- *           format: date-time
- *           example: "2024-01-15T10:30:00.000Z"
- *         metodo_pago:
- *           type: string
- *           example: "tarjeta_credito"
- *         id_usuario:
- *           type: integer
- *           example: 1
- * 
- *     PagosRangoResponse:
+ *     ListaPagosResponse:
  *       type: object
  *       properties:
  *         success:
  *           type: boolean
- *           example: true
  *         total:
  *           type: integer
- *           example: 5
  *         usuarioId:
  *           type: integer
- *           example: 1
  *         rango:
  *           type: object
  *           properties:
  *             desde:
  *               type: string
- *               example: "2024-01-01"
+ *               format: date
  *             hasta:
  *               type: string
- *               example: "2024-12-31"
+ *               format: date
  *         datos:
  *           type: array
  *           items:
  *             $ref: '#/components/schemas/Pago'
+ *     Error:
+ *       type: object
+ *       properties:
+ *         mensaje:
+ *           type: string
+ *         error:
+ *           type: string
+ *         detalle:
+ *           type: string
  */
 
 /**
  * @swagger
- * /api/pagos:
+ * tags:
+ *   name: Pagos
+ *   description: Gestión de pagos de suscripciones
+ */
+
+/**
+ * @swagger
+ * /api/v1/pagos:
  *   post:
  *     summary: Registrar un nuevo pago
- *     description: Registra un nuevo pago asociado a una suscripción y método de pago válidos. Valida que la fecha de pago no sea anterior a la fecha actual.
+ *     description: |
+ *       Registra un nuevo pago asociado a una suscripción y usuario.
+ *       **Validaciones:**
+ *       - Fecha de pago no puede ser anterior a la fecha actual
+ *       - Previene duplicados por usuario, suscripción, método y fecha
  *     tags: [Pagos]
+ *     security:
+ *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/PagoInput'
+ *             $ref: '#/components/schemas/NuevoPago'
  *           examples:
- *             pagoCompletado:
- *               summary: Pago exitoso
+ *             pagoCompleto:
+ *               summary: Pago completo con estado
  *               value:
- *                 id_usuario: 1
- *                 id_suscripcion: 1
- *                 metodo_pago: "tarjeta_credito"
- *                 monto: 9.99
- *                 fecha_pago: "2024-01-15"
- *                 estado: "completado"
- *             pagoPendiente:
- *               summary: Pago pendiente
- *               value:
- *                 id_usuario: 2
  *                 id_suscripcion: 2
- *                 metodo_pago: "mercadopago"
- *                 monto: 4.99
- *                 fecha_pago: "2024-01-15"
- *                 estado: "pendiente"
+ *                 monto: 100
+ *                 fecha_pago: "2025-12-09"
+ *                 metodo_pago: "Tarjeta Debito"
+ *                 estado: "Pagado"
+ *                 id_usuario: 14
+ *             pagoMinimo:
+ *               summary: Pago mínimo (sin estado)
+ *               value:
+ *                 id_suscripcion: 2
+ *                 monto: 100
+ *                 fecha_pago: "2025-12-09"
+ *                 metodo_pago: "Tarjeta Credito"
+ *                 id_usuario: 14
  *     responses:
  *       201:
  *         description: Pago registrado exitosamente
@@ -181,29 +159,46 @@ const chalk = require("chalk")
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/PagoResponse'
+ *             examples:
+ *               success:
+ *                 summary: Pago creado exitosamente
+ *                 value:
+ *                   message: "Pago Exitoso"
+ *                   pagoNuevo:
+ *                     id_pago: 1
+ *                     id_suscripcion: 2
+ *                     monto: 100
+ *                     fecha_pago: "2025-12-09"
+ *                     metodo_pago: "Tarjeta Debito"
+ *                     estado: "Pagado"
+ *                     id_usuario: 14
  *       400:
  *         description: Error en los datos de entrada
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 mensaje:
- *                   type: string
- *                   examples:
- *                     parametrosFaltantes: "Faltan parametros para registrar el pago"
- *                     fechaAnterior: "La fecha de pago no puede ser anterior a la fecha actual"
- *                     pagoExistente: "Ya existe un pago para ese usuario con esos parametros"
+ *               $ref: '#/components/schemas/Error'
+ *             examples:
+ *               parametrosFaltantes:
+ *                 summary: Faltan parámetros requeridos
+ *                 value:
+ *                   mensaje: "Faltan parametros para registrar el pago"
+ *               fechaAnterior:
+ *                 summary: Fecha de pago anterior a la actual
+ *                 value:
+ *                   mensaje: "La fecha de pago no puede ser anterior a la fecha actual"
+ *               pagoDuplicado:
+ *                 summary: Pago duplicado
+ *                 value:
+ *                   mensaje: "Ya existe un pago para ese usuario con esos parametros"
  *       500:
- *         description: Error interno del servidor
+ *         description: Error del servidor
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 mensaje:
- *                   type: string
- *                   example: "Error al registrar el pago, vuelva a intentar más tarde"
+ *               $ref: '#/components/schemas/Error'
+ *             example:
+ *               mensaje: "Error al registrar el pago, vuelva a intentar más tarde"
  */
 
 const postRegistrarPago = async (req, res) => {
@@ -273,13 +268,12 @@ const postRegistrarPago = async (req, res) => {
 
 }
 
-
 /**
  * @swagger
- * /api/pagos:
+ * /api/v1/pagos:
  *   get:
  *     summary: Listar pagos por usuario y rango de fechas
- *     description: Retorna todos los pagos de un usuario específico dentro de un rango de fechas determinado
+ *     description: Retorna todos los pagos de un usuario dentro de un rango de fechas específico
  *     tags: [Pagos]
  *     parameters:
  *       - in: query
@@ -287,8 +281,7 @@ const postRegistrarPago = async (req, res) => {
  *         required: true
  *         schema:
  *           type: integer
- *           minimum: 1
- *         description: ID del usuario para consultar sus pagos
+ *         description: ID del usuario para filtrar los pagos
  *         example: 1
  *       - in: query
  *         name: desde
@@ -297,7 +290,7 @@ const postRegistrarPago = async (req, res) => {
  *           type: string
  *           format: date
  *         description: Fecha de inicio del rango (YYYY-MM-DD)
- *         example: "2024-01-01"
+ *         example: "2020-01-01"
  *       - in: query
  *         name: hasta
  *         required: true
@@ -305,42 +298,75 @@ const postRegistrarPago = async (req, res) => {
  *           type: string
  *           format: date
  *         description: Fecha de fin del rango (YYYY-MM-DD)
- *         example: "2024-12-31"
+ *         example: "2025-12-31"
  *     responses:
  *       200:
  *         description: Pagos encontrados exitosamente
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/PagosRangoResponse'
+ *               $ref: '#/components/schemas/ListaPagosResponse'
+ *             examples:
+ *               success:
+ *                 summary: Pagos encontrados
+ *                 value:
+ *                   success: true
+ *                   total: 3
+ *                   usuarioId: 1
+ *                   rango:
+ *                     desde: "2020-01-01"
+ *                     hasta: "2025-12-31"
+ *                   datos:
+ *                     - id_pago: 1
+ *                       id_suscripcion: 2
+ *                       monto: 100
+ *                       fecha_pago: "2023-05-15"
+ *                       metodo_pago: "Tarjeta Debito"
+ *                       estado: "Pagado"
+ *                       id_usuario: 1
+ *                     - id_pago: 2
+ *                       id_suscripcion: 2
+ *                       monto: 100
+ *                       fecha_pago: "2023-06-15"
+ *                       metodo_pago: "Tarjeta Credito"
+ *                       estado: "Pagado"
+ *                       id_usuario: 1
  *       400:
- *         description: Error en los parámetros de consulta
+ *         description: Error en los parámetros de entrada
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 mensaje:
- *                   type: string
- *                   examples:
- *                     usuarioFaltante: "Falta el parametro usuarioId para realizar la búsqueda"
- *                     fechasFaltantes: "Faltan parámetros desde y hasta para realizar la búsqueda"
- *                     idInvalido: "El parámetro usuarioId debe ser un número"
- *                     fechaInvalida: "Formato de fecha inválido"
- *                     rangoInvalido: "La fecha de inicio no puede ser posterior a la fecha de fin"
+ *               $ref: '#/components/schemas/Error'
+ *             examples:
+ *               usuarioIdFaltante:
+ *                 summary: Falta el parámetro usuarioId
+ *                 value:
+ *                   mensaje: "Falta el parametro usuarioId para realizar la búsqueda"
+ *               fechasFaltantes:
+ *                 summary: Faltan parámetros de fecha
+ *                 value:
+ *                   mensaje: "Faltan parámetros desde y hasta para realizar la búsqueda"
+ *               usuarioIdInvalido:
+ *                 summary: usuarioId no es un número
+ *                 value:
+ *                   mensaje: "El parámetro usuarioId debe ser un número"
+ *               fechaInvalida:
+ *                 summary: Formato de fecha inválido
+ *                 value:
+ *                   mensaje: "Formato de fecha inválido"
+ *               rangoInvalido:
+ *                 summary: Rango de fechas inválido
+ *                 value:
+ *                   mensaje: "La fecha de inicio no puede ser posterior a la fecha de fin"
  *       500:
- *         description: Error interno del servidor
+ *         description: Error del servidor
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 error:
- *                   type: string
- *                   example: "Error interno del servidor"
- *                 detalle:
- *                   type: string
- *                   example: "Detalle técnico del error"
+ *               $ref: '#/components/schemas/Error'
+ *             example:
+ *               error: "Error interno del servidor"
+ *               detalle: "Detalles del error aquí"
  */
 
 const getListarPagosSolicitados = async (req, res) => {

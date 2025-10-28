@@ -6,6 +6,7 @@
 const chalk = require('chalk')
 const { Album, Cancion } = require('../models/index')
 
+
 /**
  * @swagger
  * components:
@@ -18,39 +19,41 @@ const { Album, Cancion } = require('../models/index')
  *       properties:
  *         id_album:
  *           type: integer
- *           readOnly: true
- *           example: 1
+ *           description: ID único del álbum
  *         titulo:
  *           type: string
- *           maxLength: 255
- *           example: "Thriller"
+ *           description: Título del álbum
  *         anio_publicacion:
  *           type: integer
- *           minimum: 1900
- *           maximum: 2030
- *           example: 1982
+ *           description: Año de publicación del álbum
  *         id_discografica:
  *           type: integer
- *           example: 1
+ *           description: ID de la discográfica
  *         id_artista:
  *           type: integer
- *           example: 1
+ *           description: ID del artista
  *         portada_url:
  *           type: string
- *           format: uri
- *           example: "https://ejemplo.com/portada.jpg"
+ *           description: URL de la portada del álbum
  *         duracion_total:
  *           type: integer
  *           description: Duración total en segundos
- *           example: 3600
- *         created_at:
+ *     Cancion:
+ *       type: object
+ *       properties:
+ *         id_cancion:
+ *           type: integer
+ *           description: ID único de la canción
+ *         titulo:
  *           type: string
- *           format: date-time
- *         updated_at:
- *           type: string
- *           format: date-time
- * 
- *     AlbumInput:
+ *           description: Título de la canción
+ *         duracion_segundos:
+ *           type: integer
+ *           description: Duración en segundos
+ *         id_album:
+ *           type: integer
+ *           description: ID del álbum al que pertenece
+ *     NuevoAlbum:
  *       type: object
  *       required:
  *         - titulo
@@ -58,114 +61,63 @@ const { Album, Cancion } = require('../models/index')
  *       properties:
  *         titulo:
  *           type: string
- *           maxLength: 255
- *           example: "Thriller"
- *         anio_publicacion:
- *           type: integer
- *           minimum: 1900
- *           maximum: 2030
- *           example: 1982
- *         id_discografica:
- *           type: integer
- *           example: 1
+ *           example: "El Amor Después Del Amor"
  *         id_artista:
  *           type: integer
- *           example: 1
+ *           example: 8
+ *         id_discografica:
+ *           type: integer
+ *           example: 4
+ *         anio_publicacion:
+ *           type: integer
+ *           example: 1992
  *         portada_url:
  *           type: string
- *           format: uri
  *           example: "https://ejemplo.com/portada.jpg"
  *         duracion_total:
  *           type: integer
- *           description: Duración total en segundos
  *           example: 3600
- * 
- *     AlbumResponse:
- *       type: object
- *       properties:
- *         message:
- *           type: string
- *           example: "Álbum Nuevo Registrado"
- *         albumNuevoDatos:
- *           type: object
- *           properties:
- *             id_album:
- *               type: integer
- *               example: 1
- *             titulo:
- *               type: string
- *               example: "Thriller"
- *             anio_publicacion:
- *               type: integer
- *               example: 1982
- *             id_discografica:
- *               type: integer
- *               example: 1
- *             id_artista:
- *               type: integer
- *               example: 1
- * 
- *     Cancion:
- *       type: object
- *       properties:
- *         id_cancion:
- *           type: integer
- *           example: 1
- *         titulo:
- *           type: string
- *           example: "Beat It"
- *         duracion_segundos:
- *           type: integer
- *           example: 258
- *         id_album:
- *           type: integer
- *           example: 1
- *         id_artista:
- *           type: integer
- *           example: 1
- *         created_at:
- *           type: string
- *           format: date-time
- *         updated_at:
- *           type: string
- *           format: date-time
- * 
- *     CancionResponse:
- *       type: object
- *       properties:
- *         id_cancion:
- *           type: integer
- *           example: 1
- *         titulo:
- *           type: string
- *           example: "Beat It"
- *         duracion_seg:
- *           type: integer
- *           example: 258
- *         id_album:
- *           type: integer
- *           example: 1
- * 
  *     Error:
  *       type: object
  *       properties:
  *         error:
  *           type: string
- *           example: "Mensaje de error descriptivo"
+ *           description: Mensaje de error
  *         description:
  *           type: string
- *           example: "Detalle técnico del error"
- *         timestamp:
+ *           description: Descripción detallada del error
+ *     AlbumResponse:
+ *       type: object
+ *       properties:
+ *         message:
  *           type: string
- *           format: date-time
+ *         albumNuevoDatos:
+ *           type: object
+ *           properties:
+ *             id_album:
+ *               type: integer
+ *             titulo:
+ *               type: string
+ *             anio_publicacion:
+ *               type: integer
+ *             id_discografica:
+ *               type: integer
+ *             id_artista:
+ *               type: integer
  */
 
 /**
  * @swagger
- * /api/albumes:
+ * tags:
+ *   name: Álbumes
+ *   description: Gestión de álbumes musicales
+ */
+
+/**
+ * @swagger
+ * /api/v1/albumes:
  *   post:
  *     summary: Crear un nuevo álbum
- *     description: Crea un nuevo álbum musical (requiere autenticación JWT)
  *     tags: [Álbumes]
  *     security:
  *       - bearerAuth: []
@@ -174,15 +126,15 @@ const { Album, Cancion } = require('../models/index')
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/AlbumInput'
+ *             $ref: '#/components/schemas/NuevoAlbum'
  *           examples:
  *             ejemploAlbum:
  *               summary: Ejemplo de creación de álbum
  *               value:
- *                 titulo: "Thriller"
- *                 anio_publicacion: 1982
- *                 id_discografica: 1
- *                 id_artista: 1
+ *                 titulo: "El Amor Después Del Amor"
+ *                 id_artista: 8
+ *                 id_discografica: 4
+ *                 anio_publicacion: 1992
  *                 portada_url: "https://ejemplo.com/portada.jpg"
  *                 duracion_total: 3600
  *     responses:
@@ -192,6 +144,17 @@ const { Album, Cancion } = require('../models/index')
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/AlbumResponse'
+ *             examples:
+ *               success:
+ *                 summary: Álbum creado
+ *                 value:
+ *                   message: "Álbum Nuevo Registrado"
+ *                   albumNuevoDatos:
+ *                     id_album: 1
+ *                     titulo: "El Amor Después Del Amor"
+ *                     anio_publicacion: 1992
+ *                     id_discografica: 4
+ *                     id_artista: 8
  *       400:
  *         description: Error en los datos de entrada
  *         content:
@@ -199,24 +162,23 @@ const { Album, Cancion } = require('../models/index')
  *             schema:
  *               $ref: '#/components/schemas/Error'
  *             examples:
- *               datosFaltantes:
+ *               faltanDatos:
  *                 summary: Faltan datos requeridos
  *                 value:
  *                   error: "Faltan datos para la creación del álbum"
  *               albumExistente:
  *                 summary: Álbum ya existe
  *                 value:
- *                   error: "El título del álbum ya existe, debe elegir otro"
- *       401:
- *         description: No autorizado - Token inválido o faltante
+ *                   error: "El titulo del álbum ya existe, debe elegir otro"
  *       500:
- *         description: Error interno del servidor
+ *         description: Error del servidor
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Error'
  */
 
+// Crear Album 
 const crearAlbum = async (req, res) => {
     try{
         const { titulo, anio_publicacion, id_discografica, id_artista,portada_url, duracion_total } = req.body
@@ -267,10 +229,9 @@ const crearAlbum = async (req, res) => {
 
 /**
  * @swagger
- * /api/albumes:
+ * /api/v1/albumes:
  *   get:
  *     summary: Obtener todos los álbumes de un artista
- *     description: Retorna una lista de todos los álbumes de un artista específico por su ID
  *     tags: [Álbumes]
  *     parameters:
  *       - in: query
@@ -278,32 +239,49 @@ const crearAlbum = async (req, res) => {
  *         required: true
  *         schema:
  *           type: integer
- *           minimum: 1
  *         description: ID del artista para filtrar los álbumes
- *         example: 1
+ *         example: 5
  *     responses:
  *       200:
- *         description: Lista de álbumes obtenida exitosamente
+ *         description: Lista de álbumes del artista obtenida exitosamente
  *         content:
  *           application/json:
  *             schema:
  *               type: array
  *               items:
  *                 $ref: '#/components/schemas/Album'
+ *             examples:
+ *               albumes:
+ *                 summary: Lista de álbumes
+ *                 value:
+ *                   - id_album: 1
+ *                     titulo: "Álbum 1"
+ *                     anio_publicacion: 1992
+ *                     id_discografica: 4
+ *                     id_artista: 5
+ *                   - id_album: 2
+ *                     titulo: "Álbum 2"
+ *                     anio_publicacion: 1995
+ *                     id_discografica: 4
+ *                     id_artista: 5
  *       400:
  *         description: Falta el ID del artista
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Error'
+ *             example:
+ *               error: "Falta el ID del artista"
  *       404:
  *         description: No se encontraron álbumes del artista
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Error'
+ *             example:
+ *               error: "No se encontraron álbumes del artista, controle el ID ingresado"
  *       500:
- *         description: Error interno del servidor
+ *         description: Error del servidor
  *         content:
  *           application/json:
  *             schema:
@@ -350,10 +328,9 @@ const getTodosLosAlbumesDeArtista = async (req, res) => {
 
 /**
  * @swagger
- * /api/albumes/{albumId}/canciones:
+ * /api/v1/albumes/{albumId}/canciones:
  *   get:
  *     summary: Obtener todas las canciones de un álbum
- *     description: Retorna la lista completa de canciones pertenecientes a un álbum específico
  *     tags: [Álbumes]
  *     parameters:
  *       - in: path
@@ -361,7 +338,6 @@ const getTodosLosAlbumesDeArtista = async (req, res) => {
  *         required: true
  *         schema:
  *           type: integer
- *           minimum: 1
  *         description: ID del álbum
  *         example: 1
  *     responses:
@@ -373,20 +349,36 @@ const getTodosLosAlbumesDeArtista = async (req, res) => {
  *               type: array
  *               items:
  *                 $ref: '#/components/schemas/Cancion'
+ *             examples:
+ *               canciones:
+ *                 summary: Lista de canciones
+ *                 value:
+ *                   - id_cancion: 1
+ *                     titulo: "Canción 1"
+ *                     duracion_segundos: 240
+ *                     id_album: 1
+ *                   - id_cancion: 2
+ *                     titulo: "Canción 2"
+ *                     duracion_segundos: 210
+ *                     id_album: 1
  *       400:
  *         description: Falta el ID del álbum
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Error'
+ *             example:
+ *               error: "Falta el ID del álbum"
  *       404:
  *         description: No se encontraron canciones del álbum
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Error'
+ *             example:
+ *               error: "No se encontraron canciones del álbum, controle el ID ingresado"
  *       500:
- *         description: Error interno del servidor
+ *         description: Error del servidor
  *         content:
  *           application/json:
  *             schema:
